@@ -2,14 +2,13 @@
 layout: page
 title: Setup
 root: "."
-training_site: "{{ site.sih_pages }}/training.artemis.introhpc/"
 ---
 
-## Get a shell terminal emulator
+# Get a shell terminal emulator
 
 To connect to Artemis HPC, and follow this lesson, you will need a **'terminal emulator'** program installed on your computer. Often just called a 'terminal', or 'shell terminal', 'shell client', terminal emulators give you a window with a _command line interface_ through which you can send commands to be executed by your computer.
 
-More precisely, these commands are executed by your _shell_, which is a program designed to do just that: execute commands! The most commonly used shell is 'Bash', and we'll generally refer to the shell as a 'Bash shell', and to scripts as 'Bash scripts'. There are other shells, and each has its own set of extra commands or syntaxes it can accept -- its own _scripting languauge_.
+More precisely, these commands are executed by your _shell_, which is a program designed to do just that: execute commands! The most commonly used shell is 'Bash', and we'll generally refer to the shell as a 'Bash shell', and to scripts as 'Bash scripts'. There are other shells, and each has its own set of extra commands or syntaxes it can accept -- its own _scripting language_.
 
 <figure>
   <img src="{{ page.root }}/fig/s_old_term.jpeg" height="250"/>
@@ -87,24 +86,26 @@ Head to [https://putty.org](https://putty.org) and download PuTTY. You can insta
 2. Name this session **"Artemis"** and click 'Save'
 
 <br>
-## Off-campus access
+# Off-campus access
 
-If you're attempting this training by yourself, or following on **[Zoom](https://uni-sydney.zoom.us/j/3967698889)**, _off-campus_ then you'll need to connect to the USyd internet network first. There are a couple ways to do this:
+If you're attempting this training by yourself, or following on **[Zoom](https://uni-sydney.zoom.us/)**, _off-campus_ then you'll need to connect to the USyd internet network _before_ you can connect to Artemis.
 
-### 1. The USyd VPN
+There are a couple ways to do this:
+
+## 1. The USyd VPN
 
 **VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [here](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/316). Once you've connected to the VPN, the above connection methods will work, just as though you were on-campus.
 
-### 2. Use the Artemis Jump server
+## 2. Use the Artemis Jump server
 
 Artemis provides a 'gateway' server, called **Jump**, that allows connections from outside the University network, and is itself on the network. From the Jump server, you can then connect to Artemis directly. If using the Jump server, you will need to edit the **host address** used in the instructions above:
 
 * Instead of **hpc.sydney.edu.au** _use_ **jump.research.sydney.edu.au**
 
-This will connect you to Jump, rather than Artemis itself. You can then connect to Artemis as outlined in [Episode 1]({{ page.root }}/01-intro).
+This will connect you to Jump, rather than Artemis itself. You can then connect to Artemis directly via **SSH**. See [Episode 1 of the _Introduction to Artemis HPC_ course]({{ site.sih_pages }}/training.artemis.introhpc/01-intro).
 
 
-## Graphical login nodes
+# Graphical login nodes
 
 There is one final way to access Artemis, and that is using our _graphical login nodes_. These special are graphics-enabled login servers which host 'NoMachine', a kind of remote desktop service.
 

@@ -44,24 +44,32 @@ GitHub where `site.github.url` will be defined.
 	<![endif]-->
     <title>{{ site.title }}{% if page.title %}: {{ page.title }}{% endif %}</title>
   </head>
-  <body data-spy="scroll" data-target="#toc">
-    <div class="container">
+  {% if site.kind != "series" %}
+    <body data-spy="scroll" data-target="#toc">
+  {% else %}
+    <body>
+  {% endif %}
+    <div class="container {% if site.kind == "series" %}series{% endif %}">
       {% include navbar.html %}
+      <!-- main content area -->
+  {% if site.kind != "series" %}
       <div class="row">
-        <!-- main content area -->
         <div class="col-md-9 col-sm-9">
+  {% endif %}
         {{ content }}
         {% if site.kind == "workshop" %}
         {% include workshop_footer.html %}
         {% else %}
         {% include lesson_footer.html %}
         {% endif %}
+  {% if site.kind != "series" %}
         </div>
         <!-- sidebar, which will move to the top on a small screen -->
         <div class="col-md-2 col-sm-3">
           <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
         </div>
       </div>
+  {% endif %}
     </div>
     {% include javascript.html %}
     <script>

@@ -35,8 +35,11 @@
       {% endif %}
 
       {% comment %} Always show link to home page. {% endcomment %}
+      {% if site.kind == "series" %}
+      <a class="navbar-brand" style="padding-left:20px" href="{{ site.training_home }}">Training Home</a>
+      {% else %}
       <a class="navbar-brand" style="padding-left:20px" href="{{ site.series_home }}">{{ site.series_name }}</a>
-
+      {% endif %}
     </div>
 
     {% comment %} Collapsible items start here. {% endcomment %}
