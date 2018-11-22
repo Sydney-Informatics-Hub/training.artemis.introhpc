@@ -1,7 +1,7 @@
 #------------------------------------------------------------
 # Values for this lesson.
 #------------------------------------------------------------
-port: 4100
+port: 4001
 
 # Which carpentry is this ("swc", "dc", "lc", or "cp")?
 # swc: Software Carpentry
@@ -11,14 +11,14 @@ port: 4100
 carpentry: "sih"
 
 # Overall title for pages.
-title: "SIH Training template"
-series_name: "FIXME Series"
+title: "Introduction to Artemis HPC"
+series_name: "Artemis Series"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
 #------------------------------------------------------------
 
-# What kind of thing is this ("workshop" or "lesson" or "series")?
+# What kind of thing is this ("workshop" or "lesson")?
 kind: "lesson"
 
 # Magic to make URLs resolve both locally and on GitHub.
@@ -33,7 +33,7 @@ email: "sih.training@sydney.edu.au"
 sih_site: "https://informatics.sydney.edu.au"
 sih_github: "https://github.com/Sydney-Informatics-Hub"
 sih_pages: "https://sydney-informatics-hub.github.io"
-series_home: "https://sydney-informatics-hub.github.io/FIXME/"
+series_home: "https://sydney-informatics-hub.github.io/training.artemis/"
 training_home: "https://sydney-informatics-hub.github.io/training.home/"
 
 # Carpentries sites
@@ -111,4 +111,3 @@ highlighter: rouge
 # Plugins
 plugins:
   - jemoji
-  - "jekyll-github-metadata"

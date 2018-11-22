@@ -5,8 +5,8 @@ title: "Citation"
 
 #### Please cite as:
 
-FIXME:   
-"_Sydney Informatics Hub: FIXME Training_", Version FIXME, MONTH YEAR   
+Hayim Dar, Nathaniel Butterworth, Cali Willet (eds):   
+"_Sydney Informatics Hub: Artemis Training_", Version 2018.10, October 2018   
 {{ site.series_home }}
 
 <br>
