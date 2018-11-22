@@ -533,7 +533,7 @@ class CheckGeneric(CheckBase):
 
 
 CHECKERS = [
-    (re.compile(r'CONTRIBUTING\.md'), CheckNonJekyll),
+    (re.compile(r'CONTRIBUTING\.md'), CheckGeneric),
     (re.compile(r'README\.md'), CheckNonJekyll),
     (re.compile(r'index\.md'), CheckIndex),
     (re.compile(r'reference\.md'), CheckReference),

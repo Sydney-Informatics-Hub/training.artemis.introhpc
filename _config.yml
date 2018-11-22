@@ -111,4 +111,3 @@ highlighter: rouge
 # Plugins
 plugins:
   - jemoji
-  - "jekyll-github-metadata"
