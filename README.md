@@ -10,7 +10,7 @@ This is the overview page for the Artemis training course series. The individual
 |[Matlab on Artemis: The MDCS](https://github.com/Sydney-Informatics-Hub/training.artemis.mdcs) | Artemis HPC hosts a Matlab Distributed Computing Server (MDCS) - this allows users to submit MATLAB jobs directly to Artemis from within their local Matlab instance on their machines. Come and learn how to use this service. |
 
 
-## Contributing
+### iii. Checking your work
 
 We welcome all contributions to improve our courses! Maintainers will do their best to help you if you have any
 questions, concerns, or experience any difficulties along the way.
@@ -28,3 +28,33 @@ Contact [sih.training@sydney.edu.au](mailto:sih.training@sydney.edu.au).
 
 
 [lesson-example]: https://carpentries.github.io/lesson-example
+[cc-by-human]: https://creativecommons.org/licenses/by/4.0/
+[cc-by-legal]: https://creativecommons.org/licenses/by/4.0/legalcode
+[osi]: https://opensource.org
+[mit-license]: https://opensource.org/licenses/mit-license.html
+
+[coc]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
+[contrib-covenant]: https://contributor-covenant.org/
+[contributing]: blob/gh-pages/CONTRIBUTING.md
+[styles]: https://github.com/carpentries/styles/
+
+[cran-checkpoint]: https://cran.r-project.org/package=checkpoint
+[cran-knitr]: https://cran.r-project.org/package=knitr
+[cran-stringr]: https://cran.r-project.org/package=stringr
+
+[jekyll-collection]: https://jekyllrb.com/docs/collections/
+[jekyll-install]: https://jekyllrb.com/docs/installation/
+[jekyll-windows]: http://jekyll-windows.juthilo.com/
+[jekyll]: https://jekyllrb.com/
+[jupyter]: https://jupyter.org/
+
+[kramdown]: https://kramdown.gettalong.org/
+[pandoc]: https://pandoc.org/
+[pyyaml]: https://pypi.python.org/pypi/PyYAML
+[r-markdown]: https://rmarkdown.rstudio.com/
+
+[rstudio]: https://www.rstudio.com/
+[ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
+[ruby-installer]: https://rubyinstaller.org/
+[rubygems]: https://rubygems.org/pages/download/
+[yaml]: http://yaml.org/
