@@ -59,7 +59,7 @@ We're now ready to **submit** a compute job to Artemis. Navigate to the **sample
 ~~~
 nano basic.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 <figure>
   <a name="nanobasic"></a>
@@ -76,7 +76,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 > ~~~
 > #PBS -P Training
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #2
@@ -87,7 +87,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 > ~~~
 > #PBS -N Basic_hayim
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > Substitute a job name of your choice!
 {: .solution}
 
@@ -101,7 +101,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 > #PBS -l select=1:ncpus=1:mem=1GB
 > #PBS -l walltime=00:01:00
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #4
@@ -111,7 +111,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 > ~~~
 > #PBS -q defaultQ
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 
@@ -123,7 +123,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 > #PBS -M hayim.dar@sydney.edu.au
 > #PBS -m abe
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 To begin, we're going to run a very simple 'test' job, so <u>delete everything below the directives</u>, from ```# Load modules``` onward, and replace with
@@ -135,7 +135,7 @@ mkdir New_job
 cp basic.pbs New_job/copy.pbs
 perl hello.pl <YourName>
 ~~~
-{: .bash}
+{: .language-bash}
 
 PBS uses your **/home/\<unikey\>** directory as your default _working directory_ in which to start all PBS scripts. Since your data is not likely to ever be in your home directory, the first command in any script will probably involve setting or changing to the correct folder.
 
@@ -150,7 +150,7 @@ Finally, submit the PBS script **basic.pbs** to the Artemis scheduler, using ```
 ~~~
 qsub basic.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ qsub basic.pbs
@@ -180,7 +180,7 @@ We can query a current Artemis job using the PBS command ```qstat``` and the **j
 ~~~
 qstat -x 2557008
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ qstat -x 2557008
@@ -243,7 +243,7 @@ By this time, our tiny test jobs should have run and competed. Check again
 ~~~
 qstat -x 2556851
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ qstat -x 2557008
@@ -262,7 +262,7 @@ Now, list the contents of your working directory
 ~~~
 ls -lsh
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ ls -lsh
@@ -355,7 +355,7 @@ What does the report show?
 > ~~~
 > grep -se "Exit Status" *
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .callout}
 
 ### Did what we expected happen?
@@ -375,7 +375,7 @@ so check inside:
 total 512
 -rw-r----- 1 jdar4135 RDS-CORE-Training-RW 203 Oct 25 15:35 copy.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 Success.
 
@@ -391,7 +391,7 @@ Open **index.pbs** and make any edits necessary. What will you need to change?
 ~~~
 nano index.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 <figure>
   <a name="nanoindex"></a>
@@ -407,7 +407,7 @@ nano index.pbs
 > ~~~
 > #PBS -P Training
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #2
@@ -417,7 +417,7 @@ nano index.pbs
 > ~~~
 > #PBS -N Index_hayim
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #3
@@ -432,7 +432,7 @@ nano index.pbs
 > #PBS -l select=1:ncpus=1:mem=1GB
 > #PBS -l walltime=00:02:00
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #4
@@ -442,7 +442,7 @@ nano index.pbs
 > ~~~
 > #PBS -q defaultQ
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 
@@ -453,7 +453,7 @@ nano index.pbs
 > ~~~
 > io=/project/Training/hayim
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > Substitute your working directory name where I have put 'hayim'!
 {: .solution}
 
@@ -464,7 +464,7 @@ Submit the job as before, with ```qsub```
 ~~~
 qsub index.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ qsub index.pbs
@@ -495,7 +495,7 @@ When your job finishes (how will you know?) have a look at any log files produce
 > ~~~
 > grep -se "Exit Status" *
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > [jdar4135@login3 hayim]$ grep -se "Exit Status" *
@@ -555,7 +555,7 @@ Last one. Open **align.pbs** and make any edits necessary. What will you need to
 ~~~
 nano align.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 <figure>
   <a name="nanoalign"></a>
@@ -570,7 +570,7 @@ nano align.pbs
 > ~~~
 > #PBS -P Training
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #2
@@ -580,7 +580,7 @@ nano align.pbs
 > ~~~
 > #PBS -N Align_hayim
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > Substitute a job name of your choice!
 {: .solution}
 
@@ -596,7 +596,7 @@ nano align.pbs
 > #PBS -l select=1:ncpus=2:mem=8GB
 > #PBS -l walltime=00:10:00
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 > ## Change #4
@@ -606,7 +606,7 @@ nano align.pbs
 > ~~~
 > #PBS -q defaultQ
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 
@@ -617,7 +617,7 @@ nano align.pbs
 > ~~~
 > io=/project/Training/hayim
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > Substitute your working directory name where I have put 'hayim'!
 {: .solution}
 
@@ -628,7 +628,7 @@ Submit the job as before, with ```qsub```
 ~~~
 qsub index.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ qsub align.pbs
@@ -642,14 +642,14 @@ qsub index.pbs
 ~~~
 qstat -f 2557080
 ~~~
-{: .bash}
+{: .language-bash}
 
 There's a lot. Let's ```grep``` just a few lines:
 
 ~~~
 qstat -f 2557080 | grep -e ""
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 
@@ -666,7 +666,7 @@ bwa mem -M -t 2 -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134' \
     ${io}/canfam3_chr5.fasta ${io}/134_R1.fastq.gz  \
     ${io}/134_R2.fastq.gz | samtools view -bSho ${io}/134.bam -
 ~~~
-{: .bash}
+{: .language-bash}
 
 What do those option flags do? Are any relevant here? Check the help or manual page for ```bwa```.
 
@@ -681,7 +681,7 @@ Has your **align.pbs** job completed yet? Check for errors
 ~~~
 grep -se "Exit Status" *
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ grep -se "Exit Status" *
@@ -703,7 +703,7 @@ As before, check the resource usage log
 ~~~
 cat Align_hayim.o2557080_usage
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login2 hayim]$ cat Align_hayim.o2557080_usage
@@ -772,3 +772,7 @@ ___
 
 ___
 <br>
+
+
+
+{% include links.md %}

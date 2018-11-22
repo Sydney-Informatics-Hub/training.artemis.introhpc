@@ -145,7 +145,7 @@ Navigate to our Training project directory -- the **/project** folder for **RDS-
 ~~~
 cd /project/Training
 ~~~
-{: .bash}
+{: .language-bash}
 
 Locate the data archive we'll be using for this course, in the **TrainingData** folder:
 
@@ -172,14 +172,14 @@ Create your own directory with the 'make directory' command ```mkdir```, naming 
 mkdir hayim
 cd hayim
 ~~~
-{: .bash}
+{: .language-bash}
 
 Now untar (decompress) the data archive into your directory:
 
 ~~~
 tar -xzvf ../TrainingData/sample_data.tar.gz
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login3 hayim]$ tar -xvzf ../TrainingData/sample_data.tar.gz
@@ -200,7 +200,7 @@ As can be seen in the output above, the archive contains a folder 'sample_data',
 mv sample_data/* ./
 rmdir sample_data
 ~~~
-{: .bash}
+{: .language-bash}
 
 Finally, make a copy of the **index.pbs** file, naming the copy **basic.pbs**, and open it in your text editor of choice:
 
@@ -208,7 +208,7 @@ Finally, make a copy of the **index.pbs** file, naming the copy **basic.pbs**, a
 cp index.pbs basic.pbs
 nano basic.pbs
 ~~~
-{: .bash}
+{: .language-bash}
 
 or if you prefer to use 'GEdit': ```gedit basic.pbs &```.
 
@@ -239,7 +239,7 @@ At this point you might be thinking, "Hang on -- don't the shebang and PBS direc
 #PBS -l walltime=00:10:00
 #PBS -q small-express
 ~~~
-{: .bash}
+{: .language-bash}
 
 Each of these lines declare a PBS directive, telling the scheduler how we would like it to execute our job. Without them, the scheduler has no way to know what resources our job will need. In this example
 
@@ -268,7 +268,7 @@ The next part of out PBS script is reserved for loading Artemis software **modul
 module load bwa/0.7.17
 module load samtools/1.6
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we have loaded two bioinformatics programs: **bwa** and **samtools**. Note that we have also specified the **version** of the programs we are asking _modules_ to load for us. This is because software packages sometimes change significantly from version to version, using different _syntax_ to run them, or even different _methods_ internally -- which can lead to different results on the same data!
 
@@ -291,7 +291,7 @@ Finally, we are ready to tell the scheduler what we want it to actually do -- th
 ~~~
 io=/project/Training/YourName
 ~~~
-{: .bash}
+{: .language-bash}
 
 creates a variable '**io**' which can later be retrieved by using Bash's **$** referencing syntax, as ```$io```. This code is the green section of our [script](#nanobasic):
 
@@ -304,7 +304,7 @@ bwa index -a bwtsw ${io}/canfam3_chr5.fasta
 # SAMtools index:
 samtools faidx ${io}/canfam3_chr5.fasta
 ~~~
-{: .bash}
+{: .language-bash}
 
 This part of your script will always be the most variable, as it depends most on the software and your project. In fact, you could store the 'directives' section of as a _template_ script that you base all other scripts on.
 
@@ -328,7 +328,7 @@ The full range of functions, options and usages that a program offers can be fou
 ~~~
 samtools --help
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [jdar4135@login4 ~]$ samtools --help
@@ -394,3 +394,8 @@ ___
 
 ___
 <br>
+
+
+
+
+{% include links.md %}

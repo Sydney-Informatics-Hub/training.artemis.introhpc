@@ -35,7 +35,7 @@ Even though no files are visible or listed in the terminal window, the command p
 ~~~
 [ict_hpctrain1@login3 ~]$ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 The output should look something like this (if your username is **ict_hpctrain1**):
 
@@ -88,7 +88,7 @@ If you forget what your projects are called, you can always check to see which *
 ~~~
 [ict_hpctrain1@login3 ~]$ groups
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 [ict_hpctrain1@login1 ~]$ groups
@@ -106,7 +106,7 @@ So, for example, change into the project directory of the 'Training' project wit
 [ict_hpctrain1@login3 ~]$ cd /project/Training
 [ict_hpctrain1@login1 Training]$ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /project/Training
@@ -144,7 +144,7 @@ Artemis provides a handy tool to quickly see how much disk space is currently be
 ~~~
 ict_hpctrain1@login3 ~]$ pquota
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Disk quotas for user jdar4135 (uid 572557):
@@ -175,7 +175,7 @@ To see the disk usage of a project's **/scratch** directory (or any directory), 
 ~~~
 du -sh /scratch/Training/
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 244M	/scratch/Training/
@@ -187,7 +187,7 @@ Or, if you'd like know how much space _members of a project_ have used in a dire
 ~~~
 lfs quota -hg RDS-CORE-Training-RW /scratch
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Disk quotas for group RDS-CORE-Training-RW (gid 14206):
@@ -201,7 +201,7 @@ The amount of free **/scratch** space can be reported via the 'free disk space' 
 ~~~
 df -h /scratch
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Filesystem            Size  Used Avail Use% Mounted on
@@ -277,7 +277,7 @@ then **list** currently loaded programs with ``module list``
 ~~~
 Currently Loaded Modulefiles:
   1) matlab/R2014b
-  ~~~
+~~~
   {: .output}
 
 The version ```matlab/R2014b``` was loaded, as it is the current default. **Unload** a loaded module with ```module unload``` and its name. For more info, check out the ```module``` manual page, by executing ```man module```.
@@ -327,7 +327,7 @@ To open nano, simply execute ```nano``` ar the command Prompt
 ~~~
 [jdar4135@login2 ~]$ nano
 ~~~
-{: .bash}
+{: .language-bash}
 
 <figure>
   <img src="{{ page.root }}/fig/02_nano.png" style="margin:10px;height:300px"/>
@@ -345,7 +345,7 @@ Open gedit by executing ```gedit &```; the extra **&** tells the **shell** to op
 ~~~
 [jdar4135@login2 ~]$ gedit &
 ~~~
-{: .bash}
+{: .language-bash}
 
 <figure>
   <img src="{{ page.root }}/fig/02_gedit.png" style="margin:10px;height:380px"/>
@@ -403,3 +403,7 @@ ___
 
 ___
 <br>
+
+
+
+{% include links.md %}

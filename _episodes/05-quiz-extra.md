@@ -42,7 +42,7 @@ How might we have used **NCPUS** in the last job we submitted?
 > ~~~
 > bwa mem -M -t $NCPUS -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134'
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .solution}
 
 <br>
@@ -52,7 +52,7 @@ If you find you have submitted a job incorrectly, or simply wish to cancel it fo
 ~~~
 qdel [-x] JobID [JobID ...]
 ~~~
-{: .bash}
+{: .language-bash}
 
 More than one JobID may be supplied, separated with spaces.
 
@@ -65,24 +65,24 @@ The log files we have seen so far use Artemis' default options and naming conven
 #PBS -o OutputFilename
 #PBS -e InputFilename
 ~~~
-{: .bash}
+{: .language-bash}
 
 You can also combine both log files into one, using the **join** directive; **o**e combines both into the output log file, and **e**o combines them in the error file, using the default names unless you specify otherwise.
 ~~~
 #PBS -j oe
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 #PBS -j eo
 ~~~
-{: .bash}
+{: .language-bash}
 
 PBS log files are also only created when your job _completes_. If you want to be able monitor the progress of a program which outputs such information to **stdout** or **stderr**, you can **_pipe_** these outputs to a file of your choosing, with ```>```. Eg:
 ~~~
 # Program commands
 myProg -flag option1 inputFile > myLogFile.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 To redirect both the output (**1**) and error (**2**) streams
 
@@ -90,7 +90,7 @@ To redirect both the output (**1**) and error (**2**) streams
 # Program commands
 myProg -flag option1 inputFile 1> myLogFile_$PBS_JOBID.txt 2> myErrorFile_$PBS_JOBID.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 If you redirect a message stream via piping to a file, it will no longer be available to PBS, and so the PBS log for that stream will be empty.
 
@@ -98,7 +98,7 @@ By default, your log files carry a [**_umask_** ](https://en.wikipedia.org/wiki/
 ~~~
 #PBS -W umask=022
 ~~~
-{: .bash}
+{: .language-bash}
 
 <br>
 ### Common error exit codes
@@ -122,3 +122,7 @@ How to do this is covered in the next course, [‘_Data transfer and RDS for HPC
   <img src="{{ page.root }}/fig/05_backup.png" style="margin:10px;height:300px"/>
   <figcaption> Backup your data. </figcaption>
 </figure><br>
+
+
+
+{% include links.md %}

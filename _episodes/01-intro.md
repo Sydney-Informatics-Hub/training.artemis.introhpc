@@ -94,14 +94,14 @@ At your command prompt, execute the following (type it and press 'return/enter')
 ~~~
 ssh -X ict_hpctrain<N>@hpc.sydney.edu.au
 ~~~
-{: .bash}
+{: .language-bash}
 
 or, if using XQuartz on a Mac
 
 ~~~
 ssh -Y ict_hpctrain<N>@hpc.sydney.edu.au
 ~~~
-{: .bash}
+{: .language-bash}
 
 The ```-X``` or ```-Y``` flags tell **ssh** to enable X-forwarding, which lets GUI programs on Artemis serve you graphical windows back on your local machine.
 
@@ -161,3 +161,7 @@ ___
 
 ___
 <br>
+
+
+
+{% include links.md %}
