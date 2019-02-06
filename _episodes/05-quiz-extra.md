@@ -112,6 +112,20 @@ An **Exit Status** of 0 generally indicates a successfully completed job. Exit s
 |271| The job was killed because it _ran out_ of **walltime** |
 
 <br>
+### Still need help?
+
+Log a ticket!
+
+Connect to Sydney University's Service Managment Portal: https://sydneyuni.service-now.com/sm
+
+Click on **"Submit a Request"**
+
+Navigate to the **"High Performance Computing Request"**
+
+**Home > Service Management Request > Something Else > High Performance Computing Request**
+
+These requests go straight to the Artemis Service Management team. You can request help installing software, compiling code, and anything else. Also, if you think something weird is happening with Artemis log a ticket - these fault reports will help us diagnose what is happening and improve the Artemis service!
+
 ### Artemis is NOT backed up!
 
 Artemis is **not** intended to be used as a data store. Artemis is not backed up, and has limited space. Any data you have finished working with should be transferred to your **_RCOS_** space.
