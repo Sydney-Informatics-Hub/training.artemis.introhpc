@@ -114,11 +114,11 @@ An **Exit Status** of 0 generally indicates a successfully completed job. Exit s
 
 <br>
 ### Still need help?
-If your solution is not in these notes or on the support pages (https://sydneyuni.atlassian.net/wiki/spaces/RC/overview)
+If your solution is not in these notes or on the support pages [https://sydneyuni.atlassian.net/wiki/spaces/RC/overview](https://sydneyuni.atlassian.net/wiki/spaces/RC/overview)
 
 Then log a ticket!
 
-Connect to Sydney University's Service Managment Portal: (https://sydneyuni.service-now.com/sm)
+Connect to Sydney University's Service Managment Portal: [https://sydneyuni.service-now.com/sm](https://sydneyuni.service-now.com/sm)
 
 Click on **"Submit a Request"**
 
