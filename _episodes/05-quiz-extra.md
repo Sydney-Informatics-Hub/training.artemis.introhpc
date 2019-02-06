@@ -9,6 +9,7 @@ objectives:
 keypoints:
 - "PBS **environment variables** can make your life easier"
 - "You can customise your log files"
+- "Log a service managment request for help"
 - "Artemis is _**not**_ backed up!"
 ---
 
@@ -113,8 +114,9 @@ An **Exit Status** of 0 generally indicates a successfully completed job. Exit s
 
 <br>
 ### Still need help?
+If your solution is not in these notes or on the support pages https://sydneyuni.atlassian.net/wiki/spaces/RC/overview 
 
-Log a ticket!
+Then log a ticket!
 
 Connect to Sydney University's Service Managment Portal: https://sydneyuni.service-now.com/sm
 
@@ -126,6 +128,7 @@ Navigate to the **"High Performance Computing Request"**
 
 These requests go straight to the Artemis Service Management team. You can request help installing software, compiling code, and anything else. Also, if you think something weird is happening with Artemis log a ticket - these fault reports will help us diagnose what is happening and improve the Artemis service!
 
+<br>
 ### Artemis is NOT backed up!
 
 Artemis is **not** intended to be used as a data store. Artemis is not backed up, and has limited space. Any data you have finished working with should be transferred to your **_RCOS_** space.
