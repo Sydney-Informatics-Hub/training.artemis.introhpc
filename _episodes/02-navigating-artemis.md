@@ -5,9 +5,9 @@ exercises: 0
 questions:
 - "How is Artemis HPC organised?"
 objectives:
-- "Learn how to navigate Artemis' filesystem."
+- "Learn how to navigate Artemis' filesystem"
 - "Find out what software is available on Artemis"
-- "Learn how to write script files."
+- "Learn how to write script files"
 keypoints:
 - "Storage on Artemis is arranged by _project_, which corresponds to a single RDMP."
 - "There are 3 key branches of the Artemis filesystem: **/project**, **/scratch** and **/home**"
@@ -116,7 +116,7 @@ So, for example, change into the project directory of the 'Training' project wit
 
 ### iii. /scratch
 
-Every project also has a **/scratch** directory, at ```/scratch/<Short_name>```. **/scratch** is where you should actually _perform_ your computations. What does this mean? If your workflow
+Every project also has a **/scratch** directory, at ```/scratch/<Short_name>```. **/scratch** is where you should actually _perform_ your computations. What does this mean? If your workflow:
 * Has big data inputs
 * Generates big data outputs
 * Generates lots of intermediate data files which are not needed afterward
@@ -168,7 +168,7 @@ Disk quotas for group RDS-CORE-ICT-RW (gid 15839):
 ~~~
 {: .output}
 
-The output from ```pquota``` helpfully lists the disk quotas allowed for each of the directories I can write to, as well as the number of files I have in that filesystem. There is no limit on the number of files allowed. The usages in **/project** comprise the files of all members of that project, not just your own. **/scratch** usage is not reported.
+The output from ```pquota``` helpfully lists the disk quotas allowed for each of the directories you can write to, as well as the number of files you have in that filesystem. There is no limit on the number of files allowed. The usages in **/project** comprise the files of all members of that project, not just your own. **/scratch** usage is not reported.
 
 To see the disk usage of a project's **/scratch** directory (or any directory), you can use the Unix 'used disk space' command ```du```:
 
@@ -182,7 +182,7 @@ du -sh /scratch/Training/
 ~~~
 {: .output}
 
-Or, if you'd like know how much space _members of a project_ have used in a directory, you can query the filesystem using its built-in utility ```lfs```:
+Or, if you'd like to know how much space _members of a project_ have used in a directory, you can query the filesystem using its built-in utility ```lfs```:
 
 ~~~
 lfs quota -hg RDS-CORE-Training-RW /scratch
@@ -244,7 +244,7 @@ gl2ps/1.4.0(default)    openmpi-gcc/2.1.2
 ~~~
 {: .output}
 
-This command may take a minute to run, as there is a _lot_ of software installed! If you know roughly what the program you want is called, you can refine the search with a keyword as extra argument, eg
+This command may take a minute to run, as there is a _lot_ of software installed! If you know roughly what the program you want is called, you can refine the search with a keyword as extra argument, eg:
 
 ~~~
 [ict_hpctrain1@login3 ~]$ module avail mat
@@ -258,16 +258,16 @@ mathematica/11.1.1(default) matlab/R2014b(default)    matlab/R2016b     matlab/R
 ~~~
 {: .output}
 
-Note that multiple versions of programs may be installed, and one will be designated _(default)_ -- that is the version that will be loaded if you don't specify a version.
+Note that multiple versions of programs may be installed, and one will be designated _default_ -- that is the version that will be loaded if you don't specify a version.
 
-Eg, **load** a program with the ```module load``` command and it's name
+Eg, **load** a program with the ```module load``` command and its name:
 
 ~~~
 [ict_hpctrain1@login3 ~]$ module load matlab
 ~~~
 {: .source}
 
-then **list** currently loaded programs with ``module list``
+then **list** currently loaded programs with ``module list``:
 
 ~~~
 [ict_hpctrain1@login3 ~]$ module list
@@ -287,14 +287,14 @@ The version ```matlab/R2014b``` was loaded, as it is the current default. **Unlo
 >
 > Software usage, syntax and behaviour sometimes change between versions, and if you don't specify a version you may soon find that your code no longer runs or, much worse, it _does_ run, but with different results!
 >
-> For the sakes of your research, and **scientific reproducibility**, you should always _specify the version_ of the module you are loading in your scripts, and record it in your notes.  
+> For the sake of your research, and **scientific reproducibility**, you should always _specify the version_ of the module you are loading in your scripts, and record it in your notes.  
 {: .callout}
 <br>
 
 
 ### Installing new software
 
-All software on Artemis is stored in ```/user/local```. Users do not have persmissions to write to this folder, and hence cannot install new software. If you require a particular piece of software on Artemis, you can submit a request through the [ICT Self Service Portal](https://sydney.service-now.com/selfservice/ict_services.do) (_Select ICT Services > Research > High Performance Computing Request_).
+All software on Artemis is stored in ```/usr/local```. Users do not have persmission to write to this folder, and hence cannot install new software. If you require a particular piece of software on Artemis, you can submit a [High Performance Computing Request](https://sydneyuni.service-now.com/sm?id=sc_cat_item&sys_id=1ab0bb626d2935008dd31a4dcf150a21&sysparm_category=62460abd4fe297c054a346501310c7d9) through the [ICT Service Portal](https://sydneyuni.service-now.com/sm).
 
 Alternatively, you may be able to install Linux software directly into your _userspace_, ie in your **/home** directory. Not all software can be installed in this way, and there may also be licensing issues -- so don't try this unless you know what you're doing, and please contact us if you don't!
 
@@ -307,7 +307,7 @@ Alternatively, you may be able to install Linux software directly into your _use
 Artemis has a number of **text editors** available for use, and of course you could install your own. Text editors are simple-to-sophisticated programs that let you, quite simply, write text! At the most basic level, they do not have any _formatting_, like **bold** etc, only 'plain' text. Many allow the composition of _'rich text'_, which does add formatting.<sup id="a3">[3](#f3)</sup> However, our purpose will be to write _scripts_ that other programs will read in and execute. These programs won't be looking at _formatting_, but will be parsing what we write according to the _syntax_ and keywords of the _programming language_ in use.
 
 
-To aid with this, some text editors feature _syntax highlighting_, which involves formatting text differently depending on what function that text performs in a given programming language; eg such the _MATLAB_ code below:
+To aid with this, some text editors feature _syntax highlighting_, which involves formatting text differently depending on what function that text performs in a given programming language, for example the _MATLAB_ code below:
 
 ~~~
 function hello_world()
@@ -322,7 +322,7 @@ end
 
 '**Nano**' is a basic, text-only editor with very few other features, and runs inside a _terminal window_. This makes it fast and simple to use, but it may take some getting used to for those unfamiliar with command-line programs. There is no 'point-and-click' interface to nano, only special key combinations to send commands to the program. Eg, to save a file in nano, you would hit the hotkey for 'WriteOut': <kbd>Ctrl</kbd>+<kbd>o</kbd>.
 
-To open nano, simply execute ```nano``` ar the command Prompt
+To open nano, simply execute ```nano``` at the command prompt:
 
 ~~~
 [jdar4135@login2 ~]$ nano
@@ -336,11 +336,11 @@ To open nano, simply execute ```nano``` ar the command Prompt
 
 ### ii. gedit
 
-For those who'd prefer to use a GUI (graphical user interface) with mouse support, '**gedit**' is good option, and very user friendly. It also performs syntax highlighting, which can be activated from the _View_ menu, _View > Highlight Mode_, and then select the language you would like to parse.
+For those who'd prefer to use a GUI (graphical user interface) with mouse support, '**gedit**' is good option, and very user friendly. It also performs syntax highlighting, which can be activated from the _View_ menu: _View > Highlight Mode_, and then select the language you would like to parse.
 
-To use 'gedit' on Artemis, you will need to have **X-Forwarding** enabled (see [Setup]({{ page.root }}/setup) guide), which means you'll need to be either on Linux, Mac, or using 'X-Win32' on Windows.
+To use gedit on Artemis, you will need to have **X-Forwarding** enabled (see [Setup]({{ page.root }}/setup) guide), which means you'll need to be either on Linux, Mac, or using 'X-Win32' on Windows.<sup id="a4">[4](#f4)</sup>
 
-Open gedit by executing ```gedit &```; the extra **&** tells the **shell** to open the process running gedit in the _background_, allowing you to continue using your terminal whilst gedit remains open.
+Open gedit by executing ```gedit &```; the **&** character (called an 'ampersand') tells the **shell** to open the process running gedit in the _background_, allowing you to continue using your terminal while gedit remains open.
 
 ~~~
 [jdar4135@login2 ~]$ gedit &
@@ -366,7 +366,7 @@ _Common operations in nano and gedit_
 <br>
 ### iii. others
 
-There are dozens of text editors. Some others that you may be familiar with include '**Emacs**' and '**vi/vim**'. These are available on Artemis, and 'Emacs' can be used in GUI mode as well.
+There are dozens of text editors. Some others that you may be familiar with include '**Emacs**' and '**vi/vim**'. These are available on Artemis, and Emacs can be used in GUI mode as well.
 
 <br>
 _Common text editors_
@@ -400,6 +400,9 @@ ___
 <sup id="f2">2[↩](#a2)</sup> There are ways to change the user permissions of files and folders in Linux, but we won't cover that here. Don't try it unless you know what you're doing!
 
 <sup id="f3">3[↩](#a3)</sup> Programs such as Microsoft Word are not really text-editors, but more '_word processors_', in that they do a lot more than simply compose text. There is not a hard line between the two categories.
+
+<sup id="f4">4[↩](#a4)</sup> If you prefer to use PuTTY terminal, you can use GUI text editors by having both PuTTY and X-Win32 installed. Having X-Win32 open acts as the X server for PuTTY.
+
 
 ___
 <br>
