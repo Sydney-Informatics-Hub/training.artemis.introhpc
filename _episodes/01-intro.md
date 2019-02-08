@@ -25,7 +25,7 @@ The Sydney Informatics Hub (SIH) is a _[Core Research Facility](https://sydney.e
   <figcaption> USyd Core Research Facilities <a href="https://sydney.edu.au/research/facilities.html">https://sydney.edu.au/research/facilities.html</a></figcaption>
 </figure><br>
 
-**Artemis HPC** itself is a multi-million dollar set of equipment, a 'supercomputer', is the main piece of equipment supported by SIH. However, we also provide a wide range of research services to aid investigators, such as
+**Artemis HPC** itself is a multi-million dollar set of equipment, a 'supercomputer', and is the main piece of equipment supported by SIH. However, we also provide a wide range of research services to aid investigators, such as:
 
 * [Training](https://informatics.sydney.edu.au/training/)
 * [Statistics Consulting](https://informatics.sydney.edu.au/services/statistics/)
@@ -34,7 +34,7 @@ The Sydney Informatics Hub (SIH) is a _[Core Research Facility](https://sydney.e
 * [Research Data Management](https://informatics.sydney.edu.au/rdm/) Consulting and platforms
 * [Data Science & Research Engineering](https://informatics.sydney.edu.au/services/data-science/) project work
 
-We also aim to cultivate a **data community** at USyd, organising monthly [Hacky Hours](https://informatics.sydney.edu.au/hackyhour/), outside training events (eg NVIDIA, Pawsey Center), [conferences](https://informatics.sydney.edu.au/hpc_conference/), and data/coding-related events. We are currently running an quarterly [Publication Incentive](https://informatics.sydney.edu.au/news/sihincentive/) contest, with $2000 worth of prizes for the winning peer-reviewed publications submitted to us, which both use our services _and_ acknowledge them.
+We also aim to cultivate a **data community** at USyd, organising monthly [Hacky Hours](https://informatics.sydney.edu.au/hackyhour/), outside training events (eg NVIDIA, Pawsey Center), [conferences](https://informatics.sydney.edu.au/hpc_conference/), and data/coding-related events. We are currently running a quarterly [Publication Incentive](https://informatics.sydney.edu.au/news/sihincentive/) contest, with $2000 worth of prizes for the winning peer-reviewed publications submitted to us, which both use our services _and_ acknowledge them.
 
 # Artemis HPC
 
@@ -46,17 +46,17 @@ We've mentioned 'Artemis HPC' many times now, but what is it? HPC stands for 'Hi
 * 378 TB of storage
 * 56 Gbps FDR InfiniBand (networking)
 
-Artemis computers (which we'll call _machines_ or _nodes_) run a **Linux** operating system, 'CentOS' v6.9. Computing performed Artemis' nodes is managed by a **_scheduler_**, and ours is an instance of 'PBS Pro'.
+Artemis computers (which we'll call _machines_ or _nodes_) run a **Linux** operating system, 'CentOS' v6.9. Computing performed on Artemis nodes is managed by a **_scheduler_**, and ours is an instance of 'PBS Pro'.
 
 ## Why use Artemis?
 
-Artemis is ideal for calculations that require
+Artemis is ideal for calculations that require:
 * A long time to complete (long _walltime_)
 * High RAM usage
-* Big data input or outputs, or
+* Big data input or outputs
 * Are able to use multiple cores or nodes to run in parallel, and hence much faster
 
-Artemis is **available free of charge to all** University researchers. You do need a unikey, and a valid RDMP (_Research Data Management Plan_) with Artemis access enabled.
+Artemis is **available free of charge to all** University of Sydney researchers. You do need a unikey, and a valid RDMP _[Research Data Management Plan](https://informatics.sydney.edu.au/rdm/dashr/#rdmp)_ with Artemis access enabled.
 
 Artemis is also a great **incentive to funding bodies** to view your projects favourably -- as they know you have the resources required to get the work done.
 
@@ -68,7 +68,7 @@ Finally, if you do use Artemis for your research, please acknowledge us! This en
 
 Connections to Artemis are **remote connections** -- you'll never sit at one of Artemis' machines, which are stored in a secure data-centre in Western Sydney. Instead, you connect remotely into one of Artemis' **login nodes**. Login nodes are Artemis machines that don't perform any actual computing jobs, but simply provide users with an access gateway to Artemis' filesystems and the PBS Pro **job scheduler**.
 
-You can thus connect to Artemis from _anywhere_, requiring only a **terminal emulator** with an **SSH client**. (If you're not on the USyd network (ie off-campus), you'll also need to connect to the University's **[VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn)**, or use Artemis' intermediate **_Jump server_**).
+You can thus connect to Artemis from _anywhere_, requiring only a **terminal emulator** with an **SSH client**. (If you're not on the USyd network (ie off-campus), you'll also need to connect to the University's **[VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn)**, or use Artemis' intermediate **_[Jump server](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/185729027/Getting+Started+with+Artemis+HPC#GettingStartedwithArtemisHPC-Off-campusaccess)_**.
 
 If you followed the [Setup]({{ page.root }}/setup) instructions, then you should already have the required software installed. If not, _please go do this now_!
 
@@ -114,7 +114,7 @@ Are you sure you want to continue connecting (yes/no)?
 ~~~
 {: .output}
 
-Enter 'yes'. You will then be asked for your password; type it and press 'enter'. and you should then be logged in!
+Enter 'yes'. You will then be asked for your password; type it and press 'enter'. You should then be logged in!
 
 <figure>
   <img src="{{ page.root }}/fig/01_granted.png" style="margin:10px;height:420px"/>
@@ -124,7 +124,7 @@ Enter 'yes'. You will then be asked for your password; type it and press 'enter'
 
 <h2 data-toc-text="via SSH GUI apps"> Connecting via an SSH GUI (common for Windows users) </h2>
 
-If you're on Windows, and followed the [Setup]({{ page.root }}/setup) guide, then you will likely be connecting through an X-window or shell client program, like 'X-Win32' or 'PuTTY'. Following the instructions in the [Setup]({{ page.root }}/setup) guide
+If you're on Windows, and followed the [Setup]({{ page.root }}/setup) guide, then you will likely be connecting through an X-window or shell client program, like 'X-Win32' or 'PuTTY'. Following the instructions in the [Setup]({{ page.root }}/setup) guide:
 * Open your installed program
 * Select the "Artemis" session you configured earlier
 * Click 'Launch' (X-Win32) or 'Open' (PuTTY)
@@ -148,7 +148,7 @@ If this is the first time connecting to Artemis, you will be asked to authorise 
 </figure><br>
 
 
-<h2 data-toc-text="via graphical login nodes"> Connecting via an the Graphical Login Nodes (advanced users)</h2>
+<h2 data-toc-text="via graphical login nodes"> Connecting via the Graphical Login Nodes (advanced users)</h2>
 
 For some users, it is occasionally necessary to have more reliable graphical access to the Artemis **login nodes**, in order to check intermediate results when using software with graphical outputs. Setup instructions are provided on the [Setup]({{ page.root }}/setup) page.
 
