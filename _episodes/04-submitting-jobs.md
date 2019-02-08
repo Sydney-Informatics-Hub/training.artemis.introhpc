@@ -19,9 +19,9 @@ In this episode we practice **submitting** and **monitoring** jobs on Artemis. W
 
 ## Artemis Job Queues
 
-Artemis' scheduler reserves portions of the cluster for different job types, in order to make access fairer for all users. However, the most commonly used queues are not specified in a resource request, but are allocated automatically based on what resources are requested. These primary queues all fall under the **defaultQ** -- which is also the default queue set for any job that does not specify its queue with a ```-q``` directive.
+Artemis' scheduler reserves portions of the cluster for different job types, in order to make access fairer for all users. However, the most commonly used queues are not specified in a resource request, but are allocated automatically based on what resources are requested. These primary queues all fall under the **defaultQ** (which is also the default queue set for any job that does not specify its queue with a ```-q``` directive).
 
-The queues under **defaultQ** are _small_, _normal_, _large_, _highmem_ and _gpu_. Jobs are allocated to them based according to the resource limits set for each queue; jobs will only run in a queue whose limits it satisfies. Recall that resources are requested with ```-l``` directives. The resource limits for each queue are listed below. Importantly, as soon as GPU resources are requested, jobs are assigned to the GPU queue -- there is no other queue with GPU resources.
+The queues under **defaultQ** are _small_, _normal_, _large_, _highmem_ and _gpu_. Jobs are allocated to them according to the resource limits set for each queue: jobs will only run in a queue whose limits it satisfies. Recall that resources are requested with ```-l``` directives. The resource limits for each queue are listed below. Importantly, as soon as GPU resources are requested, jobs are assigned to the GPU queue -- there is no other queue with GPU resources.
 
 | Queue | Invocation | Max Walltime  | Max Cores per<br>Job / User / Node | Memory (GB) per<br>Node / Core | Fair Share Weight |
 |:--|:--:|:--:|:--:|:---:|:---:|
@@ -31,11 +31,11 @@ The queues under **defaultQ** are _small_, _normal_, _large_, _highmem_ and _gpu
 | data transfer | **dtq** | 10 days  | 2 / 16 / 2  | 16 / --  | 0 |   
 | interactive | ```qsub -I```  | 4 hours  | 4 / 4 / 4 | 123 / --  | 100 |
 
-Take note of the maxima for each queue. Note especially the _maximum cores per node_: if you request more than this number of CPUs in a ```-l select=``` directive, your job **can never run**. The highest limit for CPU _cores / node_ is 64, as this is the number or cores of the largest CPUs available on Artemis.
+Take note of the maxima for each queue. Note especially the _maximum cores per node_: if you request more than this number of CPUs in a ```-l select=``` directive, your job **can never run**. The highest limit for CPU _cores / node_ is 64, as this is the number of cores of the largest CPUs available on Artemis.
 
-Each queue also has a different contribution factor to your _Fair Share_ count. So, eg, use of **small-express** will accumulate Fair Share 50x faster than using the **defaultQ**.
+Each queue also has a different contribution factor to your _Fair Share_ count. For example, use of **small-express** will accumulate Fair Share 50 times faster than using the **defaultQ**.
 
-There are also a number of additional queues which are not part of **defaultQ**. These are
+There are also a number of additional queues which are not part of **defaultQ**. These are:
 
 | Queue | Purpose |
 |:---:|:---|
@@ -47,7 +47,7 @@ There are also a number of additional queues which are not part of **defaultQ**.
 
 #### Allocations
 
-**Scavenger** uses idle resources available in _allocations_. An allocation refers to Artemis resources (ie nodes) which have been assigned to certain research groups for priority use. Allocations can be purchased, won, or granted via the [Facilities Access Scheme](https://informatics.sydney.edu.au/services/fas/). Remember, your **scavenger** jobs will be _paused_ if the allocation owner requests those resources; they'll be _killed_ if they become paused for longer then 24 hours. This makes **scavenger** an excellent option if you have many small jobs that you can easily re-run if they happen to be killed; some users get thousands of 'free' CPU-hours from scavenging!
+**Scavenger** uses idle resources available in _allocations_. An allocation refers to Artemis resources (ie nodes) which have been assigned to certain research groups for priority use. Allocations can be purchased, won, or granted via the [Facilities Access Scheme](https://informatics.sydney.edu.au/services/fas/). Remember, your **scavenger** jobs will be _paused_ (suspended) if the allocation owner requests those resources; they'll be _killed_ if they are suspended for longer than 24 hours. This makes **scavenger** an excellent option if you have many small jobs that you can easily re-run if they happen to be killed; some users get thousands of 'free' CPU-hours from scavenging!
 
 
 ## Submitting Jobs
@@ -94,9 +94,9 @@ We need to make a few edits before we can submit this script. Can you guess what
 > ## Change #3
 > Tailor your **resource** requests.
 >
-> Use the ```-l``` PBS directive to request appropriate compute **resources** and **wall-time** for your job.
+> Use the ```-l``` PBS directive to request appropriate compute **resources** and **walltime** for your job.
 >
-> This script will not be asked to do much, as it'll just be a first test, so request just **1 minute** of wall-time, and the minimum RAM, **1 GB**.
+> This script will not be asked to do much, as it'll just be a first test, so request just **1 minute** of walltime, and the minimum RAM, **1 GB**.
 > ~~~
 > #PBS -l select=1:ncpus=1:mem=1GB
 > #PBS -l walltime=00:01:00
@@ -139,7 +139,7 @@ perl hello.pl <YourName>
 
 PBS uses your **/home/\<unikey\>** directory as your default _working directory_ in which to start all PBS scripts. Since your data is not likely to ever be in your home directory, the first command in any script will probably involve setting or changing to the correct folder.
 
-The rest of these commands (i) create a new folder, (ii) make a copy of the **basic.pbs** file, and (iii) run a '_Perl_' script using the ```perl``` programming language and interpreter. The script **hello.pl** accepts one argument.
+The rest of these commands (i) create a new folder, (ii) make a copy of the **basic.pbs** file within the new folder, and (iii) run a '_Perl_' script using the ```perl``` programming language and interpreter. The script **hello.pl** accepts one argument.
 
 Save this PBS script (on nano <kbd>Ctrl</kbd>+<kbd>o</kbd>), and exit the editor (on nano <kbd>Ctrl</kbd>+<kbd>x</kbd>).
 
@@ -197,7 +197,7 @@ Job id            Name             User              Time Use S Queue
 | Flag | Option |
 |:--:|---|
 | ```-T``` | show an _estimated Start Time_ for jobs |
-| ```-w``` | print wider output columns, for when your job names are longe than 10 characters |
+| ```-w``` | print wider output columns, for when your job names are longer than 10 characters |
 | ```-u``` | show jobs for a specific _user_ (Unikey) |
 | ```-x``` | show finished jobs also |
 | ```-f``` | show full job details |
@@ -205,7 +205,7 @@ Job id            Name             User              Time Use S Queue
 
 Print out the entire job list, by not specifying a **job ID**, with estimated start times, by running ```qstat -T```. How far down are our training jobs?
 
-#### jobstat
+### jobstat
 
 Artemis provides another tool for checking your jobs, which also shows some extra information about Artemis. This is ```jobstat```:
 
@@ -295,14 +295,14 @@ These are the **log files** for your job:
 | JobName.**o**JobID | **O**utput log: This is where output messages -- those usually printed to **stdout** -- are recorded |
 | JobName.**o**JobID | **Usage** report: gives a short summary of the **resources** used by your job |
 
-Check whether there were any errors in our job by inspecting the contents of the **error** log with ```cat```
+Check whether there were any errors in your job by inspecting the contents of the **error** log with ```cat```:
 
 ~~~
 [jdar4135@login3 hayim]$ cat Index_hayim.e2557008
 ~~~
 {: .output}
 
-Empty! That's a good sign. Now let's have a look at the **output** log
+Empty! That's a good sign. Now let's have a look at the **output** log:
 
 ~~~
 [jdar4135@login3 hayim]$ cat Index_hayim.o2557008
@@ -312,7 +312,7 @@ Hello, world! My name is Hayim.
 
 The output from the **hello.pl** script appears in the PBS output log as expected.
 
-Finally, let's have a look at the resource **usage** report
+Finally, let's have a look at the resource **usage** report:
 
 ~~~
 [jdar4135@login3 hayim]$ cat Index_hayim.o2557008_usage
@@ -349,7 +349,7 @@ What does the report show?
 
 > ## Exit status
 >
-> Across *NIX systems and programming generally, an **Exit Status** code of **0** indicates that a program completed successfully. Any exit code above 0 usually indicates an error.
+> Across *NIX systems and programming generally, an **Exit Status** code of **0** indicates that a program completed successfully.<sup id="a1">[1](#f1)</sup Any exit code above 0 usually indicates an error.
 >
 > One way to check for errors in your jobs then, is to search for the words '_Exit Status_' in your log files
 > ~~~
@@ -362,7 +362,7 @@ What does the report show?
 
 The final test of whether a job ran correctly is to check whether the outputs you were expecting to be produced actually were produced. In our case, the script **basic.pbs** was meant to create a new folder and copy itself into it. We have already seen that **hello.pl** was run successfuly, so check for the rest:
 
-Our ```ls``` command earlier revealed that the new folder was successfully created
+Our ```ls``` command earlier revealed that the new folder was successfully created:
 ~~~
 drwxr-sr-x 2 jdar4135 RDS-CORE-Training-RW 4.0K Oct 25 15:16 New_job
 ~~~
@@ -411,7 +411,7 @@ nano index.pbs
 {: .solution}
 
 > ## Change #2
-> Give your job a **name**
+> Give your job a **name**.
 >
 > Use the ```-N``` PBS directive to give your job an easily identifiable name. You might run **lots** of jobs at the same time, so you want to be able to keep track of them!
 > ~~~
@@ -423,11 +423,11 @@ nano index.pbs
 > ## Change #3
 > Tailor your **resource** requests.
 >
-> Use the ```-l``` PBS directive to request appropriate compute **resources** and **wall-time** for your job.
+> Use the ```-l``` PBS directive to request appropriate compute **resources** and **walltime** for your job.
 >
-> This script performs an 'indexing' operation against a genome, but doesn't require more than a couple of minutes for the data we're using -- so request **2 minutes**.
+> This script performs an 'indexing' operation against reference DNA sequence, but doesn't require more than a couple of minutes for the data we're using -- so request **2 minutes**.
 >
-> The small genome (just 1 mammalian chromosome) we're using also won't require much RAM, so reduce it to the minimum, **1 GB**.
+> This small reference sequence (a tiny portion of 1 mammalian chromosome) also won't require much RAM, so reduce it to the minimum, **1 GB**.
 > ~~~
 > #PBS -l select=1:ncpus=1:mem=1GB
 > #PBS -l walltime=00:02:00
@@ -459,7 +459,7 @@ nano index.pbs
 
 When you're done, save the script (on nano <kbd>Ctrl</kbd>+<kbd>o</kbd>), and exit (on nano <kbd>Ctrl</kbd>+<kbd>x</kbd>).
 
-Submit the job as before, with ```qsub```
+Submit the job as before, with ```qsub```:
 
 ~~~
 qsub index.pbs
@@ -623,7 +623,7 @@ nano align.pbs
 
 When you're done, save the script (on nano <kbd>Ctrl</kbd>+<kbd>o</kbd>), and exit (on nano <kbd>Ctrl</kbd>+<kbd>x</kbd>).
 
-Submit the job as before, with ```qsub```
+Submit the job as before, with ```qsub```:
 
 ~~~
 qsub index.pbs
@@ -659,7 +659,7 @@ qstat -f 2557080 | grep -e ""
 The line -->
 
 <br>
-We mentioned above that we requested 2 CPUs. How did we make us of them? Have a look at the _program call_ for ```bwa mem```<sup id="a1">[1](#f1)</sup>
+We mentioned above that we requested 2 CPUs. How did we make use of them? Have a look at the _program call_ for ```bwa mem```<sup id="a2">[2](#f2)</sup>
 
 ~~~
 bwa mem -M -t 2 -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134' \
@@ -676,7 +676,7 @@ What do those option flags do? Are any relevant here? Check the help or manual p
 > On Artemis, the default is to run one thread per core, so selecting ```-t 2``` threads will lead Artemis to use **2 CPU cores**, if at least this many are requested.
 {: .solution}
 
-Has your **align.pbs** job completed yet? Check for errors
+Has your **align.pbs** job completed yet? Check for errors:
 
 ~~~
 grep -se "Exit Status" *
@@ -698,7 +698,7 @@ Great. However, note again that the **error log** is full of messages -- none th
 ~~~
 {: .output}
 
-As before, check the resource usage log
+As before, check the resource usage log:
 
 ~~~
 cat Align_hayim.o2557080_usage
@@ -768,7 +768,9 @@ Neat, hey?
 ___
 **Notes**
 
-<sup id="f1">1[↩](#a1)</sup> The ```\``` backslash in this block allow the code to be broken over multiple lines, allowing for neater code that doesn't train off the screen. There must be a space before the backslashes.
+<sup id="f1">1[↩](#a1)</sup> It's important to keep in mind that 'success' to the operating system is not necessarily the same thing as 'success' in generating the results that you wanted from your job. Even with an exit status of zero, you should still check that your job produced the expected output.
+
+<sup id="f2">2[↩](#a2)</sup> The ```\``` backslash in this block allow the code to be broken over multiple lines, allowing for neater code that doesn't train off the screen. There must be a space before the backslashes, and no space between the backslash and 'enter'.
 
 ___
 <br>
