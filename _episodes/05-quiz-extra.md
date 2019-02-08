@@ -27,19 +27,19 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 ### PBS Environment Variables
 
-Shell _'environment variables'_ are variables automatically set for you, or specified in a shell's configuration. When you invoke a PBS shell environment, with a ```qsub``` command eg, certain variables are set for you. Some of the more useful are listed below
+Shell _'environment variables'_ are variables automatically set for you, or specified in a shell's configuration. When you invoke a PBS shell environment, for example with a ```qsub``` command, certain variables are set for you. Some of the more useful are listed below:
 
 | PBS variable | Meaning | Use |
 |:---:|:----|:---|
 | **PBS_O_WORKDIR** | Is set to the _current working directory_ from which you ran ```qsub``` | ```cd $PBS_O_WORKDIR``` at the beginning of your script will change PBS into the current directory, allowing access to any data stored there |
 | **NCPUS** | The number of CPUs requested via ```-l select=``` | To ensure you tell any programs the correct number of CPUs they have access to, pass ```$NCPUS``` instead of a number as the argument |
- **PBS_JOBID** | The JobID assigned to the job | Use ```$PBS_JOBID``` give a unique name to any output or log files generated |
+ **PBS_JOBID** | The JobID assigned to the job | Use ```$PBS_JOBID``` to give a unique name to any output or log files generated |
 
 <br>
 How might we have used **NCPUS** in the last job we submitted?
 
 > ## Answer
-> Use the ```$NCPUS``` variable to specify the number of threads we want the ```bwa mem``` program to use
+> Use the ```$NCPUS``` variable to specify the number of threads we want the ```bwa mem``` program to use:
 > ~~~
 > bwa mem -M -t $NCPUS -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134'
 > ~~~
@@ -85,7 +85,7 @@ myProg -flag option1 inputFile > myLogFile.txt
 ~~~
 {: .language-bash}
 
-To redirect both the output (**1**) and error (**2**) streams
+To redirect both the output (**1**) and error (**2**) streams:
 
 ~~~
 # Program commands
@@ -104,7 +104,7 @@ By default, your log files carry a [**_umask_** ](https://en.wikipedia.org/wiki/
 <br>
 ### Common error exit codes
 
-An **Exit Status** of 0 generally indicates a successfully completed job. Exit statuses up to **128** are the statuses returned by the program itself that was running and failed. Here are a few other common codes to watch out for when your job doesn't run as expected and you want to know why
+An **Exit Status** of 0 generally indicates a successfully completed job. Exit statuses up to **128** are the statuses returned by the program itself that was running and failed. Here are a few other common codes to watch out for when your job doesn't run as expected and you want to know why:
 
 |Code|Meaning|
 |:--:|---|
@@ -124,7 +124,7 @@ Click on **"Submit a Request"**
 
 Navigate to the **"High Performance Computing Request"**
 
-**Home > Service Management Request > Something Else > High Performance Computing Request**
+**Home > Service Management > Request Something Else > Report a High Performance Computing Issue**
 
 These requests go straight to the Artemis Service Management team. You can request help installing software, compiling code, and anything else. Also, if you think something weird is happening with Artemis log a ticket - these fault reports will help us diagnose what is happening and improve the Artemis service!
 
@@ -133,11 +133,13 @@ These requests go straight to the Artemis Service Management team. You can reque
 
 Artemis is **not** intended to be used as a data store. Artemis is not backed up, and has limited space. Any data you have finished working with should be transferred to your **_RCOS_** space.
 
-How to do this is covered in the next course, [‘_Data transfer and RDS for HPC_’]({{ site.sih_pages }}/training.artemis.rds)!
+How to do this is covered in the next course, [‘_Data transfer and RDS for HPC_’](https://informatics.sydney.edu.au/training/coursedocs/Introduction_to_RDS.pdf)
+
+<!-- Awaiting the day when data transfer course is on github ({{ site.sih_pages }}/training.artemis.rds)! -->
 
 <figure>
   <img src="{{ page.root }}/fig/05_backup.png" style="margin:10px;height:300px"/>
-  <figcaption> Backup your data. </figcaption>
+  <figcaption> Back up your data. </figcaption>
 </figure><br>
 
 
