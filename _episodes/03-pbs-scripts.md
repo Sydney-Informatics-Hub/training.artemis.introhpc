@@ -12,20 +12,20 @@ keypoints:
 - "The **resources** you request affect when your job can run, and if it will finish!"
 ---
 
-This episode introduces the **_scheduler_** and how to communicate with it; primarily, this will be through '_**PBS directives**_' in _Bash_ scripts.
+This episode introduces the **_scheduler_** and how to communicate with it. Primarily, this will be through '_**PBS directives**_' in _Bash_ scripts.
 
 ## The 'scheduler'
 
-**Artemis HPC** is a _computer cluster_ -- a network -- whose _**resources**_ are assigned to users by a _**scheduler**_. The cluster's resources are the CPUs, RAM and GPUs which belong to all the constituent computers in the network. Curently, Artemis has
+**Artemis HPC** is a _computer cluster_ -- a network -- whose _**resources**_ are assigned to users by a _**scheduler**_. The cluster's resources are the CPUs, RAM and GPUs which belong to all the constituent computers in the network. Curently, Artemis has:
 
 * 7,636 cores (CPUs)
 * 45 TB of RAM
 * 108 NVIDIA V100 GPUs
 * 378 TB of storage
 
-distributed between all of its computers, which we sometimes call 'machines', and often refer to as _**nodes**_. It's important to realise that these are real computers, and each node actually has a _set number_ of CPUs and RAM etc that form it -- it's not all one huge computer.
+These resources are distributed between all of its computers, which we sometimes call 'machines', and often refer to as _**nodes**_. It's important to realise that these are real computers, and each node actually has a _set number_ of CPUs and RAM etc that form it -- it's not all one huge computer.
 
-In order make the most efficient use of this network, a very complicated algorithm tries to allocate nodes and their resources to different users who want them, with the twin aims of having no resources sitting idle and as little waiting time as possible for the users. Clearly, these aims are in conflict!
+In order to make the most efficient use of this network, a very complicated algorithm tries to allocate nodes and their resources to different users who want them, with the twin aims of having no resources sitting idle and as little waiting time as possible for the users. Clearly, these aims are in conflict!
 
 <figure>
   <img src="{{ page.root }}/fig/03_cluster.png" style="margin:10px;height:200px"/>
@@ -36,12 +36,12 @@ The **scheduler** does these computations. Artemis' scheduler is a version of ['
 
 ### Cluster resources
 
-The primary cluster resources available to compute jobs are
+The primary cluster resources available to compute jobs are:
 
 * **ncpus**: the number of CPU cores
 * **mem**: the amount of RAM
 * **ngpus**: the number of GPU cores
-* **walltime**: the length of time all these resources will be made available
+* **walltime**: the length of time all these resources will be made available to the requesting job
 
 However, as we noted, these resources aren't freely floating, but are tied to specific nodes. Therefore, when specifying HPC resources, we need to do so _at the node level_.
 
@@ -76,7 +76,7 @@ This recent tally is called your '_fair share_ weighting'. You can't really do a
 <br>
 ### Estimating resource requests
 
-You might be wondering, "How do I know how much X to request??". This is a good question, and ont without an easy answer. You definitely don't want to **underestimate** your job's requirements, because if you do your job will likely fail and be killed by the scheduler. But you also don't want to overestimate **too much**, because then you'll be requesting huge resources that the scheduler will have trouble finding for you.
+You might be wondering, "How do I know how much X to request??". This is a good question, and one without an easy answer. You definitely don't want to **underestimate** your job's requirements, because if you do your job will likely fail and be killed by the scheduler. But you also don't want to overestimate **too much**, because then you'll be requesting huge resources that the scheduler will have trouble finding for you (resulting in longer queue time).
 
 Some good approaches are:
 * If you have ever run the code before, use the specs of the computer you ran it on as a starting estimate. Ie, if I know a program runs on my laptop, and takes 2 hours, then I know that my **4 cores** and **16GB RAM** for **2 hours** are enough to run the job to completion.
@@ -105,7 +105,7 @@ Some good approaches are:
 
 ### Job queues
 
-The Artemis queue is broken down into sub-queues, called _**job queues**_, which each have different resources and limits allocated to them. Depending on what resources you wish to use, you will be assigned to a particular queue. In some case, you'll need to choose a special queue to use particular resources, such as GPUs. This will be discussed further in the [next Episode]({{ page.root }}/04-submitting-jobs).
+The Artemis queue is broken down into sub-queues, called _**job queues**_, which each have different resources and limits allocated to them. Depending on what resources you wish to use, you will be assigned to a particular queue. In some cases, you'll need to choose a special queue to use particular resources, such as GPUs. This will be discussed further in the [next Episode]({{ page.root }}/04-submitting-jobs).
 
 <br>
 ### Scheduler 'PBS' directives
@@ -134,9 +134,9 @@ The most common PBS directives are listed below. **The only compulsory directive
 <br>
 ## PBS scripting
 
-There are a number of ways to pass the PBS **directives** to the ```qsub``` submission command. However, the most flexible, and reliable, way is to write a **submission script**. We call these 'PBS scripts', after the name of the scheduling software, 'PBS Pro'.
+There are a number of ways to pass the PBS **directives** to the ```qsub``` submission command. However, the most flexible and reliable way is to write a **submission script**. We call these 'PBS scripts', after the name of the scheduling software, 'PBS Pro'.
 
-A **PBS script** is simply a _shell script_: a text file that lists command to send to your command interpreter '_shell_'.<sup id="a3">[3](#f3)</sup> On Artemis, the default shell is '[Bash](https://www.gnu.org/software/bash/)' ("Bourne-again shell"); so we'll also sometimes call these 'Bash scripts'. A **PBS script** is a _bash script_ written to be executed by the PBS scheduler's ```qsub``` command -- which means it contains PBS **directives** to tell the scheduler what we want it to do.
+A **PBS script** is simply a _shell script_: a text file that lists commands to send to your command interpreter '_shell_'.<sup id="a3">[3](#f3)</sup> On Artemis, the default shell is '[Bash](https://www.gnu.org/software/bash/)' ("Bourne-again shell"); so we'll also sometimes call these 'Bash scripts'. A **PBS script** is a _bash script_ written to be executed by the PBS scheduler's ```qsub``` command -- which means it contains PBS **directives** to tell the scheduler what we want it to do.
 
 Let's take a look at a real life **PBS script** to make all this concrete.
 
@@ -164,7 +164,7 @@ total 2.0G
 
 These files are ```.tar``` archives, like ```.zip``` files you might be more familiar with. They are made and read using the ```tar``` command. We'll be using **sample_data.tar.gz**.
 
-Before untar'ing it, create a working directory for yourself -- since we'll all be working on the same files, we can't all do that in **/project/Training**, as we'd either overwrite eachother's, or get '_Permission denied_' errors if we tried.
+Before "untar"ing it, create a working directory for yourself. Since we'll all be working on the same files, we can't all do that in **/project/Training**, as we'd either overwrite each other's, or get '_Permission denied_' errors if we tried.
 
 Create your own directory with the 'make directory' command ```mkdir```, naming it whatever you like, then change into it. I'll use my name, but you should obviously substitute the directory name you have chosen:
 
@@ -194,7 +194,7 @@ sample_data/134_R1.fastq.gz
 
 The option flags ```-xzvf``` mean e**x**tract files, use G**z**ip compression (for ```.tar.gz```), be **v**erbose and print what is being done, and use the archive **f**ile specified.
 
-As can be seen in the output above, the archive contains a folder 'sample_data', and this folder has been recreated in your working directory. (Check this by running ```ls``` to list the current directory contents!). For convenience, let's move (```mv```) all the files (```*```) out of this extra folder, and remove it (```rmdir```); since I am currently in my ```hayim``` working directory, and I want the files here also, I'll use the 'here' shortcut (```./```) as my destination argument:
+As can be seen in the output above, the archive contains a folder 'sample_data', and this folder has been recreated in your working directory. (Check this by running ```ls``` to list the current directory contents!). For convenience, let's move (```mv```) all the files (```*```) out of this extra folder, and remove it (```rmdir```). Since I am currently in my ```hayim``` working directory, and I want the files here also, I'll use the 'here' shortcut (```./```) as my destination argument:
 
 ~~~
 mv sample_data/* ./
@@ -222,7 +222,7 @@ The PBS script **basic.pbs** is constructed from 3 main sections. Let's take a l
 
 This first line actually tells the _shell_ how to 'interpret' everything that follows -- by indicating what _command interpreter_ the commands are written for, and where its program is stored (in ```/bin```). In our case, **basic.pbs** is a script written for 'Bash', using Bash language and commands.
 
-Also note the second line of the script, which contains a _**comment**_. This is a message to _human_ readers of the script (such as its author!), and is ignored by your computer. In Bash, comments are begun with a **#** character.
+Also note the second line of the script, which contains a _**comment**_. This is a message to _human_ readers of the script (such as its author!), and is ignored by your computer. In Bash, comments begin with a **#** character.
 
 ### 1. PBS directives declaration
 
@@ -243,11 +243,11 @@ At this point you might be thinking, "Hang on -- don't the shebang and PBS direc
 
 Each of these lines declare a PBS directive, telling the scheduler how we would like it to execute our job. Without them, the scheduler has no way to know what resources our job will need. In this example
 
-- the nominated **project** has short-name _Training_
-- we have set a **job name** _Index_YourName_
-- we have requested **resources** of _1 chunk_ with _1 cpu_ and _4GB RAM_
-- we have requested **resources** of _10 minutes wall time_
-- we have requested the _small-express_ job **queue**
+- The nominated **project** has short-name _Training_
+- We have set a **job name** _Index_YourName_
+- We have requested **resources** of _1 chunk_ with _1 cpu_ and _4 GB RAM_
+- We have requested **resources** of _10 minutes wall time_
+- We have requested the _small-express_ job **queue**
 
 Other directives, such as email notifications, have not been set, and are not required.
 
@@ -261,7 +261,7 @@ Only the **Project** ```-P``` is actually compulsory -- the scheduler will choos
 
 ### 2. Loading modules
 
-The next part of out PBS script is reserved for loading Artemis software **modules**. Software can be loaded any time before its used, but for clarity and to minimise human error, it's good practice to place all such loading calls at the top of a script (the lilac [section](#nanobasic) above).
+The next part of our PBS script is reserved for loading Artemis software **modules**. Software can be loaded any time before its used, but for clarity and to minimise human error, it's good practice to place all such loading calls at the top of a script (the lilac [section](#nanobasic) above).
 
 ~~~
 # Load modules
@@ -278,7 +278,7 @@ Therefore, for both your sanity (when you need to regenerate that one figure for
 >
 > Keeping track of your codes and datasets is one of the most important habits of successful science.
 >
-> It can seem daunting, but there are tools available to help. For _**code**_, the University has its own enterprise '[GitHub](http://github.sydney.edu.au)' server. You can attend one of the _**[git](https://git-scm.com/)**_ training courses to learn hot to use this very versatile version tracking system.
+> It can seem daunting, but there are tools available to help. For _**code**_, the University has its own enterprise '[GitHub](http://github.sydney.edu.au)' server. You can attend one of the _**[git](https://git-scm.com/)**_ training courses to learn how to use this very versatile version tracking system.
 >
 > SIH's [Research Data Consulting](https://informatics.sydney.edu.au/rdm/) team also manages and supports the '**[eNotebooks](https://informatics.sydney.edu.au/rdm/enotebooks/)**' data management platform, for tracking and contextualising your data, codes, notes, manuscripts and more.
 >
@@ -286,7 +286,7 @@ Therefore, for both your sanity (when you need to regenerate that one figure for
 
 ### 3. Program commands
 
-Finally, we are ready to tell the scheduler what we want it to actually do -- the programs and commands we wish to run. A this point, it is also helpful to first declare any variables or aliases/abbreviations we'd like to use. Eg, we might not want to type out a long directory path name multiple times, so we can create a Bash variable for that path. In the above example:
+Finally, we are ready to tell the scheduler what we want it to actually do -- the programs and commands we wish to run. At this point, it is also helpful to first declare any variables or aliases/abbreviations we'd like to use. Eg, we might not want to type out a long directory path name multiple times, so we can create a Bash variable for that path. In the above example:
 
 ~~~
 io=/project/Training/YourName
@@ -306,7 +306,7 @@ samtools faidx ${io}/canfam3_chr5.fasta
 ~~~
 {: .language-bash}
 
-This part of your script will always be the most variable, as it depends most on the software and your project. In fact, you could store the 'directives' section of as a _template_ script that you base all other scripts on.
+This part of your script will always be the most variable, as it depends most on the software and your project. In fact, you could store the 'directives' section only as a _template_ script that you base all other scripts on.
 
 Program function calls generally follow a stereotypical pattern:
 
