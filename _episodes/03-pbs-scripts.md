@@ -147,15 +147,15 @@ cd /project/Training
 ~~~
 {: .language-bash}
 
-Locate the data archive we'll be using for this course, in the **TrainingData** folder:
+Locate the data archive we'll be using for this course, in the **DATA** folder:
 
 ~~~
-ls -lsh TrainingData
+ls -lsh DATA
 ~~~
 {: .source}
 
 ~~~
-[jdar4135@login3 Training]$ ls -lsh TrainingData/
+[jdar4135@login3 Training]$ ls -lsh DATA/
 total 2.0G
 1.8G -rw-r--r-- 1 jdar4135 RDS-CORE-Training-RW 1.8G Oct 17 11:53 Automation.tar.gz
 244M -rw-r----- 1 jdar4135 RDS-CORE-Training-RW 244M Aug 24 10:59 sample_data.tar.gz
@@ -177,12 +177,12 @@ cd hayim
 Now untar (decompress) the data archive into your directory:
 
 ~~~
-tar -xzvf ../TrainingData/sample_data.tar.gz
+tar -xzvf ../DATA/sample_data.tar.gz
 ~~~
 {: .language-bash}
 
 ~~~
-[jdar4135@login3 hayim]$ tar -xvzf ../TrainingData/sample_data.tar.gz
+[jdar4135@login3 hayim]$ tar -xvzf ../DATA/sample_data.tar.gz
 sample_data/
 sample_data/canfam3_chr5.fasta
 sample_data/align.pbs
