@@ -349,7 +349,7 @@ What does the report show?
 
 > ## Exit status
 >
-> Across *NIX systems and programming generally, an **Exit Status** code of **0** indicates that a program completed successfully.<sup id="a1">[1](#f1)</sup Any exit code above 0 usually indicates an error.
+> Across *NIX systems and programming generally, an **Exit Status** code of **0** indicates that a program completed successfully.<sup id="a1">[1](#f1)</sup> Any exit code above 0 usually indicates an error.
 >
 > One way to check for errors in your jobs then, is to search for the words '_Exit Status_' in your log files
 > ~~~
