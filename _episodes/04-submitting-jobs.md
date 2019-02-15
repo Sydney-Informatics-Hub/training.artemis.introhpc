@@ -626,7 +626,7 @@ When you're done, save the script (on nano <kbd>Ctrl</kbd>+<kbd>o</kbd>), and ex
 Submit the job as before, with ```qsub```:
 
 ~~~
-qsub index.pbs
+qsub align.pbs
 ~~~
 {: .language-bash}
 
