@@ -43,7 +43,7 @@ However, those aren't going to work for us, as you'll need extra programs and ut
 
 ### A. X-Win32 (recommended)
 
-[X-Win32](https://www.starnet.com/xwin32/) is full-featured X-server and terminal emulator for Windows. USyd [provides a license](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/316) for it; however, the download link is restricted to staff so, students, get a copy [here]({{ page.root }}/data/x-win140-54sf.exe). Install, and follow the instructions on the USyd-ICT page to activate -- you'll need to be on the USyd network or [VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn) to do so.
+[X-Win32](https://www.starnet.com/xwin32/) is full-featured X-server and terminal emulator for Windows. USyd [provides a license](https://sydneyuni.service-now.com/sm?id=kb_article_view&sys_kb_id=b75263d6dbc1b3485beaf9b7f496194d&sysparm_tsqueryId=94cc4579db1eb704c8a5773c349619b1&sysparm_rank=2) for it; however, the download link is restricted to staff so, students, get a copy [here]({{ page.root }}/data/x-win140-54sf.exe). Install, and follow the instructions on the USyd-ICT page to activate -- you'll need to be on the USyd network or [VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn) to do so.
 
 > <h2 data-toc-skip> Windows Defender and internet permissions</h2>
 >
