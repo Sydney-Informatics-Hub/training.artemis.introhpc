@@ -18,6 +18,19 @@ questions, concerns, or experience any difficulties along the way.
 We'd like to ask you to familiarise yourself with our [Contribution Guide](CONTRIBUTING.md) and have a look at
 The Carpentries' [detailed guidelines][lesson-example] on proper formatting, ways to render the lesson locally, and even how to write new episodes.
 
+## Code Of Conduct
+We expect all attendees of our training to follow the University of Sydney’s Staff and Student Codes of Conduct, including the Bullying, harassment and discrimination prevention policy.
+
+In order to foster a positive and professional learning environment we encourage the following kinds of behaviours at all our events and platforms:
+
+* Use welcoming and inclusive language
+* Be respectful of different viewpoints and experiences
+* Gracefully accept constructive criticism
+* Focus on what is best for the community
+* Show courtesy and respect towards other community members
+
+Our full CoC, with incident reporting guidelines, is available at https://pages.github.sydney.edu.au/informatics/sih_codeofconduct/
+
 ## Maintainer(s)
 
 * Hayim Dar
