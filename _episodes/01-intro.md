@@ -34,7 +34,7 @@ The Sydney Informatics Hub (SIH) is a _[Core Research Facility](https://sydney.e
 * [Research Data Management](https://informatics.sydney.edu.au/rdm/) Consulting and platforms
 * [Data Science & Research Engineering](https://informatics.sydney.edu.au/services/data-science/) project work
 
-We also aim to cultivate a **data community** at USyd, organising monthly [Hacky Hours](https://informatics.sydney.edu.au/hackyhour/), outside training events (eg NVIDIA, Pawsey Center), [conferences](https://informatics.sydney.edu.au/hpc_conference/), and data/coding-related events. We are currently running a quarterly [Publication Incentive](https://informatics.sydney.edu.au/news/sihincentive/) contest, with $2000 worth of prizes for the winning peer-reviewed publications submitted to us, which both use our services _and_ acknowledge them.
+We also aim to cultivate a **data community** at USyd, organising monthly [Hacky Hours](https://informatics.sydney.edu.au/hackyhour/), outside training events (eg NVIDIA, Pawsey Center), [conferences](https://informatics.sydney.edu.au/hpc_conference/), and data/coding-related events. We regularly run competitions and other collaborative events, check out website for more details [http://sydney.edu.au/sydney-informatics-hub](http://sydney.edu.au/sydney-informatics-hub).
 
 # Artemis HPC
 
