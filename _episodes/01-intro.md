@@ -56,7 +56,7 @@ Artemis is ideal for calculations that require:
 * Big data input or outputs
 * Are able to use multiple cores or nodes to run in parallel, and hence much faster
 
-Artemis is **available free of charge to all** University of Sydney researchers. You do need a unikey, and a valid RDMP _[Research Data Management Plan](https://informatics.sydney.edu.au/rdm/dashr/#rdmp)_ with Artemis access enabled.
+Artemis is **available free of charge to all** University of Sydney researchers. You do need a unikey, and a valid Research Dashboard _[Research Data Management Plan](https://dashr.sydney.edu.au/)_ with Artemis access enabled.
 
 Artemis is also a great **incentive to funding bodies** to view your projects favourably -- as they know you have the resources required to get the work done.
 
@@ -68,7 +68,7 @@ Finally, if you do use Artemis for your research, please acknowledge us! This en
 
 Connections to Artemis are **remote connections** -- you'll never sit at one of Artemis' machines, which are stored in a secure data-centre in Western Sydney. Instead, you connect remotely into one of Artemis' **login nodes**. Login nodes are Artemis machines that don't perform any actual computing jobs, but simply provide users with an access gateway to Artemis' filesystems and the PBS Pro **job scheduler**.
 
-You can thus connect to Artemis from _anywhere_, requiring only a **terminal emulator** with an **SSH client**. (If you're not on the USyd network (ie off-campus), you'll also need to connect to the University's **[VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn)**, or use Artemis' intermediate **_[Jump server](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/185729027/Getting+Started+with+Artemis+HPC#GettingStartedwithArtemisHPC-Off-campusaccess)_**.
+You can thus connect to Artemis from _anywhere_, requiring only a **terminal emulator** with an **SSH client**. (If you're not on the USyd network (ie off-campus), you'll also need to connect to the University's **[VPN](https://sydneyuni.service-now.com/sm?sys_kb_id=e10e1396db01b3485beaf9b7f4961981&id=kb_article_view&sysparm_rank=8&sysparm_tsqueryId=3233ed77db6d48140eb1cd0514961918)**, or use Artemis' intermediate **_[Jump server](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/185729027/Getting+Started+with+Artemis+HPC#GettingStartedwithArtemisHPC-Off-campusaccess)_**.
 
 If you followed the [Setup]({{ page.root }}/setup) instructions, then you should already have the required software installed. If not, _please go do this now_!
 
