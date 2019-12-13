@@ -15,7 +15,7 @@ keypoints:
 
 ## Quiz!
 
-Have a go at the questions below **_BEFORE__** revealing the answere!!
+Have a go at the questions below **_BEFORE_** revealing the answer!!
 
 Better yet, _wait for the instructor_ and we'll go through the quiz all together. :blush:
 
