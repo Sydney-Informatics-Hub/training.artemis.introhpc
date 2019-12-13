@@ -21,23 +21,23 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 1. How do you submit a job called align.pbs?
 
-> ## Answer
+> ## 1. How do you submit a job called align.pbs?
 > ~~~
 > qsub align.pbs
 > ~~~
 > {: .language-bash}
 {: .solution}
 
- 2. How do you check the status of the job?
+2. How do you check the status of the job?
  
-> ### 2. How do you check the status of the job?
+> ## Answer
 > ~~~
 > qstat–x JobID
 > ~~~
 > {: .language-bash}
 {: .solution}
 
- 3. How might you know when the job is finished?
+3. How might you know when the job is finished?
  
 > ## Answer
 > The output of ‘qstat’ shows an ‘F’ in the ‘S’ (status) column.
@@ -45,7 +45,7 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 > We can see the log files for this job (they are only created at completion).
 {: .solution}
 
- 4. How much space are you allocated in project, and how do you check how much you have used?
+4. How much space are you allocated in project, and how do you check how much you have used?
  
 > ## Answer
 > Space per project: 1 TB, command ‘pquota’
