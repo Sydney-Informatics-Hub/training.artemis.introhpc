@@ -19,16 +19,6 @@ Have a go at the questions below **_BEFORE_** revealing the answer!!
 
 Better yet, _wait for the instructor_ and we'll go through the quiz all together. :blush:
 
-How might we have used **NCPUS** in the last job we submitted?
-
-> ## Answer
-> Use the ```$NCPUS``` variable to specify the number of threads we want the ```bwa mem``` program to use:
-> ~~~
-> bwa mem -M -t $NCPUS -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134'
-> ~~~
-> {: .language-bash}
-{: .solution}
-
 1. How do you submit a job called align.pbs?
 
 > ## Answer
@@ -47,37 +37,49 @@ How might we have used **NCPUS** in the last job we submitted?
 > {: .language-bash}
 {: .solution}
 
-> ### 3. How might you know when the job is finished?
+ 3. How might you know when the job is finished?
+ 
+> ## Answer
 > The output of ‘qstat’ shows an ‘F’ in the ‘S’ (status) column.
 > We receive an email from the system indicating termination. 
 > We can see the log files for this job (they are only created at completion).
 {: .solution}
 
-> ### 4. How much space are you allocated in project, and how do you check how much you have used?
+ 4. How much space are you allocated in project, and how do you check how much you have used?
+ 
+> ## Answer
 > Space per project: 1 TB, command ‘pquota’
 {: .solution}
 
-> ### 5. What log files are produced after a job completes, and what do they contain?
+5. What log files are produced after a job completes, and what do they contain?
+
+> ## Answer
 > ```JobName.oJobID```–standard output (things that are usually printed to terminal)
 > ```JobName.eJobID```–standard error (OS or application error messages)
 > ```JobName.oJobID_usage```–job resource usage
 {: .solution}
 
-> ### 6. What do the ```-P```,```-N```, and ```-q``` directives indicate to the scheduler?
+6. What do the ```-P```,```-N```, and ```-q``` directives indicate to the scheduler?
+
+> ## Answer 
 > ~~~
 > qstat–x JobID
 > ~~~
 > {: .language-bash}
 {: .solution}
 
-> ### 7. Write the directive requesting 10.5 hours wall time
+7. Write the directive requesting 10.5 hours wall time
+
+> ## Answer
 > ~~~
 > #PBS –l walltime=10:30:00
 > ~~~
 > {: .language-bash}
 {: .solution}
 
-> ### 8. Write the directive to specify a 6-core job using 2 GB RAM per core
+8. Write the directive to specify a 6-core job using 2 GB RAM per core
+
+> ## Answer
 > ~~~
 > #PBS –l select=1:ncpus=6:mem=12GB
 > ~~~
@@ -89,14 +91,18 @@ How might we have used **NCPUS** in the last job we submitted?
 > {: .language-bash}
 {: .solution}
 
-> ### 9. Your job uses the software ‘beast’. What needs to come before your command to run beast?
+9. Your job uses the software ‘beast’. What needs to come before your command to run beast?
+
+> ## Answer 
 > ~~~
 > module load beast
 > ~~~
 > {: .language-bash}
 {: .solution}
 
-> ### 10. Where should all important input and output data be stored long-term and why?
+10. Where should all important input and output data be stored long-term and why?
+
+> ## Answer
 > The Research Data Store (RDS). RDS is backed up and Artemis is not!
 {: .solution}
 
