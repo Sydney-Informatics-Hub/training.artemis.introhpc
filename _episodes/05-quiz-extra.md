@@ -19,13 +19,15 @@ Have a go at the questions below **_BEFORE__** revealing the answere!!
 
 Better yet, _wait for the instructor_ and we'll go through the quiz all together. :blush:
 
-> ### 1. How do you submit a job called align.pbs?
+1. How do you submit a job called align.pbs?
+> ## Answer
 > ~~~
 > qsub align.pbs
 > ~~~
 > {: .language-bash}
 {: .solution}
 
+ 2. How do you check the status of the job?
 > ### 2. How do you check the status of the job?
 > ~~~
 > qstat–x JobID
