@@ -15,13 +15,76 @@ keypoints:
 
 ## Quiz!
 
-Read through **all the questions** on the first slide **_BEFORE CLICKING_** to advance slide!!
+Have a go at the questions below **_BEFORE__** revealing the answere!!
 
 Better yet, _wait for the instructor_ and we'll go through the quiz all together. :blush:
 
-<br>
-<iframe src="https://unisyd-my.sharepoint.com/:p:/g/personal/hayim_dar_sydney_edu_au/ESMUb4t3T8xNtvUT01KmkkcB1ER1VNimkf7aOl6mq4asQg?e=prI08i&amp;action=embedview&amp;wdAr=1.7777777777777777" width="730px" height="570px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office Online</a>.</iframe>
-<br>
+> ### 1. How do you submit a job called align.pbs?
+> ~~~
+> qsub align.pbs
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 2. How do you check the status of the job?
+> ~~~
+> qstat–x JobID
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 3. How might you know when the job is finished?
+> The output of ‘qstat’ shows an ‘F’ in the ‘S’ (status) column.
+> We receive an email from the system indicating termination. 
+> We can see the log files for this job (they are only created at completion).
+{: .solution}
+
+> ### 4. How much space are you allocated in project, and how do you check how much you have used?
+> Space per project: 1 TB, command ‘pquota’
+{: .solution}
+
+> ### 5. What log files are produced after a job completes, and what do they contain?
+> ```JobName.oJobID```–standard output (things that are usually printed to terminal)
+> ```JobName.eJobID```–standard error (OS or application error messages)
+> ```JobName.oJobID_usage```–job resource usage
+{: .solution}
+
+> ### 6. What do the ```-P```,```-N```, and ```-q``` directives indicate to the scheduler?
+> ~~~
+> qstat–x JobID
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 7. Write the directive requesting 10.5 hours wall time
+> ~~~
+> #PBS –l walltime=10:30:00
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 8. Write the directive to specify a 6-core job using 2 GB RAM per core
+> ~~~
+> #PBS –l select=1:ncpus=6:mem=12GB
+> ~~~
+> {: .language-bash}
+> or
+> ~~~
+> #PBS –l select=6:ncpus=1:mem=2GB
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 9. Your job uses the software ‘beast’. What needs to come before your command to run beast?
+> ~~~
+> module load beast
+> ~~~
+> {: .language-bash}
+{: .solution}
+
+> ### 10. Where should all important input and output data be stored long-term and why?
+> The Research Data Store (RDS). RDS is backed up and Artemis is not!
+{: .solution}
 
 ## Additional notes
 
