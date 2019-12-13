@@ -19,7 +19,18 @@ Have a go at the questions below **_BEFORE_** revealing the answer!!
 
 Better yet, _wait for the instructor_ and we'll go through the quiz all together. :blush:
 
+How might we have used **NCPUS** in the last job we submitted?
+
+> ## Answer
+> Use the ```$NCPUS``` variable to specify the number of threads we want the ```bwa mem``` program to use:
+> ~~~
+> bwa mem -M -t $NCPUS -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134'
+> ~~~
+> {: .language-bash}
+{: .solution}
+
 1. How do you submit a job called align.pbs?
+
 > ## Answer
 > ~~~
 > qsub align.pbs
@@ -28,6 +39,7 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 {: .solution}
 
  2. How do you check the status of the job?
+ 
 > ### 2. How do you check the status of the job?
 > ~~~
 > qstat–x JobID
