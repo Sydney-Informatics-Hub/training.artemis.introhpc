@@ -24,5 +24,11 @@ The final lesson, ['_Matlab on Artemis: The MDCS_']({{ site.sih_pages }}/trainin
 > **OWN LAPTOP REQUIRED**.
 {: .prereq}
 
+> ## Course survey!
+>
+> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR)** before you leave!
+>
+> Help us help you! :smiley:
+{: .testimonial}
 
 {% include links.md %}
