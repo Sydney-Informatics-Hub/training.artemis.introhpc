@@ -94,7 +94,7 @@ There are a couple ways to do this:
 
 ## 1. The USyd VPN
 
-**VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [here](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn). Once you've connected to the VPN, the above connection methods will work, just as though you were on-campus.
+**VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [on service now](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9). Once you've connected through the Cisco Anyconnect VPN client, the above connection methods will work, just as though you were on-campus.
 
 ## 2. Use the Artemis Jump server
 
