@@ -16,6 +16,8 @@ The third course in the series, [‘_Intermediate Artemis HPC_’]({{ site.sih_p
 
 The final lesson, ['_Matlab on Artemis: The MDCS_']({{ site.sih_pages }}/training.artemis.mdcs), is an optional course for users of MATLAB who would like to submit jobs directly to the cluster from their local computers.
 
+**Recorded Lesson:** You can watch the recorded lesson from April 24, 2020, here: [https://cloudstor.aarnet.edu.au/plus/s/gcmKLMZ1bsIMwAa](https://cloudstor.aarnet.edu.au/plus/s/gcmKLMZ1bsIMwAa)
+
 > ## Prerequisites
 > Competency on the Unix/Linux command line:
 >
