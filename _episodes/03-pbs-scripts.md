@@ -272,17 +272,8 @@ module load samtools/1.6
 
 Here we have loaded two bioinformatics programs: **bwa** and **samtools**. Note that we have also specified the **version** of the programs we are asking _modules_ to load for us. This is because software packages sometimes change significantly from version to version, using different _syntax_ to run them, or even different _methods_ internally -- which can lead to different results on the same data!
 
-Therefore, for both your sanity (when you need to regenerate that one figure for your thesis!) and scientific reproducibility, we strongly advise you note the versions of the software you use to generate your results.
+***Specifying the versions of software you use is key for scientific reproducibility.***
 
-> ## 'Version control'
->
-> Keeping track of your codes and datasets is one of the most important habits of successful science.
->
-> It can seem daunting, but there are tools available to help. For _**code**_, the University has its own enterprise '[GitHub](http://github.sydney.edu.au)' server. You can attend one of the _**[git](https://git-scm.com/)**_ training courses to learn how to use this very versatile version tracking system.
->
-> SIH's [Research Data Consulting](https://informatics.sydney.edu.au/rdm/) team also manages and supports the '**[eNotebooks](https://informatics.sydney.edu.au/rdm/enotebooks/)**' data management platform, for tracking and contextualising your data, codes, notes, manuscripts and more.
->
-{: .callout}
 
 ### 3. Program commands
 
