@@ -307,71 +307,29 @@ PROGRAM [SUB-FUNCTION] [OPTIONS] INPUT [OUTPUT]
 {: .source}
 
 
-
 Everything after the **program name** are called the **arguments**. The ```[]``` bracketed arguments above are more likely to be optional, and ```[]``` is the general convention for indicating optional arguments.
 
 In the example above, the program ```bwa``` has a sub-function ```index```. To this is passed an option flag ```-a``` followed by its value ```bwtsw```, and then finally an input file ```${io}/canfam3_chr5.fasta```, using our directory variable ```io```.
 
 In general, program options will be specified by a **flag** followed by its desired **value**, though some options that don't have multiple values will just be invoked by their **flag**. Options also often have _long_ and _short_ names; eg to specify an output file you may be able to write either ```--output=filename.ext``` or simply ```-o filename.ext```.
 
+***Finding help with commands?***
+
 The full range of functions, options and usages that a program offers can be found by invoking its ```--help``` option (assuming you've loaded the program with **Modules** first)
 
+Sometimes more information is provided in the program's **manual page**, which can usually be loaded by ```man PROGRAM```, eg ```man samtools```. However, note that not all programs are consistent! Some don't have the ```--help``` command engaged. Its good practice but not essential for software developers. Manual pages and help commands are generally alike.
+
+***Try these commands and notice the output***
 ~~~
 samtools --help
 ~~~
 {: .language-bash}
 
 ~~~
-[jdar4135@login4 ~]$ samtools --help
-
-Program: samtools (Tools for alignments in the SAM format)
-Version: 1.6 (using htslib 1.6)
-
-Usage:   samtools <command> [options]
-
-Commands:
-  -- Indexing
-     dict           create a sequence dictionary file
-     faidx          index/extract FASTA
-     index          index alignment
-
-  -- Editing
-     calmd          recalculate MD/NM tags and '=' bases
-     fixmate        fix mate information
-     reheader       replace BAM header
-     rmdup          remove PCR duplicates
-     targetcut      cut fosmid regions (for fosmid pool only)
-     addreplacerg   adds or replaces RG tags
-     markdup        mark duplicates
-
-  -- File operations
-     collate        shuffle and group alignments by name
-     cat            concatenate BAMs
-     merge          merge sorted alignments
-     mpileup        multi-way pileup
-     sort           sort alignment file
-     split          splits a file by read group
-     quickcheck     quickly check if SAM/BAM/CRAM file appears intact
-     fastq          converts a BAM to a FASTQ
-     fasta          converts a BAM to a FASTA
-
-  -- Statistics
-     bedcov         read depth per BED region
-     depth          compute the depth
-     flagstat       simple stats
-     idxstats       BAM index stats
-     phase          phase heterozygotes
-     stats          generate stats (former bamcheck)
-
-  -- Viewing
-     flags          explain BAM flags
-     tview          text alignment viewer
-     view           SAM<->BAM<->CRAM conversion
-     depad          convert padded BAM to unpadded BAM
+man samtools
 ~~~
-{: .output}
+{: .language-bash}
 
-Sometimes more information is provided in the program's **manual page**, which can usually be loaded by ```man PROGRAM```, eg ```man samtools```. However, note that not all programs are consistent! Some don't have the ```--help``` option set, and may instead display a help message when you _misuse_ the program, or when you just call it with _no other_ arguments. Sorry in advance!
 
 <br>
 
