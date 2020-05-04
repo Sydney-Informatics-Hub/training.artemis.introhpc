@@ -388,7 +388,7 @@ a, A specific version of python is required. The code uses open source software 
 
 b, The ***cd $PBS_O_WORKDIR*** command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment. More examples of environment variables are given at the end of the material.
 
-c, The code requires an input parameter representing the number of random points used in the simulation. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
+c, The code requires an ***input*** parameter representing the number of random points used in the simulation. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
 
 Submit this script to the scheduler. Check the log files for errors and the output.
  
@@ -397,7 +397,7 @@ qsub estimate_pi.pbs
 ~~~
 {: .output}
 
-After this, try increasing the simulation number in the pbs script to one million, and practice deleting a job by using the ***del*** command with the job number that was printed as an argument. Here is an example:
+After this, try increasing the simulation number in the pbs script to one million, and practice deleting a job by using the ***qdel*** command with the job number that was printed used as an input argument. Here is an example:
 
 ~~~
 [TRAINING kmar7637@login4 datahpc]$ qsub estimate_pi.pbs
