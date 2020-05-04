@@ -1,5 +1,5 @@
 ---
-title: "Quiz! and Additional Notes"
+title: "Quiz! and Case Study"
 teaching: 10
 exercises: 10
 questions:
@@ -9,7 +9,7 @@ objectives:
 keypoints:
 - "PBS **environment variables** can make your life easier"
 - "You can customise your log files"
-- "Log a service managment request for help"
+- "link commands together in scripts to form a computation pipeline"
 - "Artemis is _**not**_ backed up!"
 ---
 
@@ -108,7 +108,6 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 
 ### CASE STUDY - BIOINFORMATICS PIPELINE
-
 
 
 
