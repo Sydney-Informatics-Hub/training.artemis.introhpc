@@ -382,12 +382,28 @@ Success.
 <br>
 ## Practise makes perfect
 
-Let's do that again.
+Let's do that again. This time rather than set submit a script to the scheduler that prints a generic hello world message, we will run python code that performs computation. Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
 
+The script that submits this python code to the scheduler is the ***estimate_pi.pbs*** script.
 
+~~~
+nano estimate_pi.pbs
+~~~
+{: .output}
 
+Things to notice in the script: 
+a, A specific version of python is required. The code uses open source software ***python fire*** that exposes python functions and classes to the command line in an easy manner. This dependency is installed with the ***pip*** command, a python specific package manager. Python fire requires a python 3X version.
 
+b, The ***cd $PBS_O_WORKDIR*** command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment. More examples of environment variables are given at the end of the material.
 
+c, The code requires a number representing the number of random points used. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
+
+Submit this script to the scheduler....
+ 
+~~~
+qsub estimate_pi.pbs
+~~~
+{: .output}
 
 
 ___
