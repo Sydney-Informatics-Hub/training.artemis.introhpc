@@ -211,14 +211,7 @@ Artemis provides another tool for checking your jobs, which also shows some extr
 
 ~~~
 [jdar4135@login3 hayim]$ jobstat
-Job Summary for user jdar4135
-                                                Requested -------------------------             Elapsed  --------------------------
-Job ID---- Queue- Job Name--- Project--- State- Chunks Cores GPU       RAM Walltime  Start Time CPU Hours   CPU% Progress End Time
-2557008    small  Basic_hayim Training   Queued      1     1   -     1.0Gb       1m  (n/a)          (n/a)      -        - (n/a)
- * Times with an asterix are estimates only
- * End time is start time + walltime so job may finish earlier
- * Progress is accumulated walltime vs specified walltime - so see above
-
+......
 System Status ----------------------------------------------------------------------------------------------------
 CPU hours for jobs currently executing: 1482286.8
 CPU hours for jobs queued:              489049.4
@@ -232,6 +225,24 @@ Storage Quota Usage ------------------------------------------------
 Storage Usage (Filesystems totals) ---------------------------------
 Filesystem Used     Free
 /scratch   378.1Tb  1.5%
+
+
+Storage Quota Usage ------------------------------------------------
+/home                             kmar7637       10.86G          10G ** OVERQUOTA - REMOVE DATA NOW
+/project            RDS-CORE-SIHclassic-RW       383.7G           1T
+/project              RDS-FEI-HTE2019YH-RW         267G           1T
+/project                   RDS-CORE-CLC-RW       8.483G           1T
+/project            RDS-CORE-SIHsandbox-RW         811G           1T
+/project              RDS-CORE-Training-RW       309.9G           1T
+/project                RDS-FMH-Unwired-RW       193.7G           1T
+/project                 RDS-CORE-CCSIH-RW           4k           1T
+Storage Usage (Filesystems totals) ---------------------------------
+Filesystem Used     Free
+/scratch   494.4Tb  3.0%
+/project   407.2Tb  15.8%
+
+
+
 ~~~
 {: .output}
 
@@ -272,11 +283,7 @@ total 271M
 -rw-r----- 1 jdar4135 RDS-CORE-Training-RW  748 Oct 25 11:48 align.pbs
 -rw-r----- 1 jdar4135 RDS-CORE-Training-RW  203 Oct 25 14:34 basic.pbs
 -rw-r----- 1 jdar4135 RDS-CORE-Training-RW  39M Nov 30  2016 canfam3_chr5.fasta
--rw------- 1 jdar4135 RDS-CORE-Training-RW    0 Oct 25 15:35 Basic_hayim.e2557008
--rw------- 1 jdar4135 RDS-CORE-Training-RW   31 Oct 25 15:35 Basic_hayim.o2557008
--rw-r--r-- 1 jdar4135 RDS-CORE-Training-RW 1.3K Oct 25 15:35 Basic_hayim.o2557008_usage
--rw-r----- 1 jdar4135 RDS-CORE-Training-RW  376 Aug 24 10:52 index.pbs
-drwxr-sr-x 2 jdar4135 RDS-CORE-Training-RW 4.0K Oct 25 15:16 New_job
+......
 ~~~
 {: .output}
 
@@ -382,7 +389,9 @@ Success.
 <br>
 ## Practise makes perfect: Python 
 
-Let's do that again. This time rather than set submit a script to the scheduler that prints a generic hello world message, we will run python code that performs computation. Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
+Let's do that again. This time rather than set submit a script to the scheduler that prints a generic hello world message, we will run python code that performs computation. 
+
+Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
 
 The script that submits this python code to the scheduler is the ***estimate_pi.pbs*** script.
 
@@ -392,13 +401,14 @@ nano estimate_pi.pbs
 {: .output}
 
 Things to notice in the script: 
-a, A specific version of python is required. The code uses open source software ***python fire*** that exposes python functions and classes to the command line in an easy manner. This dependency is installed with the ***pip*** command, a python specific package manager. Python fire requires a python 3X version.
+
+a, A specific version of python is required. The code uses open source software called ***python fire*** that exposes python functions and classes to the command line in an easy manner. This dependency is installed with the ***pip*** command, a python specific package manager. Python fire requires a python 3X version.
 
 b, The ***cd $PBS_O_WORKDIR*** command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment. More examples of environment variables are given at the end of the material.
 
-c, The code requires a number representing the number of random points used. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
+c, The code requires an input parameter representing the number of random points used in the simulation. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
 
-Submit this script to the scheduler....
+Submit this script to the scheduler. Check the log files for errors and the output.
  
 ~~~
 qsub estimate_pi.pbs
@@ -415,12 +425,15 @@ qdel: Job has finished
 ~~~
 {: .output}
 
+Task: If you look again at the python code, there are optional arguments that could make your code even faster (apart from requesting more resources). Can you guess what they are and how to run it???
+
+
 ## Practise makes perfect: Matlab
 Lets try one more job submission to reinforce the habit. This time we will submit a completely different matlab script that performs aggregation calculations on a csv file. 
 
-If you are used to using Matlab on your local machine, using matlab is a little different here on artemis. High performance computers generally work best when emmulating linux commands. Applications that rely on graphical interfaces, while achievable with a nomachine interface or x11 forwarding described earlier, generally are slow and buggy. We will submit a pbs file that executes a matlab script in the advisable manner that suppresses graphical interaction.
+If you are familiar with Matlab on your local machine, using matlab is a little different here on artemis. High performance computers generally work best when engaging software via linux commands. Applications that rely on graphical interfaces, while achievable with a nomachine interface or x11 forwarding described earlier, generally are slow and buggy. We will submit a pbs file that executes a matlab script in the advisable manner that suppresses graphical interaction.
 
-Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material, its an art in itself, but we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
+Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material, its an art in itself, however, we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
 
 ~~~
 head airline2008.csv
@@ -428,11 +441,13 @@ wc -l airline2008.csv
 ~~~
 {: .output}
 
-We can see under 2000 rows of flight information and identify columns that give arrival and departure time information.
+The output reveals the csv file contains 2000 rows of flight information and identify columns that give arrival and departure time information.
 
 The pbs script that runs matlab data computations on this csv file is the pbs scripted named ***airline.pbs***. A couple things to notice are:
-a, The extra flags -nodisplay -nosplash, that suppress the matlab graphical interaction.
-b, the command line way to run matlab with the -r (run) flag. There are a few ways to do it, consult matlab documentation for more examples. 
+
+a, The extra flags -nodisplay -nosplash suppress the matlab graphical interaction.
+
+b, The command line way to run matlab with the -r (run) flag. There are a few ways to do it, consult matlab documentation for more examples. 
 ~~~
 nano airline.pbs
 ~~~
@@ -443,6 +458,7 @@ qsub airline.pbs
 ~~~
 {: .output}
 
+If there are no errors, investigate the output file to find out what date in incurred the longest flight delays.
 
 ___
 **Notes**
