@@ -177,18 +177,19 @@ cd hayim
 Now untar (decompress) the data archive into your directory:
 
 ~~~
-tar -xzvf ../DATA/sample_data.tar.gz
+tar -xzvf ../DATA/data_hpc.tar.gz
 ~~~
 {: .language-bash}
 
 ~~~
-[jdar4135@login3 hayim]$ tar -xvzf ../DATA/sample_data.tar.gz
-sample_data/
-sample_data/canfam3_chr5.fasta
-sample_data/align.pbs
-sample_data/134_R2.fastq.gz
-sample_data/index.pbs
-sample_data/134_R1.fastq.gz
+[jdar4135@login3 hayim]$ tar -xvzf ../DATA/data_hpc.tar.gz
+datahpc/
+datahpc/hello.pl
+datahpc/canfam3_chr5.fasta
+datahpc/align.pbs
+datahpc/134_R2.fastq.gz
+datahpc/index.pbs
+....
 ~~~
 {: .output}
 
@@ -197,8 +198,8 @@ The option flags ```-xzvf``` mean e**x**tract files, use G**z**ip compression (f
 As can be seen in the output above, the archive contains a folder 'sample_data', and this folder has been recreated in your working directory. (Check this by running ```ls``` to list the current directory contents!). For convenience, let's move (```mv```) all the files (```*```) out of this extra folder, and remove it (```rmdir```). Since I am currently in my ```hayim``` working directory, and I want the files here also, I'll use the 'here' shortcut (```./```) as my destination argument:
 
 ~~~
-mv sample_data/* ./
-rmdir sample_data
+mv datahpc/* ./
+rmdir datahpc
 ~~~
 {: .language-bash}
 
