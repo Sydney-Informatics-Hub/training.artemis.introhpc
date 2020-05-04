@@ -212,7 +212,7 @@ Artemis provides another tool for checking your jobs, which also shows some extr
 ~~~
 [jdar4135@login3 hayim]$ jobstat
 ......
-System Status ----------------------------------------------------------------------------------------------------
+System Status --------------------------------------------
 CPU hours for jobs currently executing: 1482286.8
 CPU hours for jobs queued:              489049.4
 Storage Quota Usage ------------------------------------------------
@@ -225,24 +225,6 @@ Storage Quota Usage ------------------------------------------------
 Storage Usage (Filesystems totals) ---------------------------------
 Filesystem Used     Free
 /scratch   378.1Tb  1.5%
-
-
-Storage Quota Usage ------------------------------------------------
-/home                             kmar7637       10.86G          10G ** OVERQUOTA - REMOVE DATA NOW
-/project            RDS-CORE-SIHclassic-RW       383.7G           1T
-/project              RDS-FEI-HTE2019YH-RW         267G           1T
-/project                   RDS-CORE-CLC-RW       8.483G           1T
-/project            RDS-CORE-SIHsandbox-RW         811G           1T
-/project              RDS-CORE-Training-RW       309.9G           1T
-/project                RDS-FMH-Unwired-RW       193.7G           1T
-/project                 RDS-CORE-CCSIH-RW           4k           1T
-Storage Usage (Filesystems totals) ---------------------------------
-Filesystem Used     Free
-/scratch   494.4Tb  3.0%
-/project   407.2Tb  15.8%
-
-
-
 ~~~
 {: .output}
 
