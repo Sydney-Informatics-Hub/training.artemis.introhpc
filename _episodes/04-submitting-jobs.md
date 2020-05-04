@@ -380,7 +380,7 @@ total 512
 Success.
 
 <br>
-## Practise makes perfect
+## Practise makes perfect: Python 
 
 Let's do that again. This time rather than set submit a script to the scheduler that prints a generic hello world message, we will run python code that performs computation. Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
 
@@ -402,6 +402,44 @@ Submit this script to the scheduler....
  
 ~~~
 qsub estimate_pi.pbs
+~~~
+{: .output}
+
+After this, try increasing the simulation number in the pbs script to one million, and practice deleting a job by using the ***del*** command with the job number that was printed as an argument. Here is an example:
+
+~~~
+[TRAINING kmar7637@login4 datahpc]$ qsub estimate_pi.pbs
+463292.pbstraining
+[TRAINING kmar7637@login4 datahpc]$ qdel 463292
+qdel: Job has finished
+~~~
+{: .output}
+
+## Practise makes perfect: Matlab
+Lets try one more job submission to reinforce the habit. This time we will submit a completely different matlab script that performs aggregation calculations on a csv file. 
+
+If you are used to using Matlab on your local machine, using matlab is a little different here on artemis. High performance computers generally work best when emmulating linux commands. Applications that rely on graphical interfaces, while achievable with a nomachine interface or x11 forwarding described earlier, generally are slow and buggy. We will submit a pbs file that executes a matlab script in the advisable manner that suppresses graphical interaction.
+
+Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material, its an art in itself, but we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
+
+~~~
+head airline2008.csv
+wc -l airline2008.csv
+~~~
+{: .output}
+
+We can see under 2000 rows of flight information and identify columns that give arrival and departure time information.
+
+The pbs script that runs matlab data computations on this csv file is the pbs scripted named ***airline.pbs***. A couple things to notice are:
+a, The extra flags -nodisplay -nosplash, that suppress the matlab graphical interaction.
+b, the command line way to run matlab with the -r (run) flag. There are a few ways to do it, consult matlab documentation for more examples. 
+~~~
+nano airline.pbs
+~~~
+{: .output}
+
+~~~
+qsub airline.pbs
 ~~~
 {: .output}
 
