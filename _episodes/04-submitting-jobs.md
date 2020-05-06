@@ -375,6 +375,10 @@ Let's do that again. This time rather than set submit a script to the scheduler 
 
 Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
 
+<figure>
+  <img src="{{ page.root }}/fig/calc_pi.png" style="margin:5px;width:400px"/>
+</figure><br>
+
 The script that submits this python code to the scheduler is the ***estimate_pi.pbs*** script.
 
 ~~~
