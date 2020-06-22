@@ -156,9 +156,13 @@ ls -lsh DATA
 
 ~~~
 [jdar4135@login3 Training]$ ls -lsh DATA/
-total 2.0G
-1.8G -rw-r--r-- 1 jdar4135 RDS-CORE-Training-RW 1.8G Oct 17 11:53 Automation.tar.gz
-244M -rw-r----- 1 jdar4135 RDS-CORE-Training-RW 244M Aug 24 10:59 sample_data.tar.gz
+total 2.5G
+1.7G -rw-r-xr-- 1 nbut3013 RDS-CORE-Training-RW 1.7G Jul  9  2019 Automation.tar.gz
+244M -rw-r--r-- 1 nbut3013 RDS-CORE-Training-RW 244M Feb 14  2019 Sample_data.tar.gz
+ 25M -rw-r--r-- 1 nbut3013 RDS-CORE-Training-RW  25M Sep  7  2017 cfa_ref_CanFam3.1_chr5.fa.gz
+244M -rw-r--r-- 1 nbut3013 RDS-CORE-Training-RW 244M Jun 22 17:15 data_hpc.tar.gz
+4.0K -rw-r--r-- 1 nbut3013 RDS-CORE-Training-RW  671 Jul  9  2019 dogScripts.tar.gz
+244M -rw-r--r-- 1 nbut3013 RDS-CORE-Training-RW 244M Feb 14  2019 sample_data.tar.gz
 ~~~
 {: .output}
 
