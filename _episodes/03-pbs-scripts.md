@@ -181,7 +181,7 @@ cd hayim
 Now untar (decompress) the data archive into your directory:
 
 ~~~
-tar -xzvf ../DATA/data_hpc.tar.gz
+tar -xzvf ../DATA/data_hpc2.tar.gz
 ~~~
 {: .language-bash}
 
