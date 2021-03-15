@@ -619,7 +619,7 @@ How to do this is covered in the next course, [‘_Data transfer and RDS for HPC
 
 > ## Course survey!
 >
-> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR)** before you leave!
+> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR&training=12&training_date=2021-03-35)** before you leave!
 >
 > Help us help you! :smiley:
 {: .testimonial}
