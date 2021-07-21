@@ -15,6 +15,13 @@ keypoints:
 ---
 This episode gets users familiar with the Artemis servers, available software and directory structure. It also introduces users to text editors on Artemis for scripting.
 
+> ### Have a command you don't understand?
+>
+>  Check out this hand tool [https://explainshell.com/](https://explainshell.com/) to help breakdown the unix jargon.
+>  
+{: .callout}
+
+
 # The Artemis directory structure
 
 <br>
