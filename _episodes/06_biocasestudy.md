@@ -1,5 +1,5 @@
 ---
-title: "Additional Bioinformatics Case Study"
+title: "Bonus: Bioinformatics Case Study"
 homework: 20
 questions:
 - "What other use cases are ther for HPC?"
@@ -7,10 +7,7 @@ questions:
 objectives:
 - "Run a Bioinformatics case study example"
 keypoints:
-- "PBS **environment variables** can make your life easier"
-- "You can customise your log files"
-- "link commands together in scripts to form a computation pipeline"
-- "Artemis is _**not**_ backed up!"
+- "You can run all kinds of workflows on Artemis"
 ---
 
 
