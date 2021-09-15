@@ -32,7 +32,8 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
  
 > ## Answer
 > ~~~
-> qstat–x JobID
+> qstat <JOBID>
+> qstat -x -u <UNIKEY>
 > ~~~
 > {: .language-bash}
 {: .solution}
@@ -55,7 +56,9 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 > ## Answer
 > ```JobName.oJobID```–standard output (things that are usually printed to terminal)
+>
 > ```JobName.eJobID```–standard error (OS or application error messages)
+>
 > ```JobName.oJobID_usage```–job resource usage
 {: .solution}
 
@@ -63,7 +66,11 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 > ## Answer 
 > ~~~
-> qstat–x JobID
+> ```-P```: Specify your project.
+>
+>```-N```: Specify the name of you job.
+>
+>```-q```: Request which queue to run your job on.
 > ~~~
 > {: .language-bash}
 {: .solution}
@@ -119,10 +126,10 @@ Shell _'environment variables'_ are variables automatically set for you, or spec
  **PBS_JOBID** | The JobID assigned to the job | Use ```$PBS_JOBID``` to give a unique name to any output or log files generated |
 
 <br>
-How might we have used **NCPUS** in the last job we submitted?
+How might we have used **NCPUS** in the a command within our pbs jobscript?
 
 > ## Answer
-> Use the ```$NCPUS``` variable to specify the number of threads we want the ```bwa mem``` program to use:
+> Use the ```$NCPUS``` variable to specify the number of threads we want, e.g. in the ```bwa mem``` program you can use:
 > ~~~
 > bwa mem -M -t $NCPUS -R '@RG\tID:134\tPL:illumina\tPU:CONNEACXX\tSM:MS_134'
 > ~~~
@@ -228,7 +235,7 @@ How to do this is covered in the next course, [‘_Data transfer and RDS for HPC
 
 > ## Course survey!
 >
-> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR&training=12&training_date=2021-03-35)** before you leave!
+> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR&training=12&training_date=2021-12-21)** before you leave!
 >
 > Help us help you! :smiley:
 {: .testimonial}
