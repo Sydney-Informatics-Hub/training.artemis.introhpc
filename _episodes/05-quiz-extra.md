@@ -66,11 +66,9 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 
 > ## Answer 
 > ~~~
-> ```-P```: Specify your project.
->
->```-N```: Specify the name of you job.
->
->```-q```: Request which queue to run your job on.
+> #PBS -P yourproject # Specify your project.
+> #PBS -N yourjobname #Specify the name of you job.
+> #PBS -q defaultQ #Request which queue to run your job on.
 > ~~~
 > {: .language-bash}
 {: .solution}
