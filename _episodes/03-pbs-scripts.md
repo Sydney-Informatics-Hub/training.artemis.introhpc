@@ -166,7 +166,7 @@ total 2.5G
 ~~~
 {: .output}
 
-These files are ```.tar``` archives, like ```.zip``` files you might be more familiar with. They are made and read using the ```tar``` command. We'll be using **sample_data.tar.gz**.
+These files are ```.tar``` archives, like ```.zip``` files you might be more familiar with. They are made and read using the ```tar``` command. We'll be using **data_hpc2.tar.gz**.
 
 Before "untar"ing it, create a working directory for yourself. Since we'll all be working on the same files, we can't all do that in **/project/Training**, as we'd either overwrite each other's, or get '_Permission denied_' errors if we tried.
 
