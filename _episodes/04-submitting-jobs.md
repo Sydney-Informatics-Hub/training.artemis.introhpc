@@ -282,7 +282,7 @@ These are the **log files** for your job:
 |:--|---|
 | JobName.**e**JobID | **E**rror log: This is where error messages -- those usually printed to **stderr** -- are recorded |
 | JobName.**o**JobID | **O**utput log: This is where output messages -- those usually printed to **stdout** -- are recorded |
-| JobName.**o**JobID | **Usage** report: gives a short summary of the **resources** used by your job |
+| JobName.**o**JobID_usage | **Usage** report: gives a short summary of the **resources** used by your job |
 
 Check whether there were any errors in your job by inspecting the contents of the **error** log with ```cat```:
 
@@ -414,9 +414,9 @@ Task: If you look again at the python code, there are optional arguments that co
 ## Practise makes perfect: Matlab
 Lets try one more job submission to reinforce the habit. This time we will submit a completely different matlab script that performs aggregation calculations on a csv file. 
 
-If you are familiar with Matlab on your local machine, using matlab is a little different here on artemis. High performance computers generally work best when engaging software via linux commands. Applications that rely on graphical interfaces, while achievable with a nomachine interface or x11 forwarding described earlier, generally are slow and buggy. We will submit a pbs file that executes a matlab script in the advisable manner that suppresses graphical interaction.
+If you are familiar with Matlab on your local machine, using Matlab is a little different here on Artemis. High performance computers generally work best when engaging software via Linux commands. Applications that rely on graphical interfaces (while achievable with a Nomachine interface or X11 forwarding described earlier) generally are slow and buggy. We will submit a pbs script that executes a Matlab script in the advisable manner that suppresses graphical interaction.
 
-Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material, its an art in itself, however, we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
+Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material - it's an art in itself - however, we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
 
 ~~~
 head airline2008.csv
@@ -424,13 +424,13 @@ wc -l airline2008.csv
 ~~~
 {: .output}
 
-The output reveals the csv file contains 2000 rows of flight information and identify columns that give arrival and departure time information.
+The output reveals the csv file contains 1,754 rows of flight information containing columns that give arrival and departure time information.
 
-The pbs script that runs matlab data computations on this csv file is the pbs scripted named ***airline.pbs***. A couple things to notice are:
+The pbs script ***airline.pbs*** runs Matlab data computations on this csv file. A couple of things to notice are:
 
-a, The extra flags -nodisplay -nosplash suppress the matlab graphical interaction.
+a. The extra flags -nodisplay -nosplash suppress the matlab graphical interaction.
 
-b, The command line way to run matlab with the -r (run) flag. There are a few ways to do it, consult matlab documentation for more examples. 
+b. The command line way to run Matlab with the -r (run) flag. There are a few ways to do it - consult Matlab documentation for more examples. 
 ~~~
 nano airline.pbs
 ~~~
@@ -441,7 +441,7 @@ qsub airline.pbs
 ~~~
 {: .output}
 
-If there are no errors, investigate the output file to find out what date in incurred the longest flight delays.
+If there are no errors, investigate the output file to find out what date incurred the longest flight delays.
 
 ___
 **Notes**
