@@ -58,7 +58,7 @@ Head to [https://putty.org](https://putty.org) and download PuTTY. You can insta
 
 ### iii. X-Win32
 
-[X-Win32](https://www.starnet.com/xwin32/) is full-featured X-server and terminal emulator for Windows. USyd [provides a license](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/316) for it; however, the download link is restricted to staff so, students. Install, and follow the instructions on the USyd-ICT page to activate -- you'll need to be on the USyd network or [VPN](http://staff.ask.sydney.edu.au/app/answers/detail/a_id/519/kw/vpn) to do so.
+[X-Win32](https://www.starnet.com/xwin32/) is full-featured X-server and terminal emulator for Windows. USyd [provides a license](https://sydneyuni.service-now.com/sm?id=kb_article_view_sec&sysparm_article=KB0011959&sys_kb_id=68c2fee6dbb7d450b924456a3a96195f&spa=1) for it; however, the download link is restricted to staff, so students, get a copy [here]({{ page.root }}/data/x-win140-54sf.exe). Install, and follow the instructions on the USyd-ICT page to activate -- you'll need to be on the USyd network or [VPN](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9) to do so. 
 
 ### iv. WSL and Ubuntu
 
@@ -67,7 +67,7 @@ Install Ubuntu or some other Linux distro on the Windows Subsystem for Linux see
 <br>
 
 # 2. Get a GUI file transfer application
-If you are not fully comfortable moving data on the command line you can use various file transfer applications. Mac OSX and linuz have the command line tools built in already. Windows users will need to enable WSL and install a Linux distro (or CYGWIN or equivalent) or else use the interative platforms below.
+If you are not fully comfortable moving data on the command line you can use various file transfer applications. Mac OSX and Linux have the command line tools built in already. Windows users will need to enable WSL and install a Linux distro (or CYGWIN or equivalent) or else use the interactive platforms below.
 
 ## A. FileZilla (Recommended)
 This application can be installed on Windows, Mac OSX and Linux. Use it to make SFTP connections and move data between local and remote machines. Be wary of bundled bloatware on installation. [https://filezilla-project.org/](https://filezilla-project.org/)
@@ -86,7 +86,7 @@ There are a couple ways to do this:
 
 ## A. The USyd VPN
 
-**VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [on service now](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9). Once you've connected to the Cisco Anyconnect VPN, the above connection methods will work, just as though you were on-campus.
+**VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [on Service Now](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9). Once you've connected to the Cisco Anyconnect VPN, the above connection methods will work, just as though you were on-campus.
 
 ## B. Use the Artemis Jump server
 
