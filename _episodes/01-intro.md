@@ -15,6 +15,7 @@ keypoints:
 ---
 This episode introduces the [Sydney Informatics Hub](https://informatics.sydney.edu.au/), Artemis HPC and how to get connected.
 
+For future reference, files that contain some of todays demonstrations can be downloaded here [Files](https://cloudstor.aarnet.edu.au/plus/s/YTqStVIml4TlVcs). 
 
 # The Sydney Informatics Hub
 
