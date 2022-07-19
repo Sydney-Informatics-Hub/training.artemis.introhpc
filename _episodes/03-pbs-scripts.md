@@ -186,7 +186,7 @@ tar -xzvf ../DATA/data_hpc2.tar.gz
 {: .language-bash}
 
 ~~~
-[jdar4135@login3 hayim]$ tar -xvzf ../DATA/data_hpc2.tar.gz
+[jdar4135@login3 hayim]$ tar -xvzf ../DATA/intro_hpc.tar.gz
 datahpc/
 datahpc/hello.pl
 datahpc/canfam3_chr5.fasta
