@@ -166,7 +166,7 @@ total 2.5G
 ~~~
 {: .output}
 
-These files are ```.tar``` archives, like ```.zip``` files you might be more familiar with. They are made and read using the ```tar``` command. We'll be using **data_hpc2.tar.gz**.
+These files are ```.tar``` archives, like ```.zip``` files you might be more familiar with. They are made and read using the ```tar``` command. We'll be using **intro_hpc.tar.gz**.
 
 Before "untar"ing it, create a working directory for yourself. Since we'll all be working on the same files, we can't all do that in **/project/Training**, as we'd either overwrite each other's, or get '_Permission denied_' errors if we tried.
 
@@ -181,7 +181,7 @@ cd hayim
 Now untar (decompress) the data archive into your directory:
 
 ~~~
-tar -xzvf ../DATA/data_hpc2.tar.gz
+tar -xzvf ../DATA/intro_hpc.tar.gz
 ~~~
 {: .language-bash}
 
@@ -199,10 +199,10 @@ datahpc/index.pbs
 
 The option flags ```-xzvf``` mean e**x**tract files, use G**z**ip compression (for ```.tar.gz```), be **v**erbose and print what is being done, and use the archive **f**ile specified.
 
-As can be seen in the output above, the archive contains a folder 'sample_data', and this folder has been recreated in your working directory. (Check this by running ```ls``` to list the current directory contents!). For convenience, let's move (```mv```) all the files (```*```) out of this extra folder, and remove it (```rmdir```). Since I am currently in my ```hayim``` working directory, and I want the files here also, I'll use the 'here' shortcut (```./```) as my destination argument:
+Lets move into the newly created directory from the tarball extract to inspect files we will use to learn HPC techniques:
 
 ~~~
-mv datahpc/* ./
+cd datahpc
 rmdir datahpc
 ~~~
 {: .language-bash}
