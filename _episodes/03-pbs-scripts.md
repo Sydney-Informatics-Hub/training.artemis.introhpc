@@ -132,13 +132,15 @@ The most common PBS directives are listed below. **The only compulsory directive
 | ```-W``` | Further arguments | See manual page for more info: ```man qsub``` |
 
 <br>
-## PBS scripting
+
 
 There are a number of ways to pass the PBS **directives** to the ```qsub``` submission command. However, the most flexible and reliable way is to write a **submission script**. We call these 'PBS scripts', after the name of the scheduling software, 'PBS Pro'.
 
 A **PBS script** is simply a _shell script_: a text file that lists commands to send to your command interpreter '_shell_'.<sup id="a3">[3](#f3)</sup> On Artemis, the default shell is '[Bash](https://www.gnu.org/software/bash/)' ("Bourne-again shell"); so we'll also sometimes call these 'Bash scripts'. A **PBS script** is a _bash script_ written to be executed by the PBS scheduler's ```qsub``` command -- which means it contains PBS **directives** to tell the scheduler what we want it to do.
 
 Let's take a look at a real life **PBS script** to make all this concrete.
+
+## Extracting Data For Training
 
 Navigate to our Training project directory -- the **/project** folder for **RDS-CORE-Training-RW**:
 
@@ -199,23 +201,18 @@ datahpc/index.pbs
 
 The option flags ```-xzvf``` mean e**x**tract files, use G**z**ip compression (for ```.tar.gz```), be **v**erbose and print what is being done, and use the archive **f**ile specified.
 
-Lets move into the newly created directory from the tarball extract to inspect files we will use to learn HPC techniques:
+Lets move into the newly created directory from the tarball extract to inspect files we will use to learn how to use the HPC. After which we can copy and inspect a pbs script using nano.
 
 ~~~
 cd datahpc
-rmdir datahpc
-~~~
-{: .language-bash}
 
-Finally, make a copy of the **index.pbs** file, naming the copy **basic.pbs**, and open it in your text editor of choice:
-
-~~~
 cp index.pbs basic.pbs
-nano basic.pbs
-~~~
-{: .language-bash}
 
-or if you prefer to use 'GEdit': ```gedit basic.pbs &```.
+nano basic.pbs
+
+~~~
+
+
 
 <figure>
   <a name="nanobasic"></a>
