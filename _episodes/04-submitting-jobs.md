@@ -443,6 +443,23 @@ qsub airline.pbs
 
 If there are no errors, investigate the output file to find out what date incurred the longest flight delays.
 
+
+## Practise makes perfect: R
+Running R code on Artemis requires installing and referencing libraries needed for your R script. The recommended way to do this is to use the ***renv*** package to replicate libraries and specific versions created locally via a "lockfile". The lockfile is created by renv. 
+
+
+Three example scripts to demostrate using R (with an established renv lock file) in this course are:
+
+1. install_env.pbs : Houses the initial setup of installing R libraries to a path you have read / write permissions to. Here /home is used, but in practice it would reside somewhere in your /projects directory. 
+2. run_network.pbs : Main pbs script that references a path where libraries exist (created by the above file).  
+5. network.R : main R script that does data manipulation and visualisation via common R libraries including dplyr, plotly and network libraries. Generates a network plot based on flight information. 
+
+The installation has already been run and libraries saved in the "/project/Training/DATA/Libs" folder. ***Please chage the library path in run_network.pbs to this folder and run:*** 
+~~~
+qsub run_network.pbs
+
+~~~
+ 
 ___
 **Notes**
 
