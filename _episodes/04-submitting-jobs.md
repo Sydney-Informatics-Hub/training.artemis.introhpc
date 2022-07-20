@@ -129,7 +129,7 @@ We need to make a few edits before we can submit this script. Can you guess what
 To begin, we're going to run a very simple 'test' job, so <u>delete everything below the directives</u>, from ```# Load modules``` onward, and replace with
 
 ~~~
-cd /project/Training/<YourName>
+cd /project/Training/<YourName>/datahpc
 
 mkdir New_job
 cp basic.pbs New_job/copy.pbs
