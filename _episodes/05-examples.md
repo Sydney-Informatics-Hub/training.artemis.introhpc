@@ -16,9 +16,21 @@ keypoints:
 
 In this episode we practice with some real use cases! 
 
+To catch up:
+```
+cd /project/Training
+mkdir <yourname>
+cd <yourname>
+tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
+cd datahpc
+```
+Then you are good to go with the following examples.
+
+
+
 # Practise makes perfect: Python 
 
-Let's do that again. This time rather than set submit a script to the scheduler that prints a generic hello world message, we will run python code that performs computation. 
+Let's submit a job which runs python code that performs computation. 
 
 Investigate the ***computepi_fire.py*** python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points. 
 
@@ -32,11 +44,9 @@ nano estimate_pi.pbs
 
 Things to notice in the script: 
 
-a, A specific version of python is required. The code uses open source software called ***python fire*** that exposes python functions and classes to the command line in an easy manner. This dependency is installed with the ***pip*** command, a python specific package manager. Python fire requires a python 3X version.
-
-b, The ***cd $PBS_O_WORKDIR*** command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment. More examples of environment variables are given at the end of the material.
-
-c, The code requires an ***input*** parameter representing the number of random points used in the simulation. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
+a. A specific version of python is required. The code uses open source software called ***python fire*** that exposes python functions and classes to the command line in an easy manner. This dependency is installed with the ***pip*** command, a python specific package manager. Python fire requires a python 3X version.
+b. The ***cd $PBS_O_WORKDIR*** command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment. More examples of environment variables are given at the end of the material.
+c. The code requires an ***input*** parameter representing the number of random points used in the simulation. Increasing this will improve the accuracy at the expense of longer run time. Lets try!
 
 Submit this script to the scheduler. Check the log files for errors and the output.
  
@@ -76,7 +86,6 @@ The output reveals the csv file contains 1,754 rows of flight information contai
 The pbs script ***airline.pbs*** runs Matlab data computations on this csv file. A couple of things to notice are:
 
 a. The extra flags -nodisplay -nosplash suppress the matlab graphical interaction.
-
 b. The command line way to run Matlab with the -r (run) flag. There are a few ways to do it - consult Matlab documentation for more examples. 
 ~~~
 nano airline.pbs
