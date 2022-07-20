@@ -209,7 +209,6 @@ cd datahpc
 cp index.pbs basic.pbs
 
 nano basic.pbs
-
 ~~~
 
 
