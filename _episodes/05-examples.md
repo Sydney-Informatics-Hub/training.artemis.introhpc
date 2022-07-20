@@ -1,5 +1,5 @@
 ---
-title: "Submitting and monitoring Artemis Jobs"
+title: "Example Job Submission"
 teaching: 15
 exercises: 35
 questions:
