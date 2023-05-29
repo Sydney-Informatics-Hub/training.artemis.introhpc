@@ -25,9 +25,7 @@ The queues under **defaultQ** are _small_, _normal_, _large_, _highmem_ and _gpu
 
 | Queue | Invocation | Max Walltime  | Max Cores per<br>Job / User / Node | Memory (GB) per<br>Node / Core | Fair Share Weight |
 |:--|:--:|:--:|:--:|:---:|:---:|
-| -small<br>-normal<br>-large<br>-highmem<br>-gpu  |<br><br>**defaultQ**<br><br>| 1 day<br>7 days<br>21 days<br>21 days<br>7 days  | 24 / 128 / 24<br>96 / 128 / 32 <br>288 / 288 / 32<br>192 / 192 / 64<br>252 / 252 / 36 | 123 / < 20<br>123 / < 20<br>123 / < 20<br>123-6144 / > 20<br>185 / -- | 10<br>10<br>10<br>50<br>50  |   
-| small express | **small-express** | 12 hours  | 4 / 40 / 4  | 123 / --  | 50  |   
-| scavenger | **scavenger**| 2 days  | 288 / 288 / 24 | 123 / --  | 0 |   
+| -small<br>-normal<br>-large<br>-highmem<br>-gpu  |<br><br>**defaultQ**<br><br>| 1 day<br>7 days<br>21 days<br>21 days<br>7 days  | 24 / 128 / 24<br>96 / 128 / 32 <br>288 / 288 / 32<br>192 / 192 / 64<br>252 / 252 / 36 | 123 / < 20<br>123 / < 20<br>123 / < 20<br>123-6144 / > 20<br>185 / -- | 10<br>10<br>10<br>50<br>50  |      
 | data transfer | **dtq** | 10 days  | 2 / 16 / 2  | 16 / --  | 0 |   
 | interactive | ```qsub -I```  | 4 hours  | 4 / 4 / 4 | 123 / --  | 100 |
 
@@ -39,10 +37,10 @@ There are also a number of additional queues which are not part of **defaultQ**.
 
 | Queue | Purpose |
 |:---:|:---|
-| small-express | For quick jobs that require few resources. |
-| scavenger | Allows jobs to use any idle resources available in other people's _allocations_; however, **your job will be suspended if the allocation owner requests those resources!**<br>Suspended scavenger jobs will be **killed** after 24 hours. |
 | dtq | This queue is reserved for transferring data into or out of Artemis. Users may **not** try to perform computation in these queues, and the system generally won't let you. |
 | interactive | This is the queue for _interactive_ jobs. It can only be accessed via a ```qsub -I``` command. |
+| small-express **DECOMISSIONED** | For quick jobs that require few resources. |
+| scavenger **DECOMISSIONED** | Allows jobs to use any idle resources available in other people's _allocations_; however, **your job will be suspended if the allocation owner requests those resources!**<br>Suspended scavenger jobs will be **killed** after 24 hours. |
 
 
 #### Allocations
