@@ -205,12 +205,10 @@ Lets move into the newly created directory from the tarball extract to inspect f
 
 ~~~
 cd datahpc
-
 cp index.pbs basic.pbs
-
 nano basic.pbs
 ~~~
-
+{: .language-bash}
 
 
 <figure>
@@ -240,7 +238,6 @@ At this point you might be thinking, "Hang on -- don't the shebang and PBS direc
 #PBS -l walltime=00:10:00
 #PBS -q small-express
 ~~~
-{: .language-bash}
 
 Each of these lines declare a PBS directive, telling the scheduler how we would like it to execute our job. Without them, the scheduler has no way to know what resources our job will need. In this example
 
@@ -269,7 +266,6 @@ The next part of our PBS script is reserved for loading Artemis software **modul
 module load bwa/0.7.17
 module load samtools/1.6
 ~~~
-{: .language-bash}
 
 Here we have loaded two bioinformatics programs: **bwa** and **samtools**. Note that we have also specified the **version** of the programs we are asking _modules_ to load for us. This is because software packages sometimes change significantly from version to version, using different _syntax_ to run them, or even different _methods_ internally -- which can lead to different results on the same data!
 
@@ -283,7 +279,6 @@ Finally, we are ready to tell the scheduler what we want it to actually do -- th
 ~~~
 io=/project/Training/YourName
 ~~~
-{: .language-bash}
 
 creates a variable '**io**' which can later be retrieved by using Bash's **$** referencing syntax, as ```$io```. This code is the green section of our [script](#nanobasic):
 
@@ -296,7 +291,6 @@ bwa index -a bwtsw ${io}/canfam3_chr5.fasta
 # SAMtools index:
 samtools faidx ${io}/canfam3_chr5.fasta
 ~~~
-{: .language-bash}
 
 This part of your script will always be the most variable, as it depends most on the software and your project. In fact, you could store the 'directives' section only as a _template_ script that you base all other scripts on.
 
