@@ -19,7 +19,7 @@ ssh -X <unikey>@hpc.sydney.edu.au
 
 ## B. OSX (Mac computers and laptops)
 
-Mac operating systems come with a terminal program, called Terminal. Just look for it in your Applications folder, or hit Command-Space and type 'terminal'. You may find that other, 3rd party terminal programs are more user-friendly and powerful -- I use [Iterm2](https://www.iterm2.com/).
+Mac operating systems come with a terminal program, called Terminal. Just look for it in your Applications folder, or hit Command-Space and type 'terminal'. .
 
 <figure>
   <img src="{{ page.root }}/fig/s_terminal_app.png" width="500">
@@ -70,7 +70,7 @@ Install Ubuntu or some other Linux distro on the Windows Subsystem for Linux see
 If you are not fully comfortable moving data on the command line you can use various file transfer applications. Mac OSX and Linux have the command line tools built in already. Windows users will need to enable WSL and install a Linux distro (or CYGWIN or equivalent) or else use the interactive platforms below.
 
 ## A. FileZilla (Recommended)
-This application can be installed on Windows, Mac OSX and Linux. Use it to make SFTP connections and move data between local and remote machines. Be wary of bundled bloatware on installation. [https://filezilla-project.org/](https://filezilla-project.org/)
+This application can be installed on Windows, Mac OSX and Linux. Use it to make SFTP connections and move data between local and remote machines. **Be wary of bundled bloatware** on installation. [https://filezilla-project.org/](https://filezilla-project.org/)
 
 ## B. WinSCP
 Windows only, a great stand alone application to move data between local and remote computers. 
@@ -82,19 +82,9 @@ Windows only, a great stand alone application to move data between local and rem
 
 If you're attempting this training by yourself, or following on **[Zoom](https://uni-sydney.zoom.us/)**, _off-campus_ then you'll need to connect to the USyd internet network _before_ you can connect to Artemis.
 
-There are a couple ways to do this:
-
-## A. The USyd VPN
+## The Sydney VPN
 
 **VPN** (Virtual Private Network) is a protocol that allows you to tap into a local private network remotely. Follow USyd ICT's instructions [on Service Now](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9). Once you've connected to the Cisco Anyconnect VPN, the above connection methods will work, just as though you were on-campus.
-
-## B. Use the Artemis Jump server
-
-Artemis provides a 'gateway' server, called **Jump**, that allows connections from outside the University network, and is itself on the network. From the Jump server, you can then connect to Artemis directly. If using the Jump server, you will need to edit the **host address** used in the instructions above:
-
-* Instead of **hpc.sydney.edu.au** _use_ **jump.research.sydney.edu.au**
-
-This will connect you to Jump, rather than Artemis itself. You can then connect to Artemis directly via **SSH**. See [Episode 1 of the _Introduction to Artemis HPC_ course]({{ site.sih_pages }}/training.artemis.introhpc/01-intro).
 
 
 # 4. Graphical login nodes (Optional advanced connection)
