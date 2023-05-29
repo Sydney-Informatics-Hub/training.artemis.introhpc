@@ -49,7 +49,7 @@ Better yet, _wait for the instructor_ and we'll go through the quiz all together
 4. How much space are you allocated in project, and how do you check how much you have used?
  
 > ## Answer
-> Space per project: 1 TB, command ‘pquota’
+> Space per project: 1 TB, command ‘pquota’. or `jobstat`
 {: .solution}
 
 5. What log files are produced after a job completes, and what do they contain?
@@ -219,7 +219,7 @@ These requests go straight to the Artemis Service Management team. You can reque
 <br>
 ### Artemis is NOT backed up!
 
-Artemis is **not** intended to be used as a data store. Artemis is not backed up, and has limited space. Any data you have finished working with should be transferred to your **_RCOS_** space.
+Artemis is **not** intended to be used as a data store. Artemis is not backed up, and has limited space. Any data you have finished working with should be transferred to your **__RDS__** space.
 
 How to do this is covered in the next course, [‘_Data transfer and RDS for HPC_’](https://informatics.sydney.edu.au/training/coursedocs/Introduction_to_RDS.pdf)
 
@@ -233,7 +233,7 @@ How to do this is covered in the next course, [‘_Data transfer and RDS for HPC
 
 > ## Course survey!
 >
-> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR&training=12&training_date=2021-12-21)** before you leave!
+> **_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR&training=12)** before you leave!
 >
 > Help us help you! :smiley:
 {: .testimonial}
