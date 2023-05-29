@@ -40,7 +40,7 @@ The script that submits this python code to the scheduler is the ***estimate_pi.
 ~~~
 nano estimate_pi.pbs
 ~~~
-{: .output}
+{: .language-bash}
 
 Things to notice in the script: 
 
@@ -55,7 +55,7 @@ Submit this script to the scheduler. Check the log files for errors and the outp
 ~~~
 qsub estimate_pi.pbs
 ~~~
-{: .output}
+{: .language-bash}
 
 After this, try increasing the simulation number in the pbs script to one million, and practice deleting a job by using the ***qdel*** command with the job number that was printed used as an input argument. Here is an example:
 
@@ -75,30 +75,30 @@ Lets try one more job submission to reinforce the habit. This time we will submi
 
 If you are familiar with Matlab on your local machine, using Matlab is a little different here on Artemis. High performance computers generally work best when engaging software via Linux commands. Applications that rely on graphical interfaces (while achievable with a Nomachine interface or X11 forwarding described earlier) generally are slow and buggy. We will submit a pbs script that executes a Matlab script in the advisable manner that suppresses graphical interaction.
 
-Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material - it's an art in itself - however, we'll get a feel for what we are working with with the ***head*** and ***wc*** commands. 
+Before we begin, lets investigate the underlying data with bash commands. Working with large data files is covered in other training material - it's an art in itself - however, we'll get a feel for what we are working with with the `head` and `wc` commands. 
 
 ~~~
 head airline2008.csv
 wc -l airline2008.csv
 ~~~
-{: .output}
+{: .language-bash}
 
 The output reveals the csv file contains 1,754 rows of flight information containing columns that give arrival and departure time information.
 
 The pbs script ***airline.pbs*** runs Matlab data computations on this csv file. A couple of things to notice are:
 
-a. The extra flags -nodisplay -nosplash suppress the matlab graphical interaction.
+a. The extra flags `-nodisplay -nosplash` suppress the matlab graphical interaction.
 
-b. The command line way to run Matlab with the -r (run) flag. There are a few ways to do it - consult Matlab documentation for more examples. 
+b. The command line way to run Matlab with the `-r` (run) flag. There are a few ways to do it - consult Matlab documentation for more examples. 
 ~~~
 nano airline.pbs
 ~~~
-{: .output}
+{: .language-bash}
 
 ~~~
 qsub airline.pbs
 ~~~
-{: .output}
+{: .language-bash}
 
 If there are no errors, investigate the output file to find out what date incurred the longest flight delays.
 
@@ -117,6 +117,7 @@ The installation has already been run and libraries saved in the "/project/Train
 ~~~
 qsub run_network.pbs
 ~~~
+{: .language-bash}
  
 ___
 <br>
