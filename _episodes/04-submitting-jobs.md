@@ -45,7 +45,7 @@ There are also a number of additional queues which are not part of **defaultQ**.
 
 #### Allocations
 
-**Scavenger** uses idle resources available in _allocations_. An allocation refers to Artemis resources (ie nodes) which have been assigned to certain research groups for priority use. Allocations can be purchased, won, or granted via the [Facilities Access Scheme](https://informatics.sydney.edu.au/services/fas/). Remember, your **scavenger** jobs will be _paused_ (suspended) if the allocation owner requests those resources; they'll be _killed_ if they are suspended for longer than 24 hours. This makes **scavenger** an excellent option if you have many small jobs that you can easily re-run if they happen to be killed; some users get thousands of 'free' CPU-hours from scavenging!
+An allocation refers to Artemis resources (ie nodes) which have been assigned to certain research groups for priority use. Allocations can be purchased, won, or granted via the [Facilities Access Scheme](https://informatics.sydney.edu.au/services/fas/). Remember, your **scavenger** jobs will be _paused_ (suspended) if the allocation owner requests those resources; they'll be _killed_ if they are suspended for longer than 24 hours. This makes **scavenger** an excellent option if you have many small jobs that you can easily re-run if they happen to be killed; some users get thousands of 'free' CPU-hours from scavenging!
 
 
 ## Submitting Jobs
