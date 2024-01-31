@@ -1,0 +1,128 @@
+## Research Data Storage 
+
+### Securely store data for a long duration
+
+Storing data on Artemis is not recommended due to the automatic cleaning of unused data, and the fact that data is not backed up. Its hardware is geared towards processing (compute) rather than long term storage. 
+
+For data storage, we have a dedicated set of machines referred to as the Research Data Store (RDS). The RDS is a central location to securely store research data for a long duration.
+
+Access to RDS is granted and managed through a “Research Data Managment Plan” project completed in the Research Dashboard [DASHR](https://dashr.sydney.edu.au/). More information on RDS can be found [here](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/228589620/Research+Data+Store).
+
+Generally there are three ways you can transfer files to RDS.
+
+1. Use commands (scp or rsync) or a graphical based app (FileZilla) to move files to its remote location.
+
+2. Transfer files from Artmeis to RDS, as the RDS appears as an accessible drive on it.
+
+3. Mount your RDS to your local computer.
+
+
+Lets practice data transfer by moving the [download.pbs](https://github.com/kmarsyd/IntroHPCData) file. "Download ZIP" under the green code button can be used to download it if you are unfamiliar with git. 
+
+
+## Graphical Transfer
+
+### Transfer to Artemis
+
+Download [FileZilla Client](https://filezilla-project.org) which is a cross platform app to transfer data to remote sites.
+
+1. In the **Host** field enter `sftp://hpc.sydney.edu.au`. This is Artemis and files can be transfered from your local computer to here via a secure file transfer protocol. 
+
+2. For your **Username** field enter the same username that you used previously for artemis associated with training. i.e. `ict_hpctrainN` where N is your number between 1 and 20. In the *Password* field, enter the `training password`. 
+
+3. The **Port** field should by default be `22` but sometimes its better to specify it. 
+
+Once connected, you should see the home directory of Artemis on the right pane. Let navigate to the same directory we used earlier. To change to a different directory, in the **Remote Site** field type `/project/Training/`. The right pane should then reflect its contents. Navigate to the same subdirectory you used earlier that sits under Training, i.e. `/project/Training/<yourDirectoryName>`.
+
+*Once the appropriate locations are found, to remotely copy a file drag and drop contents from the left pane to the right.*
+
+
+### Transferring a file to RDS
+
+Using Filezilla, transferring a file to RDS follows a similar process. You first need to connect to the RDS by:
+
+1. In the **Host** field enter either `research-data-ext.sydney.edu.au` or `research-data-int.sydney.edu.au`. Choose the external location (first choice) if you are not on campus (and have your VPN up and running), otherwise the internal (second) choice if you are at campus. 
+
+2. **Credentials** and **Port** number as before. 
+
+Once connected, in the **Remote Site** field type `/rds/PRJ-Training` and enter. Contents on the right pane should now be visible. Once you begin to use your own credentials for your own projects, use /rds/PRJ-NameOfProject instead, where the NameOfProject is the short name of your project as dashr knows it to be. 
+
+
+
+## Using commands
+
+Either scp or rsync commands in your Terminal (Mac and linux: Terminal, Windows: Windows Terminal or Powershell equivalent) can be used as an alternative to graphical applications. Secure copy (scp) is demonstrated below. You will be asked to provide a password (your key strokes will not be shown) and once verified, a status bar will then be displayed showing your copy progress.
+
+On your **Local Terminal** type:
+
+`scp dogScripts.tar.gz  ict_hpctrain<N>@hpc.sydney.edu.au:/project/Training/<yourDirectoryName>`
+
+Where <N> where N is your number between 1 and 20.
+
+
+##  Moving data while on Artemis
+
+### Using the data transfer queue
+Copying small files the above ways is great - except when the files are considerable large. Interuptions to your interconnect connection can corrupt a large transfer. If you are on Artemis, we can instead ‘wrap’ file transfers in a PBS script to ensure your transfer are not hampered by interuptions. 
+
+Lets practice. Using commands on the **Artemis Terminal** extract the compressed file by typing `tar -zxvf dogScripts.tar.gz`. Once files are extracted submit the file transfer to the scheudler by typing `qsub download.pbs`. Notice the in the download.pbs file queue specified is the datatransfer queue. 
+
+### Transfer between RDS and Artemis
+
+As mentioned, the RDS appears as a mount on Artemis. Hence the usual linux commands like cp or rsync are the standard way to transfer files between Artemis and RDS. The following command on the **Artemis Terminal** demonstrates file transfer: 
+
+`cp -v /rds/PRJ-Training/Dog_disease/Ref/* /project/Training/<yourname>`
+
+
+There is an even easier way! Our HPC’s management team have created a handy utility for us called dt-script. This script (full path /usr/local/bin/dt-script for the interested) is a ‘wrapper’ for running rsync in a PBS script. It enables you to perform data transfers as a “one-liner” without the need for a script and the transfer is actually submitted to the data transfer nodes of the cluster (and not running in the foreground of your current terminal).
+
+The syntax for using dt-script is dt-script -P <Project> -f <from> -t <to> 
+
+where -P is the dashr project (short name), from (-f) directory and to (-t) a directory.  
+
+The following steps may work best on the Artemis Production Instance
+
+```module unload training```
+
+On the **Artemis Terminal**:
+
+```dt-script -P Training -f /rds/PRJ-Training/Dog_disease/Ref/ -t /project/Training/<yourDirectoryName>/```
+
+The reverse is the easiest way possible to back up your project on Artemis. Assuming you are situated within the directory containing the data to backup (so that you can make use of pwd shortcut). On the **Artemis Terminal**:
+
+```dt-script -P Training -N backup<yourName> -f `pwd` -t /rds/PRJ-Training``` 
+
+
+## Mounting your RDS on your drive
+
+Keep in mind you must have your VPN on or be at campus for connection to establish.
+
+
+### These steps for Windows 10 are:
+
+1. Click on This PC from the Desktop.
+
+2. On the Computer tab, click on Map network drive in the Network section. Choose a drive letter and enter you the path: `\\shared.sydney.edu.au\research-data`. When asked, please enter shared\<unikey> for the user name.
+    
+3. Click Finish.
+
+
+### These steps for Mac are:
+
+
+To mount on Linux or Mac operating systems, you can use the smb network communication protocol (also known as CIFS) by mounting the path. 
+
+1. Finder > Go > Connect to Server. 
+
+2. In the Server Address use: `smb://shared.sydney.edu.au/research-data`
+
+3. Enter your credentials as a Registered User.
+
+
+### These steps for Linux are:
+
+The command line is the easiest way to mount the RDS is using a tool called sshfs which connects via the ssh protocol and performs file transfers using sftp.
+
+1. Firstly install sshfs `sudo apt install sshfs`. 
+
+2. Create a directory where you want the mounted data to reside `mkdir /home/ubuntu/myRDS` and mount away `sshfs <unikey>@research-data-int.sydney.edu.au:/rds/PRJ-<yourproject> /home/ubuntu/myRDS`. 

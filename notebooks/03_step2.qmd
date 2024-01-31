@@ -1,0 +1,63 @@
+## Practice Makes Perfect - Python, R and Matlab
+
+### Python
+
+
+Now that we know how to submit jobs to the scheduler lets reinforce this by running scripts that run different programming languages.
+
+Investigate the computepi_fire.py python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points.
+
+`nano estimate_pi.pbs`
+
+Things to note:
+
+1. The cd $PBS_O_WORKDIR command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment.
+
+2. The *Multiprocessing* package is used to create a pool of resources (with its owner python interpreter). This package is a solution to the notorious global interpreter lock [GIL](https://wiki.python.org/moin/GlobalInterpreterLock) that prevents multiple threads from executing python at once. 
+
+3. The pbs script that runs computepi_fire.py requires a list of numbers reflecting a simulation number. The larger, the more accurate the approximation of pi. Now is a good chance to look at queue management and practice `qstat -x <jobnumber>, qstat -u <username> and qdel <jobnumber>` commands by increasing the simulation numbers.
+
+
+
+### Matlab
+
+
+If you are familiar with Matlab on your local machine, using Matlab is a little different here on Artemis. High performance computers generally work best when engaging software via Linux commands. Applications that rely on graphical interfaces generally are slow and buggy (Nomachine is recommended if there is no alternative). 
+
+`qsub airline.pbs`
+
+Things to note:
+
+1. The extra flags -nodisplay -nosplash suppress the matlab graphical interaction that become problematic on Artemis.
+
+2. The command line way to run Matlab with the -r (run) flag. Notice the exit that closes the automatic graphical communication that Matlab automatically engages.
+
+
+### R
+
+Running R code on Artemis requires installing and referencing libraries needed for your R script. The recommended way to do this is to use the renv package to replicate libraries and specific versions created locally via a “lockfile”. The lockfile is created by renv. Alternatives installing packages seperately (most likely using a script or interactive queue) and updating the libPaths within R scripts is the simpler option if renv isnt used.
+
+Three example scripts to demostrate using R (with an established renv lock file) are: 
+
+- **install_env.pbs**: Houses the initial setup of installing R libraries to a path you have read / write permissions to. Here /home is used, but in practice it should reside somewhere in your /project directory. The installation has already been run and libraries saved in the “/project/Training/DATA/Libs” folder
+
+- **create_env.R**: Demonstrates how to load an existing lock file and install packages. This is triggered by `install_env.pbs`
+
+- **run_network.pbs** : Main pbs script that references a path where libraries exist
+
+- **network.R** : The main R script that does data manipulation and visualisation via common R libraries including dplyr, plotly and network libraries. Generates a network plot pdf based on flight information
+
+
+`qsub run_network.pbs`
+
+
+Things to note:
+1. If you have installed packages in locations that R is not expecting, it needs to know where to look for installed packages. Updating this via libPaths does this and tells R where to look for libraries.
+
+`.libPaths( c( .libPaths(), "/project/Training/DATA/Libs") )`
+
+
+2. With the pbs script, updating paths that R expect libraries to be in can be done via export command. Example `export R_LIBS_USER=$HOME/R/library`
+
+
+

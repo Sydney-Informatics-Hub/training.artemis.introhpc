@@ -1,0 +1,17 @@
+## More resources
+
+### A place to hold long term, backed up and secure data
+
+
+[Research Computing Wiki](https://sydneyuni.atlassian.net/wiki/spaces/RC/overview)
+
+
+[Learning Linux via Software Carpentry Course](https://swcarpentry.github.io/shell-novice/)
+
+HPC Options other than Artemis
+
+[University of Sydney Research Cloud](https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/1108967637/RONIN+Research+Cloud)
+
+[NCI](https://nci.org.au/)
+
+[Sydney Informatics Hub HPC Scheme](https://www.sydney.edu.au/research/facilities/sydney-informatics-hub/schemes.html)
