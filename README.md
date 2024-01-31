@@ -1,4 +1,4 @@
-# SIH-SMM Image Segmenation Training
+# Introduction to Artemis High Performance Computer
 
 ## File location
 

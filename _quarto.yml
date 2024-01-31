@@ -14,23 +14,23 @@ website:
       - text: Concepts
         menu:
           - text: "General HPC"
-            href: 02_connect.html
+            href: notebooks/02_connect.html
           - text: "Artemis Specific"
-            href: 01_context.html
+            href: notebooks/01_context.html
       - text: Running Code on Artemis
         menu:
           - text: "Hello World on HPC"
-            href: 03_step1.html
+            href: notebooks/03_step1.html
           - text: "Running Common Software on HPC"
-            href: 403_step2.html
+            href: notebooks/03_step2.html
       - text: Research Data Storage
         menu:
           - text: "Research Data Store"
-            href: 03_step3.html
+            href: notebooks/03_step3.html
       - text: More resources
         menu:
           - text: "More resources"
-            href: 03_step4.html
+            href: notebooks/03_step4.html
 
 
 
