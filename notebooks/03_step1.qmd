@@ -16,10 +16,15 @@ The below series of commands will create a folder in a specifc location with the
 On the **Artemis Terminal** type the following commands:
 
 ```cd /project/Training
+
 mkdir <yourname>
+
 cd <yourname>
+
 tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
+
 cd datahpc
+
 cp index.pbs basic.pbs
 ```
 
@@ -35,8 +40,11 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 **nano lines after PBS Declarations**:
 
 ```cd /project/Training/datahpc/<yourname>
+
 mkdir New_job
+
 cp basic.pbs New_job/copy.pbs
+
 perl hello.pl "YourName"
 ```
 

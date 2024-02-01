@@ -7,8 +7,6 @@ website:
   navbar:
     background: primary
     left:
-      - href: index.qmd
-        text: Home
       - href: setup.qmd
         text: "Setup"
       - text: Concepts
