@@ -203,7 +203,11 @@ cookieconsent.run({
   <li><a href="#mac-logon-to-artemis" id="toc-mac-logon-to-artemis" class="nav-link" data-scroll-target="#mac-logon-to-artemis">Mac Logon to Artemis</a></li>
   <li><a href="#windows-logon-to-artemis" id="toc-windows-logon-to-artemis" class="nav-link" data-scroll-target="#windows-logon-to-artemis">Windows Logon to Artemis</a></li>
   </ul></li>
-  <li><a href="#working-on-artemis-with-graphical-applications" id="toc-working-on-artemis-with-graphical-applications" class="nav-link" data-scroll-target="#working-on-artemis-with-graphical-applications">Working on Artemis with Graphical Applications</a></li>
+  <li><a href="#working-on-artemis-with-graphical-applications" id="toc-working-on-artemis-with-graphical-applications" class="nav-link" data-scroll-target="#working-on-artemis-with-graphical-applications">Working on Artemis with Graphical Applications</a>
+  <ul class="collapse">
+  <li><a href="#x11-forwarding" id="toc-x11-forwarding" class="nav-link" data-scroll-target="#x11-forwarding">X11 FORWARDING</a></li>
+  <li><a href="#nomachine" id="toc-nomachine" class="nav-link" data-scroll-target="#nomachine">NOMACHINE</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -244,7 +248,7 @@ cookieconsent.run({
 <section id="credentials-to-access-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="credentials-to-access-artemis">Credentials to Access Artemis</h2>
 <p>You would normally use your unikey and unikey password to access Artemis. For today however, we will be using training logon credentials which are:</p>
-<p><strong>Username:</strong> ict_hpctrain<n>, with N from 1-20 (replace <n> with your assigned number)</n></n></p>
+<p><strong>Username:</strong> <code>ict_hpctrain&lt;N&gt;</code>, with N from 1-20 (replace <n> with your assigned number)</n></p>
 <p><strong>Password</strong>: will be written on the whiteboard!</p>
 <section id="mac-logon-to-artemis" class="level3">
 <h3 class="anchored" data-anchor-id="mac-logon-to-artemis">Mac Logon to Artemis</h3>
@@ -256,24 +260,30 @@ cookieconsent.run({
 <ol type="1">
 <li><p>Open Putty.</p></li>
 <li><p>Fill in the connection details:</p>
-<p><em>Host Name</em>: hpc.sydney.edu.au</p>
-<p><em>Port</em>: 22</p>
-<p><em>Connection type</em>: SSH</p></li>
+<p><em>Host Name</em>: <code>hpc.sydney.edu.au</code></p>
+<p><em>Port</em>: <code>22</code></p>
+<p><em>Connection type</em>: <code>SSH</code></p></li>
 <li><p>Name this session “Artemis” and click ‘Save’</p></li>
 </ol>
 </section>
 </section>
 <section id="working-on-artemis-with-graphical-applications" class="level2">
 <h2 class="anchored" data-anchor-id="working-on-artemis-with-graphical-applications">Working on Artemis with Graphical Applications</h2>
-<p><strong>X11 FORWARDING</strong></p>
+<section id="x11-forwarding" class="level3">
+<h3 class="anchored" data-anchor-id="x11-forwarding">X11 FORWARDING</h3>
 <p>X11 forwarding allows you to run graphical applications on a remote server and have their graphical user interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or other GUI-based tools.</p>
 <p>To use X11 forwarding you need:</p>
 <ol type="1">
-<li><p>Mac Users: <a href="https://www.xquartz.org/">Xquartz</a> up and running, then log on to Artemis by providing the extra X flag. That is: <code>ssh -X &lt;unikey&gt;@hpc.sydney.edu.au</code></p></li>
-<li><p>Windows Users: <a href="https://sourceforge.net/projects/xming/">Xming</a> should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting <em>Enable X11 forwarding</em> in the <em>PuTTY Configuration</em> window (Connection &gt; SSH &gt; X11).</p></li>
+<li>Mac Users: <a href="https://www.xquartz.org/">Xquartz</a> up and running, then log on to Artemis by providing the extra X flag. That is:</li>
+</ol>
+<p><code>ssh -X &lt;unikey&gt;@hpc.sydney.edu.au</code></p>
+<ol start="2" type="1">
+<li>Windows Users: <a href="https://sourceforge.net/projects/xming/">Xming</a> should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting <em>Enable X11 forwarding</em> in the <em>PuTTY Configuration</em> window (Connection &gt; SSH &gt; X11).</li>
 </ol>
 <p>Alternatively for windows users, <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm</a> offers a rich experience as a full-featured X-server and terminal emulator for ssh connections, the free version is more than adequate.</p>
-<p><strong>NOMACHINE</strong></p>
+</section>
+<section id="nomachine" class="level3">
+<h3 class="anchored" data-anchor-id="nomachine">NOMACHINE</h3>
 <p>An alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App. These special are graphics-enabled login servers which host ‘NoMachine’, a kind of remote desktop service.</p>
 <p>Our experience is that no-machine is preferrable when using visualisation software that rely on computation done on the HPC.</p>
 <p><u>To use the graphical login nodes</u>:</p>
@@ -284,6 +294,7 @@ cookieconsent.run({
 <p>Double-click or run the glogin.nxs shortcut you downloaded (it will open NoMachine Client). A NoMachine window should start, asking for a username and password. Replace “YOUR_UNIKEY” with your UniKey, then enter your UniKey password in the password field, then click ‘OK’. A short while later, an Artemis terminal window should open.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
