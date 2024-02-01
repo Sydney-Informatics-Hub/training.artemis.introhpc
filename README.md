@@ -14,7 +14,7 @@
 4. Add additional `*.md` files to the root dir to have them converted to html files (and add them to `_quarto.yml` to make them navigable), if you'd like.
 5. Edit this Readme in your fork to reflect the content of your workshop.
 
-The project will be built and rendered automatically (via github actions) at a URL with this format:
+The project will be built and rendered automatically (via github actions in .github/workflows/) at a URL with this format:
 
 [https://sydney-informatics-hub.github.io/training.artemis.introhpc/](https://sydney-informatics-hub.github.io/training.artemis.introhpc/)
 
