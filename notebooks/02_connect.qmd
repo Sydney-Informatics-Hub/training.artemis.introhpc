@@ -20,9 +20,11 @@ PBS Scripts are how we communicate our requirements to the scheduler. PBS Declar
 
 #PBS -l select=1:ncpus=8:mem=16gb
 
-This specifies 1 node (select=1), with 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB). A series of PBS declarations are housed within a PBS script.
+This specifies a resource request with the flag -l, consisting of 1 node (select=1), 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB). 
 
-Requesting resources is a combination of:
+A series of PBS declarations are housed within a PBS script.
+
+Resource requests are usually a combination of:
 
     select: the number of compute nodes (most often 1 unless MPI is being used)
     ncpus: the number of CPU cores
@@ -30,7 +32,9 @@ Requesting resources is a combination of:
     ngpus: the number of GPU cores
     walltime: the length of time all these resources will be made available to the requesting job
 
+To highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.  
 
+Generally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler contols the queue.
 
 Common PBS Flags are:
 
@@ -39,7 +43,7 @@ Common PBS Flags are:
 | -P     | Project short name                           | Required directive on Artemis                        |
 | -N     | Job name                                     | Name it whatever you like; no spaces        |
 | -l     | Resource request                             | a comination of resources as mentioned        |
-| -q     | Job queue                                    | Defaults to defaultQ. dtq for data transfer only                        |
+| -q     | Job queue                                    | Defaults to defaultQ. Use dtq for data transfer only                        |
 | -M     | Email address                                | Notifications can be sent by email on certain events  |
 | -m     | Email options: abe                           | Receive notification on (a)bort, (b)egin, or (e)nd of jobs  |
 | -I     | Interactive mode                             | Opens a shell terminal with access to the requested resources  |

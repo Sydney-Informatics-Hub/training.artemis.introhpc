@@ -81,98 +81,70 @@
     "href": "setup.html",
     "title": "Setup",
     "section": "",
-    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\n\nIf you are a mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
+    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a Windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\nWSL and Ubuntu (advanced)\n\nIf you are a Mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
   },
   {
     "objectID": "setup.html#essential-software",
     "href": "setup.html#essential-software",
     "title": "Setup",
     "section": "",
-    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\n\nIf you are a mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
+    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a Windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\nWSL and Ubuntu (advanced)\n\nIf you are a Mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
   },
   {
     "objectID": "setup.html#credentials-to-access-artemis",
     "href": "setup.html#credentials-to-access-artemis",
     "title": "Setup",
     "section": "Credentials to Access Artemis",
-    "text": "Credentials to Access Artemis\nYou would normally use your unikey and unikey password to access Artemis. For today however, we will be using training logon credentials which are:\nUsername: ict_hpctrain, with N from 1-20 (replace  with your assigned number)\nPassword: will be written on the whiteboard!\n\nMac Logon to Artemis\nUse the Terminal App. Just look for it in your Applications folder, or hit Command-Space and type ‘terminal’. Then in the terminal enter:\nssh  &lt;unikey&gt;@hpc.sydney.edu.au\n\n\nWindows Logon to Artemis\n\nOpen Putty.\nFill in the connection details:\nHost Name: hpc.sydney.edu.au\nPort: 22\nConnection type: SSH\nName this session “Artemis” and click ‘Save’"
+    "text": "Credentials to Access Artemis\nYou would normally use your unikey and unikey password to access Artemis. For today however, we will be using training logon credentials which are:\nUsername: ict_hpctrain&lt;N&gt;, with N from 1-20 (replace  with your assigned number)\nPassword: will be written on the whiteboard!\n\nMac Logon to Artemis\nUse the Terminal App. Just look for it in your Applications folder, or hit Command-Space and type ‘terminal’. Then in the terminal enter:\nssh  &lt;unikey&gt;@hpc.sydney.edu.au\n\n\nWindows Logon to Artemis\n\nOpen Putty.\nFill in the connection details:\nHost Name: hpc.sydney.edu.au\nPort: 22\nConnection type: SSH\nName this session “Artemis” and click ‘Save’"
   },
   {
     "objectID": "setup.html#working-on-artemis-with-graphical-applications",
     "href": "setup.html#working-on-artemis-with-graphical-applications",
     "title": "Setup",
     "section": "Working on Artemis with Graphical Applications",
-    "text": "Working on Artemis with Graphical Applications\nX11 FORWARDING\nX11 forwarding allows you to run graphical applications on a remote server and have their graphical user interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or other GUI-based tools.\nTo use X11 forwarding you need:\n\nMac Users: Xquartz up and running, then log on to Artemis by providing the extra X flag. That is: ssh -X &lt;unikey&gt;@hpc.sydney.edu.au\nWindows Users: Xming should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting Enable X11 forwarding in the PuTTY Configuration window (Connection &gt; SSH &gt; X11).\n\nAlternatively for windows users, MobaXterm offers a rich experience as a full-featured X-server and terminal emulator for ssh connections, the free version is more than adequate.\nNOMACHINE\nAn alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App. These special are graphics-enabled login servers which host ‘NoMachine’, a kind of remote desktop service.\nOur experience is that no-machine is preferrable when using visualisation software that rely on computation done on the HPC.\nTo use the graphical login nodes:\nDownload and install the NoMachine Enterprise Client for your operating system. Please don’t download the client from NoMachine directly, as their current version may not work with Artemis.\nIf you’re using MacOS, you need to install XQuartz.\nDownload the glogin.nxs session file to your computer.\nTo connect:\nDouble-click or run the glogin.nxs shortcut you downloaded (it will open NoMachine Client). A NoMachine window should start, asking for a username and password. Replace “YOUR_UNIKEY” with your UniKey, then enter your UniKey password in the password field, then click ‘OK’. A short while later, an Artemis terminal window should open."
-  },
-  {
-    "objectID": "CHEATSHEET.html",
-    "href": "CHEATSHEET.html",
-    "title": "Quarto template cheatsheet",
-    "section": "",
-    "text": "Quarto template cheatsheet\nPlease contribute your tips, tricks for use, customisation of this template :)"
+    "text": "Working on Artemis with Graphical Applications\n\nX11 FORWARDING\nX11 forwarding allows you to run graphical applications on a remote server and have their graphical user interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or other GUI-based tools.\nTo use X11 forwarding you need:\n\nMac Users: Xquartz up and running, then log on to Artemis by providing the extra X flag. That is:\n\nssh -X &lt;unikey&gt;@hpc.sydney.edu.au\n\nWindows Users: Xming should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting Enable X11 forwarding in the PuTTY Configuration window (Connection &gt; SSH &gt; X11).\n\nAlternatively for windows users, MobaXterm offers a rich experience as a full-featured X-server and terminal emulator for ssh connections, the free version is more than adequate.\n\n\nNOMACHINE\nAn alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App. These special are graphics-enabled login servers which host ‘NoMachine’, a kind of remote desktop service.\nOur experience is that no-machine is preferrable when using visualisation software that rely on computation done on the HPC.\nTo use the graphical login nodes:\nDownload and install the NoMachine Enterprise Client for your operating system. Please don’t download the client from NoMachine directly, as their current version may not work with Artemis.\nIf you’re using MacOS, you need to install XQuartz.\nDownload the glogin.nxs session file to your computer.\nTo connect:\nDouble-click or run the glogin.nxs shortcut you downloaded (it will open NoMachine Client). A NoMachine window should start, asking for a username and password. Replace “YOUR_UNIKEY” with your UniKey, then enter your UniKey password in the password field, then click ‘OK’. A short while later, an Artemis terminal window should open."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introduction to High Performance Computing",
     "section": "",
-    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor jobs using the PBS Pro scheduler. Students and staff who would like to learn how to run compute jobs on Artemis HPC. Participants must have a valid Sydney University Unikey."
-  },
-  {
-    "objectID": "index.html#watch-the-recording",
-    "href": "index.html#watch-the-recording",
-    "title": "Introduction to High Performance Computing",
-    "section": "Watch the Recording",
-    "text": "Watch the Recording\nThis was delivered as an interactive workshop at Sydney. If you find yourself here in the future feel free to watch the recording:\nComing Soon!"
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "Introduction to High Performance Computing",
-    "section": "Contributors",
-    "text": "Contributors\n\nKris SIH"
+    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor computational jobs using the PBS Pro scheduler.\nTarget audience: Students and staff who would like to learn strategies for accelerating workloads that can be applied to common tools like matlab, python, R and more! Participants must have a valid Sydney University Unikey.\nAll data used in the course can be found here. “Download ZIP” under the green code button can be used to download it if you are unfamiliar with git."
   },
   {
     "objectID": "index.html#course-pre-requisites-and-setup-requirements",
     "href": "index.html#course-pre-requisites-and-setup-requirements",
     "title": "Introduction to High Performance Computing",
     "section": "Course pre-requisites and setup requirements",
-    "text": "Course pre-requisites and setup requirements\nNo previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants will require the Sydney VPN and a terminal client (as per the Setup Instructions provided)."
+    "text": "Course pre-requisites and setup requirements\nNo previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants must have a valid Sydney University Unikey and will require the Sydney VPN and a terminal client (as per the Setup Instructions provided)."
   },
   {
-    "objectID": "index.html#venue",
-    "href": "index.html#venue",
+    "objectID": "index.html#the-sydney-informatics-hub",
+    "href": "index.html#the-sydney-informatics-hub",
     "title": "Introduction to High Performance Computing",
-    "section": "Venue",
-    "text": "Venue\nOnline via Zoom, a link will be shared with registered participants.\n\nZoom etiquette and how we interact\nSessions will be recorded and added to this page. Please interrupt whenever you want! Ideally, have your camera on and interact as much as possible. There will be someone monitoring the chat-window for any questions you would like to post there. Extending for a three-hour duration, our Zoom session incorporates regular breaks and a blend of demonstrative and hands-on material."
+    "section": "The Sydney Informatics hub",
+    "text": "The Sydney Informatics hub\nThis course is brought to you by Sydney Informatics Hub (SIH) is a Core Research Facility of the University of Sydney. Core Research Facilities centralise essential research equipment and services that would otherwise be too expensive or impractical for individual Faculties to purchase and maintain"
   },
   {
-    "objectID": "index.html#code-of-conduct",
-    "href": "index.html#code-of-conduct",
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
     "title": "Introduction to High Performance Computing",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nAs a University of Sydney course, we also want to make sure peopele are aware of our code of conduct. Feel free to move this to an about page as needed.\nExample standard Code of Conduct statement:\nWe expect all attendees of our training to follow our code of conduct, including bullying, harassment and discrimination prevention policies.\nIn order to foster a positive and professional learning environment we encourage the following kinds of behaviours at all our events and on our platforms:\n\nUse welcoming and inclusive language\nBe respectful of different viewpoints and experiences\nGracefully accept constructive criticism\nFocus on what is best for the community\nShow courtesy and respect towards other community members\n\nOur full CoC, with incident reporting guidelines, is available Here."
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nIf you do use Artemis for your research, please acknowledge us! This ensures that we continue to get the funding we need to provide you with what is really a first-grade computing resource. And don’t forget to apply to the Publication Incentive! A suggested acknowledgment might say:\nThe authors acknowledge the Sydney Informatics Hub and the University of Sydney’s high performance computing cluster, Artemis, for providing the computing resources that have contributed to the results reported herein"
   },
   {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
+    "objectID": "index.html#before-training-10-mins",
+    "href": "index.html#before-training-10-mins",
     "title": "Introduction to High Performance Computing",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nIn-depth\n\n\n\n\nArtemis HPC"
-  },
-  {
-    "objectID": "index.html#setup-instructions",
-    "href": "index.html#setup-instructions",
-    "title": "Introduction to High Performance Computing",
-    "section": "Setup Instructions",
-    "text": "Setup Instructions\nPlease attempt to complete the Setup Instructions before the course. We will run through this in the course too."
+    "section": "Before Training (10 mins)",
+    "text": "Before Training (10 mins)\nTo hit the ground running during the training please:\n\n\nRead and install the neccessary apps in the Setup Instructions.\n\n\nRead the general HPC content under Concepts."
   },
   {
     "objectID": "notebooks/02_connect.html",
     "href": "notebooks/02_connect.html",
     "title": "Introduction to High Performance Computing",
     "section": "",
-    "text": "Linux background\nArtemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by Software Carpentry.\nUsing Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:\ncommand [options] [arguments]\nFor instance, This command on your local terminal ls -ltr ~ lists all files in the home directory.\n(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory.\nnano is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.\n\n\nThe Scheduler.\nOn Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via qsub command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue.\nPBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:\n#PBS -l select=1:ncpus=8:mem=16gb\nThis specifies 1 node (select=1), with 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB). A series of PBS declarations are housed within a PBS script.\nRequesting resources is a combination of:\nselect: the number of compute nodes (most often 1 unless MPI is being used)\nncpus: the number of CPU cores\nmem: the amount of RAM\nngpus: the number of GPU cores\nwalltime: the length of time all these resources will be made available to the requesting job\nCommon PBS Flags are:\n\n\n\n\n\n\n\n\nOption\nDescription\nNotes\n\n\n\n\n-P\nProject short name\nRequired directive on Artemis\n\n\n-N\nJob name\nName it whatever you like; no spaces\n\n\n-l\nResource request\na comination of resources as mentioned\n\n\n-q\nJob queue\nDefaults to defaultQ. dtq for data transfer only\n\n\n-M\nEmail address\nNotifications can be sent by email on certain events\n\n\n-m\nEmail options: abe\nReceive notification on (a)bort, (b)egin, or (e)nd of jobs\n\n\n-I\nInteractive mode\nOpens a shell terminal with access to the requested resources\n\n\n\nOther HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same.\nA mention on Home versus Compute Nodes\nOnce you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated."
+    "text": "Linux background\nArtemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by Software Carpentry.\nUsing Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:\ncommand [options] [arguments]\nFor instance, This command on your local terminal ls -ltr ~ lists all files in the home directory.\n(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory.\nnano is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.\n\n\nThe Scheduler.\nOn Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via qsub command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue.\nPBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:\n#PBS -l select=1:ncpus=8:mem=16gb\nThis specifies a resource request with the flag -l, consisting of 1 node (select=1), 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB).\nA series of PBS declarations are housed within a PBS script.\nResource requests are usually a combination of:\nselect: the number of compute nodes (most often 1 unless MPI is being used)\nncpus: the number of CPU cores\nmem: the amount of RAM\nngpus: the number of GPU cores\nwalltime: the length of time all these resources will be made available to the requesting job\nTo highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.\nGenerally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler contols the queue.\nCommon PBS Flags are:\n\n\n\n\n\n\n\n\nOption\nDescription\nNotes\n\n\n\n\n-P\nProject short name\nRequired directive on Artemis\n\n\n-N\nJob name\nName it whatever you like; no spaces\n\n\n-l\nResource request\na comination of resources as mentioned\n\n\n-q\nJob queue\nDefaults to defaultQ. Use dtq for data transfer only\n\n\n-M\nEmail address\nNotifications can be sent by email on certain events\n\n\n-m\nEmail options: abe\nReceive notification on (a)bort, (b)egin, or (e)nd of jobs\n\n\n-I\nInteractive mode\nOpens a shell terminal with access to the requested resources\n\n\n\nOther HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same.\nA mention on Home versus Compute Nodes\nOnce you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated."
   },
   {
     "objectID": "notebooks/03_step2.html",
