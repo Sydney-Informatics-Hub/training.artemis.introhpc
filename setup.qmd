@@ -10,13 +10,15 @@ output:
 
 To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.
 
-If you are a windows users please have one of either apps below installed:
+If you are a **Windows** users please have one of either apps below installed:
 
-1. [Putty](https://putty.org) (recommended)
+1. [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) (recommended)
 
 2. [MobaXterm](https://mobaxterm.mobatek.net/download.html) 
 
-If you are a mac user we will be using the Terminal which comes pre-installed on your device.
+3. [WSL and Ubuntu](https://ubuntu.com/tutorials/tutorial-ubuntu-on-windows#1-overview) (advanced)
+
+If you are a **Mac** user we will be using the Terminal which comes pre-installed on your device.
 
 For all users, if you are not on campus install and/or have your [Cisco Anyconnect VPN](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9)
 up and running. 
