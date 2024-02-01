@@ -119,10 +119,6 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../setup.html"> 
 <span class="menu-text">Setup</span></a>
   </li>  
@@ -215,15 +211,28 @@ cookieconsent.run({
 </ul>
 <p>The below series of commands will create a folder in a specifc location with the <em>/project</em> folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the <em>/project/Training</em> folder and the compressed file housed within it.</p>
 <p>On the <strong>Artemis Terminal</strong> type the following commands:</p>
-<p><code>cd /project/Training mkdir &lt;yourname&gt; cd &lt;yourname&gt; tar -xzvf /project/Training/DATA/intro_hpc.tar.gz cd datahpc cp index.pbs basic.pbs</code></p>
-<p>Creating and running pbs files are how you communicate the the HPC Scheduler which managed your script and the resources of the HPC. Refer to the HPC Context section for more info on what the scheduler does and implications in its use.</p>
-<p>Open up the <strong>nano</strong> <em>text editor</em> and adjust the <em>basic.pbs</em> with:</p>
-<p><code>nano basic.pbs</code></p>
+<p>```cd /project/Training</p>
+<p>mkdir <yourname></yourname></p>
+<p>cd <yourname></yourname></p>
+<p>tar -xzvf /project/Training/DATA/intro_hpc.tar.gz</p>
+<p>cd datahpc</p>
+<p>cp index.pbs basic.pbs</p>
+<pre><code>
+Creating and running pbs files are how you communicate the the HPC Scheduler which managed your script and the resources of the HPC. Refer to the HPC Context section for more info on what the scheduler does and implications in its use.
+
+Open up the **nano** *text editor* and adjust the *basic.pbs* with:
+
+```nano basic.pbs</code></pre>
 <p>We will alter its contents to run a simple hello world script. Specify the <code>Training</code> project and <code>defaultQ</code> queue in the PBS declarations. Delete the existing content below the PBS declarations of basic and add the below content to create a hello world to test Artemis</p>
 <p><strong>nano lines after PBS Declarations</strong>:</p>
-<p><code>cd /project/Training/datahpc/&lt;yourname&gt; mkdir New_job cp basic.pbs New_job/copy.pbs perl hello.pl "YourName"</code></p>
-<p>Submit the <em>basic.pbs</em> script to the scheduler with</p>
-<p><code>qsub basic.pbs</code></p>
+<p>```cd /project/Training/datahpc/<yourname></yourname></p>
+<p>mkdir New_job</p>
+<p>cp basic.pbs New_job/copy.pbs</p>
+<p>perl hello.pl “YourName”</p>
+<pre><code>
+Submit the *basic.pbs* script to the scheduler with 
+
+```qsub basic.pbs</code></pre>
 <p>How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the <code>#PBS -N</code> flag and includes the job number printed when qsub was engaged.</p>
 
 
