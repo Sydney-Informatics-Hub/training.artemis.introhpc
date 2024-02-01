@@ -53,14 +53,14 @@
     "href": "setup.html",
     "title": "Setup",
     "section": "",
-    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\n\nIf you are a mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
+    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a Windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\nWSL and Ubuntu (advanced)\n\nIf you are a Mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
   },
   {
     "objectID": "setup.html#essential-software",
     "href": "setup.html#essential-software",
     "title": "Setup",
     "section": "",
-    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\n\nIf you are a mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
+    "text": "To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.\nIf you are a Windows users please have one of either apps below installed:\n\nPutty (recommended)\nMobaXterm\nWSL and Ubuntu (advanced)\n\nIf you are a Mac user we will be using the Terminal which comes pre-installed on your device.\nFor all users, if you are not on campus install and/or have your Cisco Anyconnect VPN up and running."
   },
   {
     "objectID": "setup.html#credentials-to-access-artemis",
