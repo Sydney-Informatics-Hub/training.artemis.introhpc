@@ -15,7 +15,8 @@ The below series of commands will create a folder in a specifc location with the
 
 On the **Artemis Terminal** type the following commands:
 
-```cd /project/Training
+```
+cd /project/Training
 
 mkdir <yourname>
 
@@ -39,7 +40,8 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 
 **nano lines after PBS Declarations**:
 
-```cd /project/Training/datahpc/<yourname>
+```
+cd /project/Training/datahpc/<yourname>
 
 mkdir New_job
 
