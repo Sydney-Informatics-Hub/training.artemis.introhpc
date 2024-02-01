@@ -1,4 +1,4 @@
-### Linux background
+## Linux background
 
 Artemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by [Software Carpentry](https://swcarpentry.github.io/shell-novice/). 
 
@@ -8,29 +8,30 @@ command [options] [arguments]
 
 For instance, This command on your **local terminal** `ls -ltr ~` lists all files in the home directory. 
 
-(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory. 
+(`ls`) is the command. Options include: long format (`-l`), sorted by modification time (`-t`) in reverse order with the most recently modified files appearing at the bottom (`-r`). The argument is (`~`) which is shorthand for the home directory. 
 
 
 **nano** is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.
 
-### The Scheduler.
+## The Scheduler.
 On Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via `qsub` command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue. 
 
 PBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:
 
-#PBS -l select=1:ncpus=8:mem=16gb
+```#PBS -l select=1:ncpus=8:mem=16gb
+```
 
-This specifies a resource request with the flag -l, consisting of 1 node (select=1), 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB). 
+This specifies a resource request with the flag `-l`, consisting of 1 node (`select=1`), 8 CPUs (`ncpus=8`) and 16 GB of RAM (`mem=16GB`). 
 
 A series of PBS declarations are housed within a PBS script.
 
 Resource requests are usually a combination of:
 
-    select: the number of compute nodes (most often 1 unless MPI is being used)
-    ncpus: the number of CPU cores
-    mem: the amount of RAM
-    ngpus: the number of GPU cores
-    walltime: the length of time all these resources will be made available to the requesting job
+* `select`: the number of compute nodes (most often 1 unless MPI is being used)
+* `ncpus`: the number of CPU cores
+* `mem`: the amount of RAM
+* `ngpus`: the number of GPU cores
+* `walltime`: the length of time all these resources will be made available to the requesting job
 
 To highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.  
 
@@ -52,8 +53,8 @@ Common PBS Flags are:
 
 Other HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same. 
 
-<u>A mention on Home versus Compute Nodes</u>
+## Login vs Compute Nodes
 
-Once you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated.
+Once you logon on to Artemis you are placed on the *login* nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the *login* nodes to the *compute* nodes that access larger resources. 
 
 

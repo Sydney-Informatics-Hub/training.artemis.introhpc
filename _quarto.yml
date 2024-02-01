@@ -3,34 +3,34 @@ project:
   output-dir: docs
 
 website:
-  title: "Introduction to High Performance Computing"
+  title: "Introduction to HPC"
   navbar:
     background: primary
     left:
       - href: index.qmd
         text: Home
-      - href: setup.html
+      - href: setup.qmd
         text: "Setup"
       - text: Concepts
         menu:
           - text: "General HPC"
-            href: notebooks/02_connect.html
+            href: notebooks/02_connect.qmd
           - text: "Artemis Specific"
-            href: notebooks/01_context.html
+            href: notebooks/01_context.qmd
       - text: Running Code on Artemis
         menu:
           - text: "Hello World on HPC"
-            href: notebooks/03_step1.html
+            href: notebooks/03_step1.qmd
           - text: "Running Common Software on HPC"
-            href: notebooks/03_step2.html
+            href: notebooks/03_step2.qmd
       - text: Research Data Storage
         menu:
           - text: "Research Data Store"
-            href: notebooks/03_step3.html
+            href: notebooks/03_step3.qmd
       - text: More resources
         menu:
           - text: "More resources"
-            href: notebooks/03_step4.html
+            href: notebooks/03_step4.qmd
 
 
 
