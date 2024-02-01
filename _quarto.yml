@@ -49,9 +49,9 @@ format:
    css: [styles.scss]
    quarto-margin-sidebar:
      max-width: 1000px
-   theme:
-      light: flatly
-      dark: darkly
+   theme: simplex
+      # light: flatly
+      # dark: darkly
 
    code-link: true
    code-fold: false

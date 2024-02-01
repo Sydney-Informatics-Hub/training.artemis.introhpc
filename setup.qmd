@@ -6,7 +6,9 @@ output:
     toc_float: false
 ---
 
-## Essential Software:
+## Essential Software
+
+### Terminal
 
 To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.
 
@@ -20,6 +22,8 @@ If you are a **Windows** users please have one of either apps below installed:
 
 If you are a **Mac** user we will be using the Terminal which comes pre-installed on your device.
 
+### VPN
+
 For all users, if you are not on campus install and/or have your [Cisco Anyconnect VPN](https://sydneyuni.service-now.com/sm?id=kb_article_view&sysparm_article=KB0011049&sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9)
 up and running. 
 
@@ -27,19 +31,21 @@ up and running.
 
 ## Credentials to Access Artemis
 
-You would normally use your unikey and unikey password to access Artemis. For today however, we will be using training logon credentials which are:
+You would normally use your unikey and unikey password to access Artemis. For the course you will be using training credentials. which will give access to the `Training` project:
 
 **Username:** `ict_hpctrain<N>`, with N from 1-20 (replace <N> with your assigned number)
 
-**Password**: will be written on the whiteboard!
+**Password**: to be provided.
 
 
 
 ### Mac Logon to Artemis
 
-Use the Terminal App. Just look for it in your Applications folder, or hit Command-Space and type ‘terminal'. Then in the terminal enter:
+Use the *Terminal App*. Found in your Applications folder, or hit `Command-Space` and type `terminal`. Then in the terminal enter:
 
-`ssh  <unikey>@hpc.sydney.edu.au`
+
+```ssh  <unikey>@hpc.sydney.edu.au
+```
 
 
 
@@ -58,41 +64,45 @@ Use the Terminal App. Just look for it in your Applications folder, or hit Comma
 3. Name this session “Artemis” and click ‘Save’
 
 
-
 ## Working on Artemis with Graphical Applications
 
 ### X11 FORWARDING
 
-X11 forwarding allows you to run graphical applications on a remote server and have their graphical user interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or other GUI-based tools.
+X11 forwarding allows you to run graphical applications on a remote server and have their Graphical User Interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or any other GUI-based tools.
 
-To use X11 forwarding you need:
+To use X11 forwarding you need to install additional tools and tweak the way you connect. Recommendtions are as follows.
 
-1. Mac Users:  [Xquartz](https://www.xquartz.org/) up and running, then log on to Artemis by providing the extra X flag. That is: 
+#### Mac Users
 
-`ssh -X <unikey>@hpc.sydney.edu.au`
+You will need to install and start [Xquartz](https://www.xquartz.org/). Then log in to Artemis by providing the extra `-X` flag. That is: 
 
-2. Windows Users: [Xming](https://sourceforge.net/projects/xming/) should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting *Enable X11 forwarding* in the *PuTTY Configuration* window (Connection > SSH > X11).
+```ssh -X <unikey>@hpc.sydney.edu.au
+```
 
-Alternatively for windows users, [MobaXterm](https://mobaxterm.mobatek.net/download.html) offers a rich experience as a full-featured X-server and terminal emulator for ssh connections, the free version is more than adequate.
+#### Windows Users 
+
+You will need to install and start [Xming](https://sourceforge.net/projects/xming/). Then in *PuTTY*, you can enable X11 forwarding in a new or saved SSH sessions by selecting *Enable X11 forwarding* in the *PuTTY Configuration* window (Connection > SSH > X11).
+
+Alternatively, [MobaXterm](https://mobaxterm.mobatek.net/download.html) offers a rich experience as a full-featured X-server and terminal emulator for SSH connections, the free version is more than adequate.
 
 ### NOMACHINE
 
 An alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App.
-These special are graphics-enabled login servers which host ‘NoMachine’, a kind of remote desktop service.
+These special are graphics-enabled login servers which host *NoMachine*, a kind of remote desktop service.
 
 Our experience is that no-machine is preferrable when using visualisation software that rely on computation done on the HPC.
 
-<u>To use the graphical login nodes</u>:
+To use the graphical login nodes:
 
 Download and install the [NoMachine Enterprise Client](https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/) for your operating system. Please don’t download the client from NoMachine directly, as their current version may not work with Artemis.
 
 If you’re using MacOS, you need to install [XQuartz](https://www.xquartz.org).
 
-Download the [glogin.nxs](https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/glogin.nxs) session file to your computer.
+Download the [glogin.nxs](https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/glogin.nxs) session configuration file to your computer.
 
 To connect:
 
-Double-click or run the glogin.nxs shortcut you downloaded (it will open NoMachine Client).
+Double-click or run the `glogin.nxs` shortcut you downloaded (it will open NoMachine Client).
 A NoMachine window should start, asking for a username and password.
-Replace “YOUR_UNIKEY” with your UniKey, then enter your UniKey password in the password field, then click ‘OK’.
+Replace `YOUR_UNIKEY` with your UniKey, then enter your UniKey password in the password field, then click *OK*.
 A short while later, an Artemis terminal window should open.
