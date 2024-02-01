@@ -81,21 +81,7 @@
     "href": "index.html",
     "title": "Introduction to High Performance Computing",
     "section": "",
-    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor jobs using the PBS Pro scheduler. Students and staff who would like to learn how to run compute jobs on Artemis HPC.\nAll data used in the course can be found here. “Download ZIP” under the green code button can be used to download it if you are unfamiliar with git."
-  },
-  {
-    "objectID": "index.html#watch-the-recording",
-    "href": "index.html#watch-the-recording",
-    "title": "Introduction to High Performance Computing",
-    "section": "Watch the Recording",
-    "text": "Watch the Recording\nThis was delivered as an interactive workshop at Sydney. If you find yourself here in the future feel free to watch the recording:\nComing Soon!"
-  },
-  {
-    "objectID": "index.html#contributors",
-    "href": "index.html#contributors",
-    "title": "Introduction to High Performance Computing",
-    "section": "Contributors",
-    "text": "Contributors\n\nKris SIH"
+    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor computational jobs using the PBS Pro scheduler.\nTarget audience: Students and staff who would like to learn strategies for accelerating workloads that can be applied to common tools like matlab, python, R and more! Participants must have a valid Sydney University Unikey.\nAll data used in the course can be found here. “Download ZIP” under the green code button can be used to download it if you are unfamiliar with git."
   },
   {
     "objectID": "index.html#course-pre-requisites-and-setup-requirements",
@@ -110,27 +96,6 @@
     "title": "Introduction to High Performance Computing",
     "section": "The Sydney Informatics hub",
     "text": "The Sydney Informatics hub\nThis course is brought to you by Sydney Informatics Hub (SIH) is a Core Research Facility of the University of Sydney. Core Research Facilities centralise essential research equipment and services that would otherwise be too expensive or impractical for individual Faculties to purchase and maintain"
-  },
-  {
-    "objectID": "index.html#venue",
-    "href": "index.html#venue",
-    "title": "Introduction to High Performance Computing",
-    "section": "Venue",
-    "text": "Venue\nOnline via Zoom, a link will be shared with registered participants.\n\nZoom etiquette and how we interact\nSessions will be recorded and added to this page. Please interrupt whenever you want! Ideally, have your camera on and interact as much as possible. There will be someone monitoring the chat-window for any questions you would like to post there. Extending for a three-hour duration, our Zoom session incorporates regular breaks and a blend of demonstrative and hands-on material."
-  },
-  {
-    "objectID": "index.html#code-of-conduct",
-    "href": "index.html#code-of-conduct",
-    "title": "Introduction to High Performance Computing",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nAs a University of Sydney course, we also want to make sure peopele are aware of our code of conduct. Feel free to move this to an about page as needed.\nExample standard Code of Conduct statement:\nWe expect all attendees of our training to follow our code of conduct, including bullying, harassment and discrimination prevention policies.\nIn order to foster a positive and professional learning environment we encourage the following kinds of behaviours at all our events and on our platforms:\n\nUse welcoming and inclusive language\nBe respectful of different viewpoints and experiences\nGracefully accept constructive criticism\nFocus on what is best for the community\nShow courtesy and respect towards other community members\n\nOur full CoC, with incident reporting guidelines, is available Here."
-  },
-  {
-    "objectID": "index.html#schedule",
-    "href": "index.html#schedule",
-    "title": "Introduction to High Performance Computing",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nIn-depth\n\n\n\n\nArtemis HPC"
   },
   {
     "objectID": "index.html#acknowledgements",
@@ -207,6 +172,6 @@
     "href": "notebooks/02_connect.html",
     "title": "Introduction to High Performance Computing",
     "section": "",
-    "text": "Linux background\nArtemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by Software Carpentry.\nUsing Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:\ncommand [options] [arguments]\nFor instance, This command on your local terminal ls -ltr ~ lists all files in the home directory.\n(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory.\nnano is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.\n\n\nThe Scheduler.\nOn Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via qsub command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue.\nPBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:\n#PBS -l select=1:ncpus=8:mem=16gb\nThis specifies 1 node (select=1), with 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB). A series of PBS declarations are housed within a PBS script.\nRequesting resources is a combination of:\nselect: the number of compute nodes (most often 1 unless MPI is being used)\nncpus: the number of CPU cores\nmem: the amount of RAM\nngpus: the number of GPU cores\nwalltime: the length of time all these resources will be made available to the requesting job\nCommon PBS Flags are:\n\n\n\n\n\n\n\n\nOption\nDescription\nNotes\n\n\n\n\n-P\nProject short name\nRequired directive on Artemis\n\n\n-N\nJob name\nName it whatever you like; no spaces\n\n\n-l\nResource request\na comination of resources as mentioned\n\n\n-q\nJob queue\nDefaults to defaultQ. dtq for data transfer only\n\n\n-M\nEmail address\nNotifications can be sent by email on certain events\n\n\n-m\nEmail options: abe\nReceive notification on (a)bort, (b)egin, or (e)nd of jobs\n\n\n-I\nInteractive mode\nOpens a shell terminal with access to the requested resources\n\n\n\nOther HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same.\nA mention on Home versus Compute Nodes\nOnce you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated."
+    "text": "Linux background\nArtemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by Software Carpentry.\nUsing Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:\ncommand [options] [arguments]\nFor instance, This command on your local terminal ls -ltr ~ lists all files in the home directory.\n(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory.\nnano is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.\n\n\nThe Scheduler.\nOn Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via qsub command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue.\nPBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:\n#PBS -l select=1:ncpus=8:mem=16gb\nThis specifies a resource request with the flag -l, consisting of 1 node (select=1), 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB).\nA series of PBS declarations are housed within a PBS script.\nResource requests are usually a combination of:\nselect: the number of compute nodes (most often 1 unless MPI is being used)\nncpus: the number of CPU cores\nmem: the amount of RAM\nngpus: the number of GPU cores\nwalltime: the length of time all these resources will be made available to the requesting job\nTo highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.\nGenerally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler contols the queue.\nCommon PBS Flags are:\n\n\n\n\n\n\n\n\nOption\nDescription\nNotes\n\n\n\n\n-P\nProject short name\nRequired directive on Artemis\n\n\n-N\nJob name\nName it whatever you like; no spaces\n\n\n-l\nResource request\na comination of resources as mentioned\n\n\n-q\nJob queue\nDefaults to defaultQ. Use dtq for data transfer only\n\n\n-M\nEmail address\nNotifications can be sent by email on certain events\n\n\n-m\nEmail options: abe\nReceive notification on (a)bort, (b)egin, or (e)nd of jobs\n\n\n-I\nInteractive mode\nOpens a shell terminal with access to the requested resources\n\n\n\nOther HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same.\nA mention on Home versus Compute Nodes\nOnce you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated."
   }
 ]
