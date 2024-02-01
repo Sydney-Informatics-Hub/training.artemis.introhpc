@@ -16,7 +16,7 @@ All data used in the course can be found [here](https://github.com/kmarsyd/Intro
 
 ## Course pre-requisites and setup requirements
 
-No previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants must have a valid Sydney University Unikey and will require the Sydney VPN and a terminal client (as per the [Setup Instructions](./setup.html) provided).
+No previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants must have a valid Sydney University Unikey and will require the Sydney VPN and a terminal client (as per the [Setup Instructions](./setup.qmd) provided).
 
 ## The Sydney Informatics hub
 
@@ -25,17 +25,17 @@ This course is brought to you by [Sydney Informatics Hub (SIH)](https://informat
 
 ## Acknowledgements
 
-If you do use Artemis for your research, please acknowledge us! This ensures that we continue to get the funding we need to provide you with what is really a first-grade computing resource. And don’t forget to apply to the Publication Incentive! A suggested acknowledgment might say:
+If you do use Artemis for your research, please acknowledge us! This ensures that we continue to get the funding we need to provide you with a first-grade computing resource. A suggested acknowledgment might say:
 
-`The authors acknowledge the Sydney Informatics Hub and the University of Sydney’s high performance computing cluster, Artemis, for providing the computing resources that have contributed to the results reported herein`
+`The authors acknowledge the Sydney Informatics Hub and the University of Sydney’s high performance computing cluster, Artemis, for providing the computing resources that have contributed to the results reported herein.`
 
 
 ## Before Training (10 mins)
 
 To hit the ground running during the training please:
 
-* 1. Read and install the neccessary apps in the [Setup Instructions](./setup.html).
+1. Read and install the neccessary apps in the [Setup Instructions](./setup.html).
 
-* 2. Read the general HPC content under [Concepts](./notebooks/02_connect.qmd).
+2. Read the general HPC content under [Concepts](./notebooks/02_connect.qmd).
 
 

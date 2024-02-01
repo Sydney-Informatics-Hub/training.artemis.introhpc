@@ -1,3 +1,5 @@
+# Artemis as a Remote Server
+
 ## Linux background
 
 Artemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by [Software Carpentry](https://swcarpentry.github.io/shell-novice/). 
