@@ -194,15 +194,17 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-use-artemis" id="toc-why-use-artemis" class="nav-link active" data-scroll-target="#why-use-artemis">Why use Artemis</a></li>
-  <li><a href="#what-is-artemis" id="toc-what-is-artemis" class="nav-link" data-scroll-target="#what-is-artemis">What is Artemis</a></li>
-  <li><a href="#specifically-what-is-different-in-artemis" id="toc-specifically-what-is-different-in-artemis" class="nav-link" data-scroll-target="#specifically-what-is-different-in-artemis">Specifically what is different in Artemis</a>
+  <li><a href="#artemis-as-a-hpc" id="toc-artemis-as-a-hpc" class="nav-link active" data-scroll-target="#artemis-as-a-hpc">Artemis as a HPC</a>
   <ul class="collapse">
-  <li><a href="#home" id="toc-home" class="nav-link" data-scroll-target="#home">home</a></li>
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">project</a></li>
-  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">scratch</a></li>
-  <li><a href="#key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" id="toc-key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" class="nav-link" data-scroll-target="#key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months">Key Point: Inactive data in /project is wiped after 6 months, and in /scratch after 3 months!</a></li>
+  <li><a href="#why-use-artemis" id="toc-why-use-artemis" class="nav-link" data-scroll-target="#why-use-artemis">Why use Artemis</a></li>
+  <li><a href="#what-is-artemis" id="toc-what-is-artemis" class="nav-link" data-scroll-target="#what-is-artemis">What is Artemis</a></li>
+  <li><a href="#navigating-artemis" id="toc-navigating-artemis" class="nav-link" data-scroll-target="#navigating-artemis">Navigating Artemis</a>
+  <ul class="collapse">
+  <li><a href="#home" id="toc-home" class="nav-link" data-scroll-target="#home">/home</a></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">/project</a></li>
+  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
   <li><a href="#artemis-specific-applications" id="toc-artemis-specific-applications" class="nav-link" data-scroll-target="#artemis-specific-applications">Artemis specific applications</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,6 +215,8 @@ cookieconsent.run({
 
 
 
+<section id="artemis-as-a-hpc" class="level1">
+<h1>Artemis as a HPC</h1>
 <section id="why-use-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="why-use-artemis">Why use Artemis</h2>
 <p>Artemis is ideal for calculations that require:</p>
@@ -228,22 +232,24 @@ cookieconsent.run({
 <section id="what-is-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-artemis">What is Artemis</h2>
 <p>Artemis is the University of Sydney’s High Performance Computer. Technically, Artemis is a computing cluster, which is a whole lot of individual computers networked together. At present, Artemis consists of:</p>
-<p>7,636 cores (CPUs)</p>
-<p>45 TB of RAM</p>
-<p>108 NVIDIA V100 GPUs</p>
-<p>378 TB of storage</p>
-<p>56 Gbps FDR InfiniBand (networking)</p>
-<p>Artemis computers (which we’ll call machines or nodes) run a Linux operating system, ‘CentOS’ v6.10. Computing performed on Artemis nodes is managed by a scheduler, and ours is an instance of ‘PBS Pro’.</p>
+<ul>
+<li>7,636 cores (CPUs)</li>
+<li>45 TB of RAM</li>
+<li>108 NVIDIA V100 GPUs</li>
+<li>378 TB of storage</li>
+<li>56 Gbps FDR InfiniBand (networking)</li>
+</ul>
+<p>Artemis computers (which we call <em>machines</em> or <em>nodes</em>) run a Linux operating system, <em>CentOS v6.10</em>. Computing performed on Artemis nodes is managed by a scheduler, and ours is an instance of <em>PBS Pro</em>.</p>
 </section>
-<section id="specifically-what-is-different-in-artemis" class="level2">
-<h2 class="anchored" data-anchor-id="specifically-what-is-different-in-artemis">Specifically what is different in Artemis</h2>
+<section id="navigating-artemis" class="level2">
+<h2 class="anchored" data-anchor-id="navigating-artemis">Navigating Artemis</h2>
 <p>As Artemis runs on a linux operating system, many of the folders and structure of them adhere to standard linux file systems. This includes a root folder <code>/</code> and a tree like structure from it that includes things like binaries <code>/bin</code>, temporary files <code>/tmp</code>, configuration files <code>/ etc</code> etc etc…There are a few exceptions that are specific to Artmemis, notably /home, /project, and /scratch.</p>
 <section id="home" class="level3">
-<h3 class="anchored" data-anchor-id="home">home</h3>
+<h3 class="anchored" data-anchor-id="home">/home</h3>
 <p><code>/home</code> is your home directory. Every user on Artemis (and any Linux system) has a home directory located at /home/<username>. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis, this is where you’ll end up: home</username></p>
 </section>
 <section id="project" class="level3">
-<h3 class="anchored" data-anchor-id="project">project</h3>
+<h3 class="anchored" data-anchor-id="project">/project</h3>
 <p>The <code>/project</code> branch is where researchers on a project should keep all the data and programs or scripts that are currently being used. We say ‘currently’ because project directories are allocated only 1 TB of storage space – that may sound like a lot, but this space is shared between all users of your project, and it runs out faster than you think. Data that you’re not currently working on should be deleted or moved back to its permanent storage location (which should be the Research Data Store1).</p>
 <p>This also means that everyone working on your project can see all files in the project directory by default.</p>
 <p>Project directories are all subfolders of /project, and will have names like:</p>
@@ -251,17 +257,41 @@ cookieconsent.run({
 <p>which take the form <code>/RDS-&lt;Faculty&gt;-&lt;Short_name&gt;-RW</code></p>
 </section>
 <section id="scratch" class="level3">
-<h3 class="anchored" data-anchor-id="scratch">scratch</h3>
-<p>Every project also has a /scratch directory, at /scratch/<short_name>. Short_name is the short name of the project as defined by dashr. /scratch is where you should actually perform your computations. What does this mean? If your workflow:</short_name></p>
-<pre><code>Has big data inputs
-Generates big data outputs
-Generates lots of intermediate data files which are not needed afterward</code></pre>
-<p>then you should put and save this data in your /scratch space. The reasons are that you are not limited to 1 TB of space in /scratch as you are in /project, and there is also no reason to clutter up your shared project directories with temporary files. Once your computation is complete, simply copy the important or re-used inputs and outputs back to your /project folder, and delete your data in /scratch – that’s why it’s called scratch!</p>
-</section>
-<section id="key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" class="level3">
-<h3 class="anchored" data-anchor-id="key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months">Key Point: Inactive data in /project is wiped after 6 months, and in /scratch after 3 months!</h3>
+<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
+<p>Every project also has a <code>/scratch</code> directory, at <code>/scratch/&lt;Short_name&gt;</code>. <code>Short_name</code> is the short name of the project as defined by dashr. <code>/scratch</code> is where you should actually perform your computations. What does this mean? If your workflow:</p>
+<ul>
+<li>Has big data inputs</li>
+<li>Generates big data outputs</li>
+<li>Generates lots of intermediate data files which are not needed afterward</li>
+</ul>
+<p>then you should put and save this data in your <code>/scratch</code> space. The reasons are that you are not limited to 1 TB of space in <code>/scratch</code> as you are in <code>/project</code>, and there is also no reason to clutter up your shared project directories with temporary files. Once your computation is complete, simply copy the important or re-used inputs and outputs back to your <code>/project</code> folder (or better yet, your <code>/rds</code> folder), and delete your data in <code>/scratch</code> – that’s why it’s called scratch!</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Data Deletion Policy">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Deletion Policy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Key Point: Inactive data in <code>/project</code> is wiped after <strong>6 months</strong>, and in <code>/scratch</code> after <strong>3 months</strong>! And Artemis is not backed up, at all.</p>
+</div>
+</div>
 <p>The reason an automatic cleanup process occurs is that HPC’s are shared resources, and while its resources are large, if resources become consumed it start to not run properly for all users.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="/rds">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+/rds
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Data you want to keep should be moved onto the Research Data Store (RDS) - More on that later.</p>
+</div>
+</div>
 </section>
 <section id="artemis-specific-applications" class="level3">
 <h3 class="anchored" data-anchor-id="artemis-specific-applications">Artemis specific applications</h3>
@@ -334,6 +364,7 @@ Generates lots of intermediate data files which are not needed afterward</code><
 </table>
 
 
+</section>
 </section>
 </section>
 

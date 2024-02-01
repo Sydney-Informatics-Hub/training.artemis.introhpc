@@ -194,9 +194,12 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linux-background" id="toc-linux-background" class="nav-link active" data-scroll-target="#linux-background">Linux background</a></li>
+  <li><a href="#artemis-as-a-remote-server" id="toc-artemis-as-a-remote-server" class="nav-link active" data-scroll-target="#artemis-as-a-remote-server">Artemis as a Remote Server</a>
+  <ul class="collapse">
+  <li><a href="#linux-background" id="toc-linux-background" class="nav-link" data-scroll-target="#linux-background">Linux background</a></li>
   <li><a href="#the-scheduler." id="toc-the-scheduler." class="nav-link" data-scroll-target="#the-scheduler.">The Scheduler.</a></li>
   <li><a href="#login-vs-compute-nodes" id="toc-login-vs-compute-nodes" class="nav-link" data-scroll-target="#login-vs-compute-nodes">Login vs Compute Nodes</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -206,6 +209,8 @@ cookieconsent.run({
 
 
 
+<section id="artemis-as-a-remote-server" class="level1">
+<h1>Artemis as a Remote Server</h1>
 <section id="linux-background" class="level2">
 <h2 class="anchored" data-anchor-id="linux-background">Linux background</h2>
 <p>Artemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a>.</p>
@@ -291,6 +296,7 @@ cookieconsent.run({
 <p>Once you logon on to Artemis you are placed on the <em>login</em> nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the <em>login</em> nodes to the <em>compute</em> nodes that access larger resources.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
