@@ -74,7 +74,7 @@
     "href": "index.html",
     "title": "Introduction to High Performance Computing",
     "section": "",
-    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor jobs using the PBS Pro scheduler. Students and staff who would like to learn how to run compute jobs on Artemis HPC. Participants must have a valid Sydney University Unikey."
+    "text": "Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor jobs using the PBS Pro scheduler. Students and staff who would like to learn how to run compute jobs on Artemis HPC.\nAll data used in the course can be found here. “Download ZIP” under the green code button can be used to download it if you are unfamiliar with git."
   },
   {
     "objectID": "index.html#watch-the-recording",
@@ -95,7 +95,14 @@
     "href": "index.html#course-pre-requisites-and-setup-requirements",
     "title": "Introduction to High Performance Computing",
     "section": "Course pre-requisites and setup requirements",
-    "text": "Course pre-requisites and setup requirements\nNo previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants will require the Sydney VPN and a terminal client (as per the Setup Instructions provided)."
+    "text": "Course pre-requisites and setup requirements\nNo previous programming experience is required, this training course will introduce you to fundamentals of the various tools (unix/linux, HPC) as required. Training will be delivered online, so you will need access to a modern computer with a stable internet connection. Participants must have a valid Sydney University Unikey and will require the Sydney VPN and a terminal client (as per the Setup Instructions provided)."
+  },
+  {
+    "objectID": "index.html#the-sydney-informatics-hub",
+    "href": "index.html#the-sydney-informatics-hub",
+    "title": "Introduction to High Performance Computing",
+    "section": "The Sydney Informatics hub",
+    "text": "The Sydney Informatics hub\nThis course is brought to you by Sydney Informatics Hub (SIH) is a Core Research Facility of the University of Sydney. Core Research Facilities centralise essential research equipment and services that would otherwise be too expensive or impractical for individual Faculties to purchase and maintain"
   },
   {
     "objectID": "index.html#venue",
@@ -119,11 +126,18 @@
     "text": "Schedule\n\n\n\nIn-depth\n\n\n\n\nArtemis HPC"
   },
   {
-    "objectID": "index.html#setup-instructions",
-    "href": "index.html#setup-instructions",
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
     "title": "Introduction to High Performance Computing",
-    "section": "Setup Instructions",
-    "text": "Setup Instructions\nPlease attempt to complete the Setup Instructions before the course. We will run through this in the course too."
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nIf you do use Artemis for your research, please acknowledge us! This ensures that we continue to get the funding we need to provide you with what is really a first-grade computing resource. And don’t forget to apply to the Publication Incentive! A suggested acknowledgment might say:\nThe authors acknowledge the Sydney Informatics Hub and the University of Sydney’s high performance computing cluster, Artemis, for providing the computing resources that have contributed to the results reported herein"
+  },
+  {
+    "objectID": "index.html#before-training-10-mins",
+    "href": "index.html#before-training-10-mins",
+    "title": "Introduction to High Performance Computing",
+    "section": "Before Training (10 mins)",
+    "text": "Before Training (10 mins)\nTo hit the ground running during the training please:\n\n\nRead and install the neccessary apps in the Setup Instructions.\n\n\nRead the general HPC content under Concepts."
   },
   {
     "objectID": "setup.html",
