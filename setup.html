@@ -37,12 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -183,7 +181,6 @@ cookieconsent.run({
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -197,7 +194,11 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#essential-software" id="toc-essential-software" class="nav-link active" data-scroll-target="#essential-software">Essential Software:</a></li>
+  <li><a href="#essential-software" id="toc-essential-software" class="nav-link active" data-scroll-target="#essential-software">Essential Software</a>
+  <ul class="collapse">
+  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal">Terminal</a></li>
+  <li><a href="#vpn" id="toc-vpn" class="nav-link" data-scroll-target="#vpn">VPN</a></li>
+  </ul></li>
   <li><a href="#credentials-to-access-artemis" id="toc-credentials-to-access-artemis" class="nav-link" data-scroll-target="#credentials-to-access-artemis">Credentials to Access Artemis</a>
   <ul class="collapse">
   <li><a href="#mac-logon-to-artemis" id="toc-mac-logon-to-artemis" class="nav-link" data-scroll-target="#mac-logon-to-artemis">Mac Logon to Artemis</a></li>
@@ -234,7 +235,9 @@ cookieconsent.run({
 
 
 <section id="essential-software" class="level2">
-<h2 class="anchored" data-anchor-id="essential-software">Essential Software:</h2>
+<h2 class="anchored" data-anchor-id="essential-software">Essential Software</h2>
+<section id="terminal" class="level3">
+<h3 class="anchored" data-anchor-id="terminal">Terminal</h3>
 <p>To connect to Artemis HPC, and follow this lesson, you will need a ‘terminal emulator with SSH (secure shell). SSH provides encrypted communication between the your computer and a remote server, in this case Artemis. The SSH client will be invoked by the command ‘ssh’.</p>
 <p>If you are a <strong>Windows</strong> users please have one of either apps below installed:</p>
 <ol type="1">
@@ -243,16 +246,20 @@ cookieconsent.run({
 <li><p><a href="https://ubuntu.com/tutorials/tutorial-ubuntu-on-windows#1-overview">WSL and Ubuntu</a> (advanced)</p></li>
 </ol>
 <p>If you are a <strong>Mac</strong> user we will be using the Terminal which comes pre-installed on your device.</p>
+</section>
+<section id="vpn" class="level3">
+<h3 class="anchored" data-anchor-id="vpn">VPN</h3>
 <p>For all users, if you are not on campus install and/or have your <a href="https://sydneyuni.service-now.com/sm?id=kb_article_view&amp;sysparm_article=KB0011049&amp;sys_kb_id=9e86e1a3dbdf0c50e35b89e4059619b9">Cisco Anyconnect VPN</a> up and running.</p>
+</section>
 </section>
 <section id="credentials-to-access-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="credentials-to-access-artemis">Credentials to Access Artemis</h2>
-<p>You would normally use your unikey and unikey password to access Artemis. For today however, we will be using training logon credentials which are:</p>
+<p>You would normally use your unikey and unikey password to access Artemis. For the course you will be using training credentials. which will give access to the <code>Training</code> project:</p>
 <p><strong>Username:</strong> <code>ict_hpctrain&lt;N&gt;</code>, with N from 1-20 (replace <n> with your assigned number)</n></p>
-<p><strong>Password</strong>: will be written on the whiteboard!</p>
+<p><strong>Password</strong>: to be provided.</p>
 <section id="mac-logon-to-artemis" class="level3">
 <h3 class="anchored" data-anchor-id="mac-logon-to-artemis">Mac Logon to Artemis</h3>
-<p>Use the Terminal App. Just look for it in your Applications folder, or hit Command-Space and type ‘terminal’. Then in the terminal enter:</p>
+<p>Use the <em>Terminal App</em>. Found in your Applications folder, or hit <code>Command-Space</code> and type <code>terminal</code>. Then in the terminal enter:</p>
 <p><code>ssh  &lt;unikey&gt;@hpc.sydney.edu.au</code></p>
 </section>
 <section id="windows-logon-to-artemis" class="level3">
@@ -271,27 +278,29 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="working-on-artemis-with-graphical-applications">Working on Artemis with Graphical Applications</h2>
 <section id="x11-forwarding" class="level3">
 <h3 class="anchored" data-anchor-id="x11-forwarding">X11 FORWARDING</h3>
-<p>X11 forwarding allows you to run graphical applications on a remote server and have their graphical user interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or other GUI-based tools.</p>
-<p>To use X11 forwarding you need:</p>
-<ol type="1">
-<li>Mac Users: <a href="https://www.xquartz.org/">Xquartz</a> up and running, then log on to Artemis by providing the extra X flag. That is:</li>
-</ol>
+<p>X11 forwarding allows you to run graphical applications on a remote server and have their Graphical User Interfaces (GUIs) displayed on your local machine. This is particularly useful when you are working on a remote server or computer and need to run graphical applications, such as graphical text editors, web browsers, or any other GUI-based tools.</p>
+<p>To use X11 forwarding you need to install additional tools and tweak the way you connect. Recommendtions are as follows.</p>
+<section id="mac-users" class="level4">
+<h4 class="anchored" data-anchor-id="mac-users">Mac Users</h4>
+<p>You will need to install and start <a href="https://www.xquartz.org/">Xquartz</a>. Then log in to Artemis by providing the extra <code>-X</code> flag. That is:</p>
 <p><code>ssh -X &lt;unikey&gt;@hpc.sydney.edu.au</code></p>
-<ol start="2" type="1">
-<li>Windows Users: <a href="https://sourceforge.net/projects/xming/">Xming</a> should be up and running. In PuTTY for Windows, you can enable X11 forwarding in new or saved SSH sessions by selecting <em>Enable X11 forwarding</em> in the <em>PuTTY Configuration</em> window (Connection &gt; SSH &gt; X11).</li>
-</ol>
-<p>Alternatively for windows users, <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm</a> offers a rich experience as a full-featured X-server and terminal emulator for ssh connections, the free version is more than adequate.</p>
+</section>
+<section id="windows-users" class="level4">
+<h4 class="anchored" data-anchor-id="windows-users">Windows Users</h4>
+<p>You will need to install and start <a href="https://sourceforge.net/projects/xming/">Xming</a>. Then in <em>PuTTY</em>, you can enable X11 forwarding in a new or saved SSH sessions by selecting <em>Enable X11 forwarding</em> in the <em>PuTTY Configuration</em> window (Connection &gt; SSH &gt; X11).</p>
+<p>Alternatively, <a href="https://mobaxterm.mobatek.net/download.html">MobaXterm</a> offers a rich experience as a full-featured X-server and terminal emulator for SSH connections, the free version is more than adequate.</p>
+</section>
 </section>
 <section id="nomachine" class="level3">
 <h3 class="anchored" data-anchor-id="nomachine">NOMACHINE</h3>
-<p>An alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App. These special are graphics-enabled login servers which host ‘NoMachine’, a kind of remote desktop service.</p>
+<p>An alternative to X11 forwarding is to use our graphical login nodes via the NoMachine App. These special are graphics-enabled login servers which host <em>NoMachine</em>, a kind of remote desktop service.</p>
 <p>Our experience is that no-machine is preferrable when using visualisation software that rely on computation done on the HPC.</p>
-<p><u>To use the graphical login nodes</u>:</p>
+<p>To use the graphical login nodes:</p>
 <p>Download and install the <a href="https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/">NoMachine Enterprise Client</a> for your operating system. Please don’t download the client from NoMachine directly, as their current version may not work with Artemis.</p>
 <p>If you’re using MacOS, you need to install <a href="https://www.xquartz.org">XQuartz</a>.</p>
-<p>Download the <a href="https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/glogin.nxs">glogin.nxs</a> session file to your computer.</p>
+<p>Download the <a href="https://pages.github.sydney.edu.au/rc/Artemis-HPC-glogin/glogin.nxs">glogin.nxs</a> session configuration file to your computer.</p>
 <p>To connect:</p>
-<p>Double-click or run the glogin.nxs shortcut you downloaded (it will open NoMachine Client). A NoMachine window should start, asking for a username and password. Replace “YOUR_UNIKEY” with your UniKey, then enter your UniKey password in the password field, then click ‘OK’. A short while later, an Artemis terminal window should open.</p>
+<p>Double-click or run the <code>glogin.nxs</code> shortcut you downloaded (it will open NoMachine Client). A NoMachine window should start, asking for a username and password. Replace <code>YOUR_UNIKEY</code> with your UniKey, then enter your UniKey password in the password field, then click <em>OK</em>. A short while later, an Artemis terminal window should open.</p>
 
 
 </section>
@@ -318,150 +327,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
