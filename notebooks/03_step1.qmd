@@ -15,7 +15,7 @@ The below series of commands will create a folder in a specifc location with the
 
 On the **Artemis Terminal** type the following commands:
 
-```{bash}
+```{r}
 cd /project/Training
 mkdir <yourname>
 cd <yourname>
