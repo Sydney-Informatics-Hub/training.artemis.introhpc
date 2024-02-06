@@ -35,7 +35,7 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 
 **nano lines after PBS Declarations**:
 
-```
+```{python}
 cd /project/Training/datahpc/<yourname>
 
 mkdir New_job
