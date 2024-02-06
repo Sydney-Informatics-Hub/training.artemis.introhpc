@@ -15,7 +15,11 @@ The below series of commands will create a folder in a specifc location with the
 
 On the **Artemis Terminal** type the following commands:
 
-```{r}
+```{bash}
+#| code-overflow: wrap
+#| code-block-border-left: "#31BAE9"
+#| code-block-bg: true
+
 cd /project/Training
 mkdir <yourname>
 cd <yourname>
@@ -35,7 +39,7 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 
 **nano lines after PBS Declarations**:
 
-```{.python .code-overflow-wrap}
+```{.bash .code-overflow-wrap .code-block-bg}
 cd /project/Training/datahpc/<yourname>
 
 mkdir New_job
