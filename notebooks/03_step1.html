@@ -190,7 +190,7 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#scheduling-a-pbs-job" id="toc-scheduling-a-pbs-job" class="nav-link active" data-scroll-target="#scheduling-a-pbs-job">Scheduling a PBS job</a></li>
+  <li><a href="#submitting-a-job" id="toc-submitting-a-job" class="nav-link active" data-scroll-target="#submitting-a-job">Submitting a Job</a></li>
   </ul>
 </nav>
     </div>
@@ -200,8 +200,8 @@ cookieconsent.run({
 
 
 
-<section id="scheduling-a-pbs-job" class="level1">
-<h1>Scheduling a PBS job</h1>
+<section id="submitting-a-job" class="level1">
+<h1>Submitting a Job</h1>
 <p>Assuming you are logged on to Artemis with the training credentials lets run compute jobs on Artemis HPC. Please use your own unikey credentials after todays training.</p>
 <p>As mentioned, pbs scripts communicate your requirements to the scheduler. These scripts tend to follow the basic pattern:</p>
 <ul>
@@ -211,32 +211,44 @@ cookieconsent.run({
 </ul>
 <p>The below series of commands will create a folder in a specifc location with the <em>/project</em> folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the <em>/project/Training</em> folder and the compressed file housed within it.</p>
 <p>On the <strong>Artemis Terminal</strong> type the following commands:</p>
-<pre><code>cd /project/Training
-
-mkdir &lt;yourname&gt;
-
-cd &lt;yourname&gt;
-
-tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
-
-cd datahpc
-
-cp index.pbs basic.pbs</code></pre>
+<p><code>cd /project/Training</code></p>
+<p><code>mkdir &lt;yourname&gt;</code></p>
+<p><code>cd &lt;yourname&gt;</code></p>
+<p><code>tar -xzvf /project/Training/DATA/intro_hpc.tar.gz</code></p>
+<p><code>cd datahpc</code></p>
+<p><code>cp index.pbs basic.pbs</code></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Not using these notes with the Training project?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not using these notes with the Training project?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>wget https://github.com/Sydney-Informatics-Hub/IntroHPCData/archive/refs/tags/20240206.zip</code> in place of the <code>tar</code> command to download all the scripts and data to use with these notes.</p>
+</div>
+</div>
 <p>Creating and running pbs files are how you communicate the the HPC Scheduler which managed your script and the resources of the HPC. Refer to the HPC Context section for more info on what the scheduler does and implications in its use.</p>
 <p>Open up the <strong>nano</strong> <em>text editor</em> and adjust the <em>basic.pbs</em> with:</p>
 <p><code>nano basic.pbs</code></p>
 <p>We will alter its contents to run a simple hello world script. Specify the <code>Training</code> project and <code>defaultQ</code> queue in the PBS declarations. Delete the existing content below the PBS declarations of basic and add the below content to create a hello world to test Artemis</p>
-<p><strong>nano lines after PBS Declarations</strong>:</p>
-<pre><code>cd /project/Training/datahpc/&lt;yourname&gt;
+<p><strong>basic.pbs should contain</strong>*:</p>
+<pre><code>#!/bin/bash
+#PBS -P Training
+#PBS -N test-hello
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=00:10:00
+#PBS -q defaultQ
 
+cd /project/Training/datahpc/&lt;yourname&gt;
 mkdir New_job
-
 cp basic.pbs New_job/copy.pbs
-
 perl hello.pl "YourName"</code></pre>
 <p>Submit the <em>basic.pbs</em> script to the scheduler with</p>
 <p><code>qsub basic.pbs</code></p>
-<p>How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the <code>#PBS -N</code> flag and includes the job number printed when qsub was engaged.</p>
+<p>How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the <code>#PBS -N</code> flag and includes the job number printed when <code>qsub</code> was engaged.</p>
 
 
 </section>

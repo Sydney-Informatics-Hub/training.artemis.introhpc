@@ -190,64 +190,78 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#practice-makes-perfect---python-r-and-matlab" id="toc-practice-makes-perfect---python-r-and-matlab" class="nav-link active" data-scroll-target="#practice-makes-perfect---python-r-and-matlab">Practice Makes Perfect - Python, R and Matlab</a>
-  <ul class="collapse">
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link active" data-scroll-target="#python">Python</a></li>
   <li><a href="#matlab" id="toc-matlab" class="nav-link" data-scroll-target="#matlab">Matlab</a></li>
   <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Example PBS scripts for Python, R and Matlab</h1>
+</div>
 
 
 
-<section id="practice-makes-perfect---python-r-and-matlab" class="level2">
-<h2 class="anchored" data-anchor-id="practice-makes-perfect---python-r-and-matlab">Practice Makes Perfect - Python, R and Matlab</h2>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
 <p>Now that we know how to submit jobs to the scheduler lets reinforce this by running scripts that run different programming languages.</p>
-<p>Investigate the computepi_fire.py python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points.</p>
+<p>Investigate the <em>computepi_fire.py</em> python file. Given a number of trials to run, this code estimates the number pi by randomly assigning points within a square and comparing the number of points that fall within a circle of radius one relative to the total number of points.</p>
 <p><code>nano estimate_pi.pbs</code></p>
 <p>Things to note:</p>
 <ol type="1">
-<li><p>The cd $PBS_O_WORKDIR command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment.</p></li>
+<li><p>The <code>cd $PBS_O_WORKDIR</code> command changes the directory to the location where the pbs script was submitted. This is an example of a shell variable that has been set by the pbs environment.</p></li>
 <li><p>The <em>Multiprocessing</em> package is used to create a pool of resources (with its owner python interpreter). This package is a solution to the notorious global interpreter lock <a href="https://wiki.python.org/moin/GlobalInterpreterLock">GIL</a> that prevents multiple threads from executing python at once.</p></li>
-<li><p>The pbs script that runs computepi_fire.py requires a list of numbers reflecting a simulation number. The larger, the more accurate the approximation of pi. Now is a good chance to look at queue management and practice <code>qstat -x &lt;jobnumber&gt;, qstat -u &lt;username&gt; and qdel &lt;jobnumber&gt;</code> commands by increasing the simulation numbers.</p></li>
+<li><p>The pbs script that runs computepi_fire.py requires a list of numbers reflecting a simulation number. The larger, the more accurate the approximation of pi. Now is a good chance to look at queue management and practice <code>qstat -x &lt;jobnumber&gt;</code>, <code>qstat -u &lt;username&gt;</code> and <code>qdel &lt;jobnumber&gt;</code> commands by increasing the simulation numbers.</p></li>
 </ol>
 </section>
-<section id="matlab" class="level3">
-<h3 class="anchored" data-anchor-id="matlab">Matlab</h3>
+<section id="matlab" class="level2">
+<h2 class="anchored" data-anchor-id="matlab">Matlab</h2>
 <p>If you are familiar with Matlab on your local machine, using Matlab is a little different here on Artemis. High performance computers generally work best when engaging software via Linux commands. Applications that rely on graphical interfaces generally are slow and buggy (Nomachine is recommended if there is no alternative).</p>
 <p><code>qsub airline.pbs</code></p>
 <p>Things to note:</p>
 <ol type="1">
-<li><p>The extra flags -nodisplay -nosplash suppress the matlab graphical interaction that become problematic on Artemis.</p></li>
-<li><p>The command line way to run Matlab with the -r (run) flag. Notice the exit that closes the automatic graphical communication that Matlab automatically engages.</p></li>
+<li><p>The extra flags `<code>-nodisplay -nosplash</code> suppress the matlab graphical interaction that become problematic on Artemis.</p></li>
+<li><p>The command line way to run Matlab with the <code>-r</code> (run) flag. Notice the exit that closes the automatic graphical communication that Matlab automatically engages.</p></li>
 </ol>
 </section>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>Running R code on Artemis requires installing and referencing libraries needed for your R script. The recommended way to do this is to use the renv package to replicate libraries and specific versions created locally via a “lockfile”. The lockfile is created by renv. Alternatives installing packages seperately (most likely using a script or interactive queue) and updating the libPaths within R scripts is the simpler option if renv isnt used.</p>
-<p>Three example scripts to demostrate using R (with an established renv lock file) are:</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<p>Running R code on Artemis requires installing and referencing libraries needed for your R script. The recommended way to do this is to use the <em>renv</em> package to replicate libraries and specific versions created locally via a “lockfile”. The lockfile is created by <em>renv</em>. Alternatives installing packages separately (most likely using a script or interactive queue) and updating the libPaths within R scripts is the simpler option if renv is not used.</p>
+<p>Three example scripts to demonstrate using R (with an established renv lock file) are:</p>
 <ul>
-<li><p><strong>install_env.pbs</strong>: Houses the initial setup of installing R libraries to a path you have read / write permissions to. Here /home is used, but in practice it should reside somewhere in your /project directory. The installation has already been run and libraries saved in the “/project/Training/DATA/Libs” folder</p></li>
+<li><p><strong>install_env.pbs</strong>: Houses the initial setup of installing R libraries to a path you have read / write permissions to. Here /home is used, but in practice it should reside somewhere in your /project directory. The installation has already been run and libraries saved in the <code>/project/Training/DATA/Libs</code> folder</p></li>
 <li><p><strong>create_env.R</strong>: Demonstrates how to load an existing lock file and install packages. This is triggered by <code>install_env.pbs</code></p></li>
 <li><p><strong>run_network.pbs</strong> : Main pbs script that references a path where libraries exist</p></li>
 <li><p><strong>network.R</strong> : The main R script that does data manipulation and visualisation via common R libraries including dplyr, plotly and network libraries. Generates a network plot pdf based on flight information</p></li>
 </ul>
 <p><code>qsub run_network.pbs</code></p>
-<p>Things to note: 1. If you have installed packages in locations that R is not expecting, it needs to know where to look for installed packages. Updating this via libPaths does this and tells R where to look for libraries.</p>
-<p><code>.libPaths( c( .libPaths(), "/project/Training/DATA/Libs") )</code></p>
+<p>Things to note:</p>
+<ol type="1">
+<li>If you have installed packages in locations that R is not expecting, it needs to know where to look for installed packages. Updating this via libPaths does this and tells R where to look for libraries.</li>
+</ol>
+<pre class="{bash}"><code>.libPaths( c( .libPaths(), "/project/Training/DATA/Libs") )</code></pre>
 <ol start="2" type="1">
 <li>With the pbs script, updating paths that R expect libraries to be in can be done via export command. Example <code>export R_LIBS_USER=$HOME/R/library</code></li>
 </ol>
+<p>More info at the <a href="https://sydneyuni.atlassian.net/wiki/spaces/RC/pages/814678196/R">Artemis Documentation</a>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

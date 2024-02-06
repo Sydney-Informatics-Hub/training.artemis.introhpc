@@ -209,9 +209,9 @@ cookieconsent.run({
 <h1>Artemis as a Remote Server</h1>
 <section id="linux-background" class="level2">
 <h2 class="anchored" data-anchor-id="linux-background">Linux background</h2>
-<p>Artemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a>.</p>
+<p>Artemis runs on a Linux operating system (currently CentOS v6.10). Becoming familiar with Linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of Linux is a preferable for this course. A recommended course to learn the basics is by <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a>.</p>
 <p>Using Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:</p>
-<p>command [options] [arguments]</p>
+<pre><code>command [options] [arguments]</code></pre>
 <p>For instance, This command on your <strong>local terminal</strong> <code>ls -ltr ~</code> lists all files in the home directory.</p>
 <p>(<code>ls</code>) is the command. Options include: long format (<code>-l</code>), sorted by modification time (<code>-t</code>) in reverse order with the most recently modified files appearing at the bottom (<code>-r</code>). The argument is (<code>~</code>) which is shorthand for the home directory.</p>
 <p><strong>nano</strong> is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.</p>
@@ -232,7 +232,7 @@ cookieconsent.run({
 <li><code>walltime</code>: the length of time all these resources will be made available to the requesting job</li>
 </ul>
 <p>To highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.</p>
-<p>Generally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler contols the queue.</p>
+<p>Generally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler controls the queue.</p>
 <p>Common PBS Flags are:</p>
 <table class="table">
 <colgroup>
@@ -249,37 +249,37 @@ cookieconsent.run({
 </thead>
 <tbody>
 <tr class="odd">
-<td>-P</td>
+<td><code>-P</code></td>
 <td>Project short name</td>
 <td>Required directive on Artemis</td>
 </tr>
 <tr class="even">
-<td>-N</td>
+<td><code>-N</code></td>
 <td>Job name</td>
 <td>Name it whatever you like; no spaces</td>
 </tr>
 <tr class="odd">
-<td>-l</td>
+<td><code>-l</code></td>
 <td>Resource request</td>
-<td>a comination of resources as mentioned</td>
+<td>a combination of resources as mentioned</td>
 </tr>
 <tr class="even">
-<td>-q</td>
+<td><code>-q</code></td>
 <td>Job queue</td>
 <td>Defaults to defaultQ. Use dtq for data transfer only</td>
 </tr>
 <tr class="odd">
-<td>-M</td>
+<td><code>-M</code></td>
 <td>Email address</td>
 <td>Notifications can be sent by email on certain events</td>
 </tr>
 <tr class="even">
-<td>-m</td>
+<td><code>-m</code></td>
 <td>Email options: abe</td>
 <td>Receive notification on (a)bort, (b)egin, or (e)nd of jobs</td>
 </tr>
 <tr class="odd">
-<td>-I</td>
+<td><code>-I</code></td>
 <td>Interactive mode</td>
 <td>Opens a shell terminal with access to the requested resources</td>
 </tr>
@@ -289,7 +289,7 @@ cookieconsent.run({
 </section>
 <section id="login-vs-compute-nodes" class="level2">
 <h2 class="anchored" data-anchor-id="login-vs-compute-nodes">Login vs Compute Nodes</h2>
-<p>Once you logon on to Artemis you are placed on the <em>login</em> nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the <em>login</em> nodes to the <em>compute</em> nodes that access larger resources.</p>
+<p>Once you logon on to Artemis you are placed on the <em>login</em> nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transferred from the <em>login</em> nodes to the <em>compute</em> nodes that access larger resources.</p>
 
 
 </section>
