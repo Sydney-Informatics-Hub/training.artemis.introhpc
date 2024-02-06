@@ -48,7 +48,7 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 
 **basic.pbs should contain***:
 
-```{bash}
+```
 #!/bin/bash
 #PBS -P Training
 #PBS -N test-hello
