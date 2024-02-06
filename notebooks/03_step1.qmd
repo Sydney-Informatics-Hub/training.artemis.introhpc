@@ -1,4 +1,4 @@
-# Scheduling a PBS job
+# Submitting a Job
 
 Assuming you are logged on to Artemis with the training credentials lets run compute jobs on Artemis HPC. Please use your own unikey credentials after todays training.
 
@@ -15,18 +15,27 @@ The below series of commands will create a folder in a specifc location with the
 
 On the **Artemis Terminal** type the following commands:
 
-```{bash}
-#| code-overflow: wrap
-#| code-block-border-left: "#31BAE9"
-#| code-block-bg: true
-
-cd /project/Training
-mkdir <yourname>
-cd <yourname>
-tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
-cd datahpc
-cp index.pbs basic.pbs
+```cd /project/Training
 ```
+
+```mkdir <yourname>
+```
+
+```cd <yourname>
+```
+
+```tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
+```
+
+```cd datahpc
+```
+
+```cp index.pbs basic.pbs
+```
+
+::: {.callout-tip title="Not using these notes with the Training project?"}
+Use `wget https://github.com/Sydney-Informatics-Hub/IntroHPCData/archive/refs/tags/20240206.zip` in place of the `tar` command to download all the scripts and data to use with these notes.
+:::
 
 Creating and running pbs files are how you communicate the the HPC Scheduler which managed your script and the resources of the HPC. Refer to the HPC Context section for more info on what the scheduler does and implications in its use.
 
@@ -37,15 +46,19 @@ Open up the **nano** *text editor* and adjust the *basic.pbs* with:
 
 We will alter its contents to run a simple hello world script. Specify the `Training` project and `defaultQ` queue in the PBS declarations. Delete the existing content below the PBS declarations of basic and add the below content to create a hello world to test Artemis
 
-**nano lines after PBS Declarations**:
+**basic.pbs should contain***:
 
 ```{.bash .code-overflow-wrap .code-block-bg}
+#!/bin/bash
+#PBS -P Training
+#PBS -N test-hello
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=00:10:00
+#PBS -q defaultQ
+
 cd /project/Training/datahpc/<yourname>
-
 mkdir New_job
-
 cp basic.pbs New_job/copy.pbs
-
 perl hello.pl "YourName"
 ```
 
@@ -54,4 +67,4 @@ Submit the *basic.pbs* script to the scheduler with
 ```qsub basic.pbs
 ```
 
-How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the `#PBS -N` flag and includes the job number printed when qsub was engaged.
+How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the `#PBS -N` flag and includes the job number printed when `qsub` was engaged.

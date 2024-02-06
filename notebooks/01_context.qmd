@@ -35,7 +35,7 @@ As Artemis runs on a Linux operating system, many of the folders and structure o
 
 ### /home
 
-`/home` is your home directory. Every user on Artemis (and any Linux system) has a home directory located at /home/<username>. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis, this is where you’ll end up: home
+`/home` is your home directory with 10gb of storage. Every user on Artemis (and any Linux system) has a home directory located at `/home/<username>`. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis or submit a job, by default you will end up here, `/home/<username>```
 
 
 ### /project
@@ -57,7 +57,7 @@ Every project also has a `/scratch` directory, at `/scratch/<Short_name>`. `Shor
 
 * Has big data inputs
 * Generates big data outputs
-* Generates lots of intermediate data files which are not needed afterward
+* Generates lots of intermediate data files which are not needed afterwards
 
 then you should put and save this data in your `/scratch` space. The reasons are that you are not limited to 1 TB of space in `/scratch` as you are in `/project`, and there is also no reason to clutter up your shared project directories with temporary files. Once your computation is complete, simply copy the important or re-used inputs and outputs back to your `/project` folder (or better yet, your `/rds` folder), and delete your data in `/scratch` – that’s why it’s called scratch!
 

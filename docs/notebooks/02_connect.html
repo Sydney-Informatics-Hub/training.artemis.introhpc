@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to High Performance Computing – connect</title>
+<title>Introduction to HPC – connect</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,12 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,7 +100,7 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Introduction to High Performance Computing</span>
+    <span class="navbar-title">Introduction to HPC</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -111,10 +109,6 @@ cookieconsent.run({
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../setup.html" rel="" target="">
  <span class="menu-text">Setup</span></a>
@@ -173,7 +167,6 @@ cookieconsent.run({
   </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -188,8 +181,12 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linux-background" id="toc-linux-background" class="nav-link active" data-scroll-target="#linux-background">Linux background</a></li>
+  <li><a href="#artemis-as-a-remote-server" id="toc-artemis-as-a-remote-server" class="nav-link active" data-scroll-target="#artemis-as-a-remote-server">Artemis as a Remote Server</a>
+  <ul class="collapse">
+  <li><a href="#linux-background" id="toc-linux-background" class="nav-link" data-scroll-target="#linux-background">Linux background</a></li>
   <li><a href="#the-scheduler." id="toc-the-scheduler." class="nav-link" data-scroll-target="#the-scheduler.">The Scheduler.</a></li>
+  <li><a href="#login-vs-compute-nodes" id="toc-login-vs-compute-nodes" class="nav-link" data-scroll-target="#login-vs-compute-nodes">Login vs Compute Nodes</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -198,30 +195,34 @@ cookieconsent.run({
 
 
 
-<section id="linux-background" class="level3">
-<h3 class="anchored" data-anchor-id="linux-background">Linux background</h3>
-<p>Artemis runs on a linux operating system (currently CentOS v6.10). Becoming familar with linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of linux is a preferrable for this course. A recommended course to learn the basics is by <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a>.</p>
+<section id="artemis-as-a-remote-server" class="level1">
+<h1>Artemis as a Remote Server</h1>
+<section id="linux-background" class="level2">
+<h2 class="anchored" data-anchor-id="linux-background">Linux background</h2>
+<p>Artemis runs on a Linux operating system (currently CentOS v6.10). Becoming familiar with Linux commands can be quite challenging for those users who are used to graphical systems such as Windows. A Basic knowledge of Linux is a preferable for this course. A recommended course to learn the basics is by <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a>.</p>
 <p>Using Linux involves interacting with the system through commands entered in a command-line interface (CLI). The pattern of commands tend to follow:</p>
-<p>command [options] [arguments]</p>
+<pre><code>command [options] [arguments]</code></pre>
 <p>For instance, This command on your <strong>local terminal</strong> <code>ls -ltr ~</code> lists all files in the home directory.</p>
-<p>(ls) is the command. Options include: long format (-l), sorted by modification time (-t) in reverse order with the most recently modified files appearing at the bottom (-r). The argument is (~) which is shorthand for the home directory.</p>
+<p>(<code>ls</code>) is the command. Options include: long format (<code>-l</code>), sorted by modification time (<code>-t</code>) in reverse order with the most recently modified files appearing at the bottom (<code>-r</code>). The argument is (<code>~</code>) which is shorthand for the home directory.</p>
 <p><strong>nano</strong> is the text editor we will be using to make and adjust files and is preinstalled on Artemis. Using nano will be demonstrated.</p>
 </section>
-<section id="the-scheduler." class="level3">
-<h3 class="anchored" data-anchor-id="the-scheduler.">The Scheduler.</h3>
+<section id="the-scheduler." class="level2">
+<h2 class="anchored" data-anchor-id="the-scheduler.">The Scheduler.</h2>
 <p>On Artemis, PBS Pro is the name of the scheduler that manages computer resources and jobs (what people want to run). The scheduler manages available capacity and the competing jobs wanting to access its resources via a queue. One a job is submitted to the scheduler (via <code>qsub</code> command ), a job is placed in the queue until spare capacity is found to run it. Generally the larger the resources you are requesting, the longer your job will be placed in a queue.</p>
 <p>PBS Scripts are how we communicate our requirements to the scheduler. PBS Declarations are the syntax of doing so and is a combination of a directive, a flag and options. All lines starting with #PBS are PBS declarations and the scheduler will try to interpret its meaning. An example of a PBS declaration is:</p>
-<p>#PBS -l select=1:ncpus=8:mem=16gb</p>
-<p>This specifies a resource request with the flag -l, consisting of 1 node (select=1), 8 CPUs (ncpus=8) and 16 GB of RAM (mem=16GB).</p>
+<p><code>#PBS -l select=1:ncpus=8:mem=16gb</code></p>
+<p>This specifies a resource request with the flag <code>-l</code>, consisting of 1 node (<code>select=1</code>), 8 CPUs (<code>ncpus=8</code>) and 16 GB of RAM (<code>mem=16GB</code>).</p>
 <p>A series of PBS declarations are housed within a PBS script.</p>
 <p>Resource requests are usually a combination of:</p>
-<pre><code>select: the number of compute nodes (most often 1 unless MPI is being used)
-ncpus: the number of CPU cores
-mem: the amount of RAM
-ngpus: the number of GPU cores
-walltime: the length of time all these resources will be made available to the requesting job</code></pre>
+<ul>
+<li><code>select</code>: the number of compute nodes (most often 1 unless MPI is being used)</li>
+<li><code>ncpus</code>: the number of CPU cores</li>
+<li><code>mem</code>: the amount of RAM</li>
+<li><code>ngpus</code>: the number of GPU cores</li>
+<li><code>walltime</code>: the length of time all these resources will be made available to the requesting job</li>
+</ul>
 <p>To highlight walltime, you only have the collect of resources for a defined duration. If you have used your allocated walltime, the scheduler will stop your task irrespective of if your job is still running.</p>
-<p>Generally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler contols the queue.</p>
+<p>Generally the larger the resources requests, the longer (given spare capacity of the HPC and competing jobs) your job will most likely be placed in the queue before running. The scheduler controls the queue.</p>
 <p>Common PBS Flags are:</p>
 <table class="table">
 <colgroup>
@@ -238,47 +239,50 @@ walltime: the length of time all these resources will be made available to the r
 </thead>
 <tbody>
 <tr class="odd">
-<td>-P</td>
+<td><code>-P</code></td>
 <td>Project short name</td>
 <td>Required directive on Artemis</td>
 </tr>
 <tr class="even">
-<td>-N</td>
+<td><code>-N</code></td>
 <td>Job name</td>
 <td>Name it whatever you like; no spaces</td>
 </tr>
 <tr class="odd">
-<td>-l</td>
+<td><code>-l</code></td>
 <td>Resource request</td>
-<td>a comination of resources as mentioned</td>
+<td>a combination of resources as mentioned</td>
 </tr>
 <tr class="even">
-<td>-q</td>
+<td><code>-q</code></td>
 <td>Job queue</td>
 <td>Defaults to defaultQ. Use dtq for data transfer only</td>
 </tr>
 <tr class="odd">
-<td>-M</td>
+<td><code>-M</code></td>
 <td>Email address</td>
 <td>Notifications can be sent by email on certain events</td>
 </tr>
 <tr class="even">
-<td>-m</td>
+<td><code>-m</code></td>
 <td>Email options: abe</td>
 <td>Receive notification on (a)bort, (b)egin, or (e)nd of jobs</td>
 </tr>
 <tr class="odd">
-<td>-I</td>
+<td><code>-I</code></td>
 <td>Interactive mode</td>
 <td>Opens a shell terminal with access to the requested resources</td>
 </tr>
 </tbody>
 </table>
 <p>Other HPC systems might use other Schedulers requiring a different syntax (SLURM), but the concepts are the same.</p>
-<p><u>A mention on Home versus Compute Nodes</u></p>
-<p>Once you logon on to Artemis you are placed on the logon nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transfered from the logon nodes to its compute nodes that access larger resources. This will be demonstrated.</p>
+</section>
+<section id="login-vs-compute-nodes" class="level2">
+<h2 class="anchored" data-anchor-id="login-vs-compute-nodes">Login vs Compute Nodes</h2>
+<p>Once you logon on to Artemis you are placed on the <em>login</em> nodes. Avoid running scripts there as you wont be able to access the potential resources available. PBS script submitted to the scheduler ensure your job is transferred from the <em>login</em> nodes to the <em>compute</em> nodes that access larger resources.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -302,121 +306,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

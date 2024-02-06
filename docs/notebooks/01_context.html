@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to High Performance Computing – context</title>
+<title>Introduction to HPC – context</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,12 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,7 +100,7 @@ cookieconsent.run({
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Introduction to High Performance Computing</span>
+    <span class="navbar-title">Introduction to HPC</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -111,10 +109,6 @@ cookieconsent.run({
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
-  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../setup.html" rel="" target="">
  <span class="menu-text">Setup</span></a>
@@ -173,7 +167,6 @@ cookieconsent.run({
   </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -188,15 +181,17 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-use-artemis" id="toc-why-use-artemis" class="nav-link active" data-scroll-target="#why-use-artemis">Why use Artemis</a></li>
-  <li><a href="#what-is-artemis" id="toc-what-is-artemis" class="nav-link" data-scroll-target="#what-is-artemis">What is Artemis</a></li>
-  <li><a href="#specifically-what-is-different-in-artemis" id="toc-specifically-what-is-different-in-artemis" class="nav-link" data-scroll-target="#specifically-what-is-different-in-artemis">Specifically what is different in Artemis</a>
+  <li><a href="#artemis-as-a-hpc" id="toc-artemis-as-a-hpc" class="nav-link active" data-scroll-target="#artemis-as-a-hpc">Artemis as a HPC</a>
   <ul class="collapse">
-  <li><a href="#home" id="toc-home" class="nav-link" data-scroll-target="#home">home</a></li>
-  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">project</a></li>
-  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">scratch</a></li>
-  <li><a href="#key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" id="toc-key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" class="nav-link" data-scroll-target="#key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months">Key Point: Inactive data in /project is wiped after 6 months, and in /scratch after 3 months!</a></li>
+  <li><a href="#why-use-artemis" id="toc-why-use-artemis" class="nav-link" data-scroll-target="#why-use-artemis">Why use Artemis</a></li>
+  <li><a href="#what-is-artemis" id="toc-what-is-artemis" class="nav-link" data-scroll-target="#what-is-artemis">What is Artemis</a></li>
+  <li><a href="#navigating-artemis" id="toc-navigating-artemis" class="nav-link" data-scroll-target="#navigating-artemis">Navigating Artemis</a>
+  <ul class="collapse">
+  <li><a href="#home" id="toc-home" class="nav-link" data-scroll-target="#home">/home</a></li>
+  <li><a href="#project" id="toc-project" class="nav-link" data-scroll-target="#project">/project</a></li>
+  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">/scratch</a></li>
   <li><a href="#artemis-specific-applications" id="toc-artemis-specific-applications" class="nav-link" data-scroll-target="#artemis-specific-applications">Artemis specific applications</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -206,37 +201,42 @@ cookieconsent.run({
 
 
 
+<section id="artemis-as-a-hpc" class="level1">
+<h1>Artemis as a HPC</h1>
 <section id="why-use-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="why-use-artemis">Why use Artemis</h2>
 <p>Artemis is ideal for calculations that require:</p>
 <ol type="1">
-<li><p>A long time to complete (long walltime)</p></li>
-<li><p>High RAM usage</p></li>
-<li><p>Big data input or outputs</p></li>
-<li><p>Are using specific software that is designed to be run on HPC Systems (multiple cores or nodes run in parallel)</p></li>
+<li>A long time to complete (long walltime)</li>
+<li>High RAM usage</li>
+<li>Big data input or outputs</li>
+<li>Multiple iterations of program inputs.</li>
+<li>Are using specific software that is designed to be run on HPC Systems (multiple cores or nodes run in parallel)</li>
 </ol>
-<p>Artemis is available free of charge to all University of Sydney researchers. You do need a unikey, and a valid <a href="https://dashr.sydney.edu.au/">Research Dashboard Research Data Management Plan (DASR)</a> with Artemis access enabled.</p>
+<p>Artemis is available free of charge to all University of Sydney researchers. You require a Unikey, and a valid <em>Research Data Management Plan</em> via <a href="https://dashr.sydney.edu.au/">DASHR</a> with <strong>Artemis HPC access enabled</strong>.</p>
 <p>Artemis is also a great incentive to funding bodies to view your projects favourably – as they know you have the resources required to get the work done.</p>
 </section>
 <section id="what-is-artemis" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-artemis">What is Artemis</h2>
 <p>Artemis is the University of Sydney’s High Performance Computer. Technically, Artemis is a computing cluster, which is a whole lot of individual computers networked together. At present, Artemis consists of:</p>
-<p>7,636 cores (CPUs)</p>
-<p>45 TB of RAM</p>
-<p>108 NVIDIA V100 GPUs</p>
-<p>378 TB of storage</p>
-<p>56 Gbps FDR InfiniBand (networking)</p>
-<p>Artemis computers (which we’ll call machines or nodes) run a Linux operating system, ‘CentOS’ v6.10. Computing performed on Artemis nodes is managed by a scheduler, and ours is an instance of ‘PBS Pro’.</p>
+<ul>
+<li>7,636 cores (CPUs)</li>
+<li>45 TB of RAM</li>
+<li>108 NVIDIA V100 GPUs</li>
+<li>1 PB of storage</li>
+<li>56 Gbps FDR InfiniBand (networking)</li>
+</ul>
+<p>Artemis computers (which we call <em>machines</em> or <em>nodes</em>) run a Linux operating system, <em>CentOS v6.10</em>. Computing performed on Artemis nodes is managed by a scheduler, and ours is an instance of <em>PBS Pro</em>.</p>
 </section>
-<section id="specifically-what-is-different-in-artemis" class="level2">
-<h2 class="anchored" data-anchor-id="specifically-what-is-different-in-artemis">Specifically what is different in Artemis</h2>
-<p>As Artemis runs on a linux operating system, many of the folders and structure of them adhere to standard linux file systems. This includes a root folder <code>/</code> and a tree like structure from it that includes things like binaries <code>/bin</code>, temporary files <code>/tmp</code>, configuration files <code>/ etc</code> etc etc…There are a few exceptions that are specific to Artmemis, notably /home, /project, and /scratch.</p>
+<section id="navigating-artemis" class="level2">
+<h2 class="anchored" data-anchor-id="navigating-artemis">Navigating Artemis</h2>
+<p>As Artemis runs on a Linux operating system, many of the folders and structure of them adhere to standard Linux file systems. This includes a root folder <code>/</code> and a tree like structure from it that includes things like binaries <code>/bin</code>, temporary files <code>/tmp</code>, configuration files <code>/ etc</code> etc etc…There are a few exceptions that are specific to Artmemis, notably /home, /project, and /scratch.</p>
 <section id="home" class="level3">
-<h3 class="anchored" data-anchor-id="home">home</h3>
-<p><code>/home</code> is your home directory. Every user on Artemis (and any Linux system) has a home directory located at /home/<username>. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis, this is where you’ll end up: home</username></p>
+<h3 class="anchored" data-anchor-id="home">/home</h3>
+<p><code>/home</code> is your home directory with 10gb of storage. Every user on Artemis (and any Linux system) has a home directory located at <code>/home/&lt;username&gt;</code>. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis or submit a job, by default you will end up here, `/home/<username>```</username></p>
 </section>
 <section id="project" class="level3">
-<h3 class="anchored" data-anchor-id="project">project</h3>
+<h3 class="anchored" data-anchor-id="project">/project</h3>
 <p>The <code>/project</code> branch is where researchers on a project should keep all the data and programs or scripts that are currently being used. We say ‘currently’ because project directories are allocated only 1 TB of storage space – that may sound like a lot, but this space is shared between all users of your project, and it runs out faster than you think. Data that you’re not currently working on should be deleted or moved back to its permanent storage location (which should be the Research Data Store1).</p>
 <p>This also means that everyone working on your project can see all files in the project directory by default.</p>
 <p>Project directories are all subfolders of /project, and will have names like:</p>
@@ -244,17 +244,41 @@ cookieconsent.run({
 <p>which take the form <code>/RDS-&lt;Faculty&gt;-&lt;Short_name&gt;-RW</code></p>
 </section>
 <section id="scratch" class="level3">
-<h3 class="anchored" data-anchor-id="scratch">scratch</h3>
-<p>Every project also has a /scratch directory, at /scratch/<short_name>. Short_name is the short name of the project as defined by dashr. /scratch is where you should actually perform your computations. What does this mean? If your workflow:</short_name></p>
-<pre><code>Has big data inputs
-Generates big data outputs
-Generates lots of intermediate data files which are not needed afterward</code></pre>
-<p>then you should put and save this data in your /scratch space. The reasons are that you are not limited to 1 TB of space in /scratch as you are in /project, and there is also no reason to clutter up your shared project directories with temporary files. Once your computation is complete, simply copy the important or re-used inputs and outputs back to your /project folder, and delete your data in /scratch – that’s why it’s called scratch!</p>
-</section>
-<section id="key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months" class="level3">
-<h3 class="anchored" data-anchor-id="key-point-inactive-data-in-project-is-wiped-after-6-months-and-in-scratch-after-3-months">Key Point: Inactive data in /project is wiped after 6 months, and in /scratch after 3 months!</h3>
+<h3 class="anchored" data-anchor-id="scratch">/scratch</h3>
+<p>Every project also has a <code>/scratch</code> directory, at <code>/scratch/&lt;Short_name&gt;</code>. <code>Short_name</code> is the short name of the project as defined by dashr. <code>/scratch</code> is where you should actually perform your computations. What does this mean? If your workflow:</p>
+<ul>
+<li>Has big data inputs</li>
+<li>Generates big data outputs</li>
+<li>Generates lots of intermediate data files which are not needed afterwards</li>
+</ul>
+<p>then you should put and save this data in your <code>/scratch</code> space. The reasons are that you are not limited to 1 TB of space in <code>/scratch</code> as you are in <code>/project</code>, and there is also no reason to clutter up your shared project directories with temporary files. Once your computation is complete, simply copy the important or re-used inputs and outputs back to your <code>/project</code> folder (or better yet, your <code>/rds</code> folder), and delete your data in <code>/scratch</code> – that’s why it’s called scratch!</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Data Deletion Policy">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Deletion Policy
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Key Point: Inactive data in <code>/project</code> is wiped after <strong>6 months</strong>, and in <code>/scratch</code> after <strong>3 months</strong>! And Artemis is not backed up, at all.</p>
+</div>
+</div>
 <p>The reason an automatic cleanup process occurs is that HPC’s are shared resources, and while its resources are large, if resources become consumed it start to not run properly for all users.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="/rds">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+/rds
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Data you want to keep should be moved onto the Research Data Store (RDS) - More on that later.</p>
+</div>
+</div>
 </section>
 <section id="artemis-specific-applications" class="level3">
 <h3 class="anchored" data-anchor-id="artemis-specific-applications">Artemis specific applications</h3>
@@ -329,6 +353,7 @@ Generates lots of intermediate data files which are not needed afterward</code><
 
 </section>
 </section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -351,121 +376,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
