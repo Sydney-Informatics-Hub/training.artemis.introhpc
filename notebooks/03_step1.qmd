@@ -11,21 +11,16 @@ As mentioned, pbs scripts communicate your requirements to the scheduler. These 
 
 - c, Run your scripts and manage directory paths and/or shell variables
 
-The below series of commands will create a folder in a specifc location with the */project* folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the */project/Training* folder and the compressed file housed within it. 
+The below series of commands will create a folder in a specifc location with the */project* folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the */project/Training* folder and the compressed file housed within it.
 
 On the **Artemis Terminal** type the following commands:
 
-```
+```{bash}
 cd /project/Training
-
 mkdir <yourname>
-
 cd <yourname>
-
 tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
-
 cd datahpc
-
 cp index.pbs basic.pbs
 ```
 
@@ -34,7 +29,7 @@ Creating and running pbs files are how you communicate the the HPC Scheduler whi
 Open up the **nano** *text editor* and adjust the *basic.pbs* with:
 
 ```nano basic.pbs
-``` 
+```
 
 We will alter its contents to run a simple hello world script. Specify the `Training` project and `defaultQ` queue in the PBS declarations. Delete the existing content below the PBS declarations of basic and add the below content to create a hello world to test Artemis
 
@@ -50,11 +45,9 @@ cp basic.pbs New_job/copy.pbs
 perl hello.pl "YourName"
 ```
 
-Submit the *basic.pbs* script to the scheduler with 
+Submit the *basic.pbs* script to the scheduler with
 
 ```qsub basic.pbs
 ```
 
-How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the `#PBS -N` flag and includes the job number printed when qsub was engaged. 
-
-
+How do we know if our script ran successfully? Investigate the output and error files that were automatically generated whose name refers to the `#PBS -N` flag and includes the job number printed when qsub was engaged.

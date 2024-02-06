@@ -5,15 +5,13 @@
 Artemis is ideal for calculations that require:
 
 1. A long time to complete (long walltime)
-
 2. High RAM usage
-
 3. Big data input or outputs
+4. Multiple iterations of program inputs.
+5. Are using specific software that is designed to be run on HPC Systems (multiple cores or nodes run in parallel)
 
-4. Are using specific software that is designed to be run on HPC Systems (multiple cores or nodes run in parallel)
 
-
-Artemis is available free of charge to all University of Sydney researchers. You do need a unikey, and a valid [Research Dashboard Research Data Management Plan (DASR)](https://dashr.sydney.edu.au/) with Artemis access enabled.
+Artemis is available free of charge to all University of Sydney researchers. You require a Unikey, and a valid  *Research Data Management Plan* via [DASHR](https://dashr.sydney.edu.au/) with **Artemis HPC access enabled**.
 
 Artemis is also a great incentive to funding bodies to view your projects favourably – as they know you have the resources required to get the work done.
 
@@ -26,16 +24,16 @@ Artemis is the University of Sydney's High Performance Computer. Technically, Ar
 * 7,636 cores (CPUs)
 * 45 TB of RAM
 * 108 NVIDIA V100 GPUs
-* 378 TB of storage
+* 1 PB of storage
 * 56 Gbps FDR InfiniBand (networking)
 
 Artemis computers (which we call *machines* or *nodes*) run a Linux operating system, *CentOS v6.10*. Computing performed on Artemis nodes is managed by a scheduler, and ours is an instance of *PBS Pro*.
 
-## Navigating Artemis 
+## Navigating Artemis
 
-As Artemis runs on a linux operating system, many of the folders and structure of them adhere to standard linux file systems. This includes a root folder `/` and a tree like structure from it that includes things like binaries `/bin`, temporary files `/tmp`, configuration files `/ etc` etc etc...There are a few exceptions that are specific to Artmemis, notably /home, /project, and /scratch. 
+As Artemis runs on a Linux operating system, many of the folders and structure of them adhere to standard Linux file systems. This includes a root folder `/` and a tree like structure from it that includes things like binaries `/bin`, temporary files `/tmp`, configuration files `/ etc` etc etc...There are a few exceptions that are specific to Artmemis, notably /home, /project, and /scratch.
 
-### /home 
+### /home
 
 `/home` is your home directory. Every user on Artemis (and any Linux system) has a home directory located at /home/<username>. Your username may be your Unikey, or it may be the training accounts we’re using today. Every time you log in to Artemis, this is where you’ll end up: home
 
@@ -46,7 +44,7 @@ The `/project` branch is where researchers on a project should keep all the data
 
 This also means that everyone working on your project can see all files in the project directory by default.
 
-Project directories are all subfolders of /project, and will have names like: 
+Project directories are all subfolders of /project, and will have names like:
 
 `/project/RDS-CORE-Training-RW`
 
