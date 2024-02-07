@@ -35,7 +35,11 @@ Things to note:
 
 ## R
 
-Running R code on Artemis requires installing and referencing libraries needed for your R script. The recommended way to do this is to use the *renv* package to replicate libraries and specific versions created locally via a “lockfile”. The lockfile is created by *renv*. Alternatives installing packages separately (most likely using a script or interactive queue) and updating the libPaths within R scripts is the simpler option if renv is not used.
+Running R code on Artemis requires installing and referencing libraries needed for your R script. 
+
+One way to do this is by engaging the interactive queue and via the R console on the Artemis terminal use install.package commands that specify the libary path (lib) to be a location you have writeable permissions with. As an example see [the interactive demo](https://github.com/kmarsyd/IntroHPCData/tree/main/datahpc/interactive_queue_demo). 
+
+Another approach is to use the *renv* package to replicate libraries and specific versions created locally via a “lockfile”. The lockfile is created by *renv*. Alternatives installing packages separately (most likely using a script or interactive queue) and updating the libPaths within R scripts is the simpler option if renv is not used.
 
 Three example scripts to demonstrate using R (with an established renv lock file) are:
 
