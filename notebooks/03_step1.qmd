@@ -11,7 +11,7 @@ As mentioned, pbs scripts communicate your requirements to the scheduler. These 
 
 - c, Run your scripts and manage directory paths and/or shell variables
 
-The below series of commands will create a folder in a specifc location with the */project* folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the */project/Training* folder and the compressed file housed within it.
+The below series of commands will create a folder in a specific location with the */project* folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the */project/Training* folder and the compressed file housed within it.
 
 On the **Artemis Terminal** type the following commands:
 
@@ -24,7 +24,7 @@ On the **Artemis Terminal** type the following commands:
 ```cd <yourname>
 ```
 
-```tar -xzvf /project/Training/DATA/intro_hpc.tar.gz
+```git clone https://github.com/Sydney-Informatics-Hub/datahpc.git
 ```
 
 ```cd datahpc
@@ -56,7 +56,7 @@ We will alter its contents to run a simple hello world script. Specify the `Trai
 #PBS -l walltime=00:10:00
 #PBS -q defaultQ
 
-cd /project/Training/datahpc/<yourname>
+cd /project/Training/<yourname>/datahpc/
 mkdir New_job
 cp basic.pbs New_job/copy.pbs
 perl hello.pl "YourName"
