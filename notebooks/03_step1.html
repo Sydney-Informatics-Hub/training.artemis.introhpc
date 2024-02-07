@@ -243,12 +243,12 @@ cookieconsent.run({
 <li><p>b, Load modules required for your scripts (including environments)</p></li>
 <li><p>c, Run your scripts and manage directory paths and/or shell variables</p></li>
 </ul>
-<p>The below series of commands will create a folder in a specifc location with the <em>/project</em> folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the <em>/project/Training</em> folder and the compressed file housed within it.</p>
+<p>The below series of commands will create a folder in a specific location with the <em>/project</em> folder, extract data and rename a file which we will use to run our scripts. As we have logged in with the training credentials, we should have access to the <em>/project/Training</em> folder and the compressed file housed within it.</p>
 <p>On the <strong>Artemis Terminal</strong> type the following commands:</p>
 <p><code>cd /project/Training</code></p>
 <p><code>mkdir &lt;yourname&gt;</code></p>
 <p><code>cd &lt;yourname&gt;</code></p>
-<p><code>tar -xzvf /project/Training/DATA/intro_hpc.tar.gz</code></p>
+<p><code>git clone https://github.com/Sydney-Informatics-Hub/datahpc.git</code></p>
 <p><code>cd datahpc</code></p>
 <p><code>cp index.pbs basic.pbs</code></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Not using these notes with the Training project?">
@@ -276,7 +276,7 @@ Not using these notes with the Training project?
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#PBS -l walltime=00:10:00</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#PBS -q defaultQ</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /project/Training/datahpc/<span class="op">&lt;</span>yourname<span class="op">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /project/Training/<span class="op">&lt;</span>yourname<span class="op">&gt;</span>/datahpc/</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> New_job</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> basic.pbs New_job/copy.pbs</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> hello.pl <span class="st">"YourName"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
