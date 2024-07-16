@@ -17,7 +17,7 @@ Things to note:
 
 3. The pbs script that runs computepi_fire.py requires a list of numbers reflecting a simulation number. The larger, the more accurate the approximation of pi. Now is a good chance to look at queue management and practice `qstat -x <jobnumber>`, `qstat -u <username>` and `qdel <jobnumber>` commands by increasing the simulation numbers.
 
-
+Chances are for more complex workloads you'd want to set up an **environment** to manage libraries and their dependencies. We recommend using [conda environemnts](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) on Artemis by installing miniconda (most likely in the /projects directory so your colleagues can use it) and sourcing the environment within the PBS script before the python workflow is enganged. See this [running on Artemis](https://sydney-informatics-hub.github.io/training.artemis.gpu/06-Python/index.html) example on how you'd use conda and alter your PBS script.
 
 ## Matlab
 
@@ -35,7 +35,7 @@ Things to note:
 
 ## R
 
-Running R code on Artemis requires installing and referencing libraries needed for your R script. 
+Running R code on Artemis requires installing and referencing **packages** needed for your R script. 
 
 One way to do this is by engaging the interactive queue and via the R console on the Artemis terminal use install.package commands that specify the libary path (lib) to be a location you have writeable permissions with. As an example see [the interactive demo](https://github.com/kmarsyd/IntroHPCData/tree/main/datahpc/interactive_queue_demo). 
 
