@@ -6,6 +6,12 @@ output:
     toc_float: false
 ---
 
+> ## Attention
+> Artemis is due to be *permanently shutdown on 29 August 2025*.
+> No new projects will be created on Artemis from 28 February 2025.
+> Transition your work to NCI (or elsewhere) now.
+> Contact research-cloud.project@sydney.edu.au for any questions or concerns.
+
 
 Introduces Sydney’s High Performance Computer (HPC), ‘Artemis’. We cover connecting and navigating Artemis, available software, and how to submit and monitor computational jobs using the PBS Pro scheduler.
 
